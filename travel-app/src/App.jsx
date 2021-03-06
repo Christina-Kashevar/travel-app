@@ -17,7 +17,7 @@ export default function App() {
             <Home />
           </Route>
           <Route path="/country">
-            <Country />
+          <Route path="/country/:id" render={(props) => <Country {...props} />} />
           </Route>
         </Switch>
       </div>
