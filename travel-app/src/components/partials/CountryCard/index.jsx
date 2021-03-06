@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import useStyles from './styles';
 
 import Card from '@material-ui/core/Card';
@@ -13,8 +13,13 @@ import Typography from '@material-ui/core/Typography';
 
 
 export default function CountryCard(props) {
+  const history = useHistory();
   const { id } = props;
   const classes = useStyles();
+
+  function handleClick() {
+    history.push(`/country/${id}`);
+  }
 
   return (
     <Card className={classes.root}>
@@ -38,10 +43,8 @@ export default function CountryCard(props) {
         <Button size="small" color="primary">
           Share
         </Button>
-        <Button size="small" color="primary">
-          <Link to={`/country/${id}`} >
-            Learn More
-          </Link>
+        <Button size="small" color="primary" onClick={handleClick}>
+          Learn More
         </Button>
       </CardActions>
     </Card>
