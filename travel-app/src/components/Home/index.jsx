@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Grid, Typography } from '@material-ui/core';
 
 import Header from '../partials/Header';
+import Footer from '../partials/Footer'
 import CountryCard from '../partials/CountryCard'
 
 const countryIDs = [
@@ -32,6 +33,7 @@ export default function Country() {
           ))}
         </Grid>
       </Container>
+      <Footer />
     </Grid>
   );
 }
