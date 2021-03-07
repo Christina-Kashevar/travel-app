@@ -36,7 +36,10 @@ export default function Footer() {
           </Grid>
           <Grid>
             <IconButton
-              onClick={() => (window.location = 'https://rs.school/js/')}
+              component="a"
+              href="https://rs.school/js/"
+              target="blank"
+              rel="noreferrer noopener"
             >
               <img src="https://rs.school/images/rs_school.svg" alt="RS School logo" className={classes.logoImage}/>
             </IconButton>
