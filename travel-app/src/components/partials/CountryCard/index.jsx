@@ -18,7 +18,7 @@ export default function CountryCard(props) {
   const classes = useStyles();
 
   function handleClick() {
-    history.push(`/country/${country.name}`);
+    history.push(`/country/${country.id}`);
   }
 
   return (
@@ -34,10 +34,10 @@ export default function CountryCard(props) {
             <Typography gutterBottom variant="h5" component="h2">
               {country.name}
             </Typography>
-            <Typography gutterBottom variant="h7" component="h3">
+            <Typography gutterBottom variant="h6" component="h3">
               Capital: {country.capital}
             </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
+            <Typography variant="body2" component="p">
               Lizards are a widespread group of squamate reptiles, with over
               6,000 species, ranging across all continents except Antarctica
             </Typography>

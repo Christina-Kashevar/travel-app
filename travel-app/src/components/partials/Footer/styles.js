@@ -4,12 +4,16 @@ const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
   },
-  appbar:{
+  appBar:{
     width: '100%',
   },
   toolbar:{
     display: 'flex',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+  },
+  logoImage: {
+    height: theme.spacing(3),
+    width: 'auto',
   },
 }));
 

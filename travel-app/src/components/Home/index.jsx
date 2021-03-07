@@ -20,7 +20,7 @@ export default function Country() {
           alignItems="center"
         >
           {COUNTRY_IDS.map((id) => (
-            <CountryCard id={id} />
+            <CountryCard id={id} key={id} />
           ))}
         </Grid>
       </Container>

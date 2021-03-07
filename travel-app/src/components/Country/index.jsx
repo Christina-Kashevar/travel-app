@@ -4,14 +4,18 @@ import { useParams } from 'react-router-dom';
 import { Grid, Typography } from '@material-ui/core';
 
 import Header from '../partials/Header';
-import Footer from '../partials/Footer'
+import Footer from '../partials/Footer';
+
+import { getCountryById } from '../../engine';
 
 export default function Country() {
-  let { id } = useParams();
+  const { id } = useParams();
+  const country = getCountryById(id);
+
   return (
     <Grid>
-      <Header pageName={id} />
-      <Typography variant="h3">{id}</Typography>
+      <Header pageName={country.name} />
+      <Typography variant="h3">{country.name}</Typography>
       <Footer />
     </Grid>
   );
