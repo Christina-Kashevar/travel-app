@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
-        maxWidth: 200,
+        maxWidth: 250,
       },
     app: {
         backgroundSize: 'cover',
@@ -44,7 +44,22 @@ const useStyles = makeStyles((theme) => ({
   },
   img:{
     borderRadius: '16px',
+    backgroundColor: 'rgba(255, 255, 255, 0.7)',
+    width: '25%',
   },
+  h:{
+    color: '#FFF',
+    fontWeight: 300,
+    fontSize: '1.5em',
+    textAlign: 'center',
+  },
+  hSmall:{
+    color: '#FFF',
+    fontWeight: 300,
+    fontSize: '1em',
+    textAlign: 'center',
+    padding: 10,
+  }
 }
   ));
 
