@@ -11,3 +11,4 @@ export const COUNTRY_DATA = [
 ];
 
 export const COUNTRY_IDS = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'eg', 'cn', 'tr'];
+export const REACT_APP_WEATHER_KEY = '69671bc4a5a5ce9fec667fd138ce3060';
