@@ -4,7 +4,7 @@ const useStyles = makeStyles({
   root: {
     maxWidth: 250,
     height: 50,
-    margin: 10,
+    margin: '10px 0',
   },
   flex: {
     display: 'flex',
