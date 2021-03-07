@@ -9,13 +9,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
+import { getCountryById } from '../../../engine';
+
 export default function CountryCard(props) {
   const history = useHistory();
   const { id } = props;
+  const country = getCountryById(id);
   const classes = useStyles();
 
   function handleClick() {
-    history.push(`/country/${id.country}`);
+    history.push(`/country/${country.name}`);
   }
 
   return (
@@ -29,10 +32,10 @@ export default function CountryCard(props) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {id.country}
+              {country.name}
             </Typography>
             <Typography gutterBottom variant="h7" component="h3">
-              Capital: {id.capital}
+              Capital: {country.capital}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
               Lizards are a widespread group of squamate reptiles, with over

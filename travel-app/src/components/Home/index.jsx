@@ -5,17 +5,7 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import CountryCard from '../partials/CountryCard';
 
-const countryIDs = [
-  { country: 'France', capital: 'Paris' },
-  { country: 'Italy', capital: 'Rome' },
-  { country: 'Russia', capital: 'Moscow' },
-  { country: 'Mexico', capital: 'Mexico' },
-  { country: 'Greece', capital: 'Athens' },
-  { country: 'India', capital: 'Delhi' },
-  { country: 'Egypt', capital: 'Cairo' },
-  { country: 'China', capital: 'Beijing' },
-  { country: 'Turkey', capital: 'Istanbul' },
-];
+import { COUNTRY_IDS } from '../../data/constants';
 
 export default function Country() {
   return (
@@ -29,7 +19,7 @@ export default function Country() {
           justify="space-evenly"
           alignItems="center"
         >
-          {countryIDs.map((id) => (
+          {COUNTRY_IDS.map((id) => (
             <CountryCard id={id} />
           ))}
         </Grid>
