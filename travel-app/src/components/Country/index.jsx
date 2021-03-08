@@ -23,13 +23,18 @@ export default function Country() {
       <Grid>
         <Header pageName={country.name} />
         <Container>
-          <Grid container spacing={3} className={classes.root}>
+          <Grid container spacing={1} className={classes.root}>
             <Grid item xs={9}>
-              <Typography variant="h3">{country.name}</Typography>
-              <Typography variant="body1">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
-              </Typography>
-              <Map />
+              <Container>
+                <Typography variant="h3">{country.name}</Typography>
+                <Typography variant="body1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
+                </Typography>
+                <Map />
+                <Typography variant="body1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
+                </Typography>
+              </Container>
             </Grid>
             <Grid item xs={3}>
               <Weather capital={country.capital}/>
