@@ -35,7 +35,7 @@ function Currency({ currencyCod }) {
 
   return (
     <Card className={classes.root}>
-      <CurrencyCard currencyData={currencyData} lang={lang} />
+      <CurrencyCard currencyData={currencyData} currencyCod={currencyCod} lang={lang} />
     </Card>
   );
 }

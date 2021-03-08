@@ -13,13 +13,16 @@ import usaIcon from '../../../assets/images/usa.png';
 import ecIcon from '../../../assets/images/ecIcon.png';
 import rubIcon from '../../../assets/images/rubIcon.png';
 import useStyles from './styles';
-const CurrencyCard = ({ currencyData, lang }) => {
+const CurrencyCard = ({ currencyData, currencyCod, lang }) => {
   const classes = useStyles();
   return !currencyData ? (
     <p>Loading...</p>
   ) : (
     <CardMedia className={classes.app}>
       <Grid className={classes.main}>
+      <Grid className={classes.currencyCod}>
+        1 {currencyCod}
+        </Grid>
         {currencyData.map((el, i) => {
           let currencyLang = '';
           if (lang === 'ru') {
