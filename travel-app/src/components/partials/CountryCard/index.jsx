@@ -27,7 +27,7 @@ export default function CountryCard(props) {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={`${process.env.PUBLIC_URL}/images/contemplative-reptile.jpg`}
+            image={country.img}
             title="Contemplative Reptile"
           />
           <CardContent>
@@ -38,8 +38,7 @@ export default function CountryCard(props) {
               Capital: {country.capital}
             </Typography>
             <Typography variant="body2" component="p">
-              Lizards are a widespread group of squamate reptiles, with over
-              6,000 species, ranging across all continents except Antarctica
+              {country.shortDescription}
             </Typography>
           </CardContent>
         </CardActionArea>
