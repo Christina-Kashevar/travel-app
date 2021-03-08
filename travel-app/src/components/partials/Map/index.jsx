@@ -1,6 +1,6 @@
 import React, {useCallback, useState} from 'react';
 import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import ReactMapboxGl, { Layer, Feature } from 'react-mapbox-gl';
+import ReactMapboxGl, { Layer, Source } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import useStyles from './styles';
 
@@ -8,15 +8,30 @@ import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
+import { COUNTRY_COORDS } from '../../../data/geo';
+
 import { Grid, IconButton } from '@material-ui/core';
 
 const MapBox = ReactMapboxGl({
   accessToken: MAPBOX_ACCESS_TOKEN,
 });
 
-export default function Map () {
+const COUNTRY_BONDS_SOURCE = {
+  type: 'vector',
+  url: 'mapbox://mapbox.country-boundaries-v1',
+};
+
+const paint = {
+  'fill-color': '#fbc02d',
+  'fill-opacity': 0.5,
+};
+
+export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
+  const { id } = props;
+  const coords = COUNTRY_COORDS[id];
+  const { lat, long } = coords;
   const classes = useStyles();
 
   const trackFs = useCallback((state) => setFsState(state), []);
@@ -29,6 +44,8 @@ export default function Map () {
     handleFs.enter();
   };
 
+  const filter = ['==', 'iso_3166_1', id.toUpperCase()];
+
   return (
       <FullScreen handle={handleFs} onChange={trackFs}>
         <Grid className={classes.fsWrapper}>
@@ -37,14 +54,18 @@ export default function Map () {
           </IconButton>
         </Grid>
         <MapBox
+          // eslint-disable-next-line react/style-prop-object
           style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
           zoom={[5]}
           className={classes.mapContainer}
-          >
-          <Layer type="symbol" id="marker" layout={{ 'icon-image': 'marker-15' }}>
-              <Feature coordinates={[-0.481747846041145, 51.3233379650232]} />
+          center={[long, lat]}
+        >
+          <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
+          <Layer type="fill" sourceId="country-bonds" paint={paint} sourceLayer="country_boundaries" filter={filter}>
           </Layer>
         </MapBox>
+
+
       </FullScreen>
   );
 }

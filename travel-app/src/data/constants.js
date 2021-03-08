@@ -1,5 +1,5 @@
 export const COUNTRY_DATA = [
-  { id: 'fr', name: 'France', capital: 'Paris', timeZone: 'Europe/Paris', currency: 'EUR' },
+  { id: 'fr', name: 'France', capital: 'Paris', timeZone: 'Europe/Paris', currency: 'EUR'},
   { id: 'it', name: 'Italy', capital: 'Rome', timeZone: 'Europe/Rome', currency: 'EUR' },
   { id: 'ru', name: 'Russia', capital: 'Moscow', timeZone: 'Europe/Moscow', currency: 'RUB' },
   { id: 'mx', name: 'Mexico', capital: 'Mexico', timeZone: 'America/Mexico_City', currency: 'MXN' },
