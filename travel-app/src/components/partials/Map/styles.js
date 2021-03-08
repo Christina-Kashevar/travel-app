@@ -8,11 +8,16 @@ const useStyles = makeStyles((theme) => ({
     height: '100%',
     minHeight: theme.spacing(50),
   },
+  fsWrapper: {
+    position: 'relative',
+    width: '100%',
+    height: '0',
+  },
   fsButton: {
     color: theme.palette.getContrastText(blue[500]),
-    position: 'relative',
-    top: theme.spacing(6),
-    left: `calc(100% - ${theme.spacing(6)}px)`,
+    position: 'absolute',
+    top: theme.spacing(0.5),
+    left: `calc(100% - ${theme.spacing(6.5)}px)`,
     zIndex: 2,
   }
 }));

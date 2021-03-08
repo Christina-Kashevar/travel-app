@@ -37,12 +37,21 @@ function polygons() {
 export default function Map () {
   const handle = useFullScreenHandle();
   const classes = useStyles();
+
+  const toggleFs = () => {
+    if(handle.active) {
+      handle.exit();
+      return;
+    }
+    handle.enter();
+  };
   return (
-    <Grid>
-      <IconButton onClick={handle.enter} className={classes.fsButton} color="primary">
-        <FullscreenIcon />
-      </IconButton>
       <FullScreen handle={handle}>
+        <Grid className={classes.fsWrapper}>
+          <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
+            <FullscreenIcon />
+          </IconButton>
+        </Grid>
         <MapBox
           style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
           zoom={[5]}
@@ -53,7 +62,5 @@ export default function Map () {
           </Layer>
         </MapBox>
       </FullScreen>
-    </Grid>
-
   );
 }
