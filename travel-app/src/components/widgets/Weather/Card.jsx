@@ -4,7 +4,7 @@ import useStyles from './styles';
 import cold from '../../../assets/images/cold-bg.jpg';
 import warm from '../../../assets/images/warm-bg.jpg';
 const WeatherCard = ({ weatherData }) => {
-  const kelvinToFarenheit = (k) => {
+  const kelvinToFahrenheit = (k) => {
     return Math.round((k - 273.15).toFixed(2));
   };
   const classes = useStyles();
@@ -13,13 +13,13 @@ const WeatherCard = ({ weatherData }) => {
   ) : (
     <CardMedia
       className={classes.app}
-      image={kelvinToFarenheit(weatherData.main.temp) > 16 ? warm : cold}
+      image={kelvinToFahrenheit(weatherData.main.temp) > 16 ? warm : cold}
     >
       <Grid className={classes.main}>
         <Grid className={classes.location}>{weatherData.name}</Grid>
         <Grid className={classes.weatherBox}>
           <Grid className={classes.temp}>
-            {kelvinToFarenheit(weatherData.main.temp)}°c
+            {kelvinToFahrenheit(weatherData.main.temp)}°c
           </Grid>
           <Grid className={classes.weather}>
             <img

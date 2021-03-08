@@ -4,9 +4,11 @@ import { Card } from '@material-ui/core';
 import useStyles from './styles';
 import WeatherCard from './Card';
 import { REACT_APP_WEATHER_KEY } from '../../../data/constants';
+
 function Weather({ capital }) {
   const [weatherData, setWeatherData] = useState(null);
   const classes = useStyles();
+
   useEffect(() => {
     axios
       .get(

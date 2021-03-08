@@ -17,11 +17,11 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
   },
-  
+
   weatherBox: {
     textAlign: 'center',
   },
-  
+
   temp: {
     position: 'relative',
     display: 'inline-block',
@@ -31,11 +31,11 @@ const useStyles = makeStyles((theme) => ({
     padding: '15px 25px',
     color: '#FFF',
     fontSize: '3em',
-    fontWeight: '900', 
+    fontWeight: '900',
     textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
     textAlign: 'center',
     boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
-  }, 
+  },
   weather: {
     color: '#FFF',
     fontSize: '48px',

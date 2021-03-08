@@ -7,7 +7,7 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 
 import { getCountryById } from '../../engine';
-import Weather from '../widgets/Weather/index';
+import Weather from '../widgets/Weather';
 export default function Country() {
   const { id } = useParams();
   const country = getCountryById(id);
