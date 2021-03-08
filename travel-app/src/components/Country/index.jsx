@@ -5,20 +5,23 @@ import { Grid, Typography } from '@material-ui/core';
 
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
+
+import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
+import Weather from '../widgets/Weather';
 
 import { getCountryById } from '../../engine';
-import Weather from '../widgets/Weather';
+
 export default function Country() {
   const { id } = useParams();
   const country = getCountryById(id);
-
   return (
     <Grid>
       <Header pageName={country.name} />
       <Typography variant="h3">{country.name}</Typography>
       <Weather capital={country.capital}/>
       <DateWidget id={id} lang={'en'}/>
+      <Currency currencyCod={country.currency}/>
       <Footer />
     </Grid>
   );
