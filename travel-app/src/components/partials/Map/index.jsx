@@ -1,6 +1,6 @@
-import React, {useCallback, useState} from 'react';
-import { FullScreen, useFullScreenHandle } from "react-full-screen";
-import ReactMapboxGl, { Layer, Source, Feature } from 'react-mapbox-gl';
+import React, { useCallback, useState } from 'react';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import ReactMapboxGl, { Layer, Source, Feature, Marker} from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import useStyles from './styles';
 
@@ -10,7 +10,7 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
 import { COUNTRY_COORDS, CAPITALS_COORDS } from '../../../data/geo';
 
-import { Grid, IconButton } from '@material-ui/core';
+import { Grid, IconButton, Box} from '@material-ui/core';
 
 const MapBox = ReactMapboxGl({
   accessToken: MAPBOX_ACCESS_TOKEN,
@@ -45,7 +45,7 @@ export default function Map(props) {
   const trackFs = useCallback((state) => setFsState(state), []);
 
   const toggleFs = () => {
-    if(handleFs.active) {
+    if (handleFs.active) {
       handleFs.exit();
       return;
     }
@@ -54,30 +54,37 @@ export default function Map(props) {
 
   const filter = ['==', 'iso_3166_1', id.toUpperCase()];
   const capitalCoords = CAPITALS_COORDS[id];
-
   return (
-      <FullScreen handle={handleFs} onChange={trackFs}>
-        <Grid className={classes.fsWrapper}>
-          <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
-            {(fsState) ? <FullscreenExitIcon /> : <FullscreenIcon />}
-          </IconButton>
-        </Grid>
-        <MapBox
-          // eslint-disable-next-line react/style-prop-object
-          style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
-          zoom={[5]}
-          className={classes.mapContainer}
-          center={[long, lat]}
-        >
-          <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
-          <Layer type="fill" sourceId="country-bonds" paint={paint} sourceLayer="country_boundaries" filter={filter}>
-          </Layer>
-          <Layer type="circle" paint={POSITION_CIRCLE_PAINT}>
-            <Feature coordinates={capitalCoords} />
-          </Layer>
-        </MapBox>
-
-
-      </FullScreen>
+    <FullScreen handle={handleFs} onChange={trackFs}>
+      <Grid className={classes.fsWrapper}>
+        <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
+          {fsState ? <FullscreenExitIcon /> : <FullscreenIcon />}
+        </IconButton>
+      </Grid>
+      <MapBox
+        // eslint-disable-next-line react/style-prop-object
+        style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
+        zoom={[5]}
+        className={classes.mapContainer}
+        center={[long, lat]}
+      >
+        <Marker coordinates={[capitalCoords[1], capitalCoords[0]]}>
+          <Grid className={classes.marker}>
+            <Box className={classes.marketSpan}></Box>
+          </Grid>
+        </Marker>
+        <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
+        <Layer
+          type="fill"
+          sourceId="country-bonds"
+          paint={paint}
+          sourceLayer="country_boundaries"
+          filter={filter}
+        ></Layer>
+        <Layer type="circle" paint={POSITION_CIRCLE_PAINT}>
+          <Feature coordinates={capitalCoords} />
+        </Layer>
+      </MapBox>
+    </FullScreen>
   );
 }
