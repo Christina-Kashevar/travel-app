@@ -7,12 +7,13 @@ import { Container, Grid, Typography } from '@material-ui/core';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import Map from '../partials/Map';
+
+
+import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
 import Weather from '../widgets/Weather';
 
 import { getCountryById } from '../../engine';
-
-
 
 export default function Country() {
   const { id } = useParams();
@@ -39,6 +40,7 @@ export default function Country() {
             <Grid item xs={3}>
               <Weather capital={country.capital}/>
               <DateWidget id={id} lang={'en'}/>
+              <Currency currencyCod={country.currency}/>
             </Grid>
           </Grid>
         </Container>
