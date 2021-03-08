@@ -1,28 +1,35 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import useStyles from './styles';
 
 import { Container, Grid, Typography } from '@material-ui/core';
 
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
+import Map from '../partials/Map';
 import DateWidget from '../widgets/Date';
+import Weather from '../widgets/Weather';
 
 import { getCountryById } from '../../engine';
-import Weather from '../widgets/Weather';
+
+
+
 export default function Country() {
   const { id } = useParams();
   const country = getCountryById(id);
+  const classes = useStyles();
 
   return (
       <Grid>
         <Header pageName={country.name} />
         <Container>
-          <Grid container spacing={3}>
+          <Grid container spacing={3} className={classes.root}>
             <Grid item xs={9}>
               <Typography variant="h3">{country.name}</Typography>
               <Typography variant="body1">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
               </Typography>
+              <Map />
             </Grid>
             <Grid item xs={3}>
               <Weather capital={country.capital}/>
