@@ -22,30 +22,27 @@ export default function DateWidget({id, lang}) {
       localLang = 'en-GB';
   }
 
-  const options = {
-    weekday: 'long',
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    hour: 'numeric',
-    minute:'numeric',
-    second:'numeric',
-    timeZone: country.timeZone
-  };
-
-  function showTime() {
-    const date = (new Date()).toLocaleString(localLang, options).split(',');
-    setDayOfWeek(date[0]);
-    setDayAndMonth(`${date[1].trim().split(' ')[0]} ${date[1].trim().split(' ')[1]}`);
-    setTime(date[2]);
-  }
-
   useEffect(() => {
-    const timer = setTimeout(showTime, 1000);
-    return () => {
-      clearTimeout(timer);
+    const options = {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+      hour: 'numeric',
+      minute:'numeric',
+      second:'numeric',
+      timeZone: country.timeZone
     };
-  })
+
+    const oneSecInterval = setInterval(() => {
+      const date = (new Date()).toLocaleString(localLang, options).split(',');
+      setDayOfWeek(date[0]);
+      setDayAndMonth(`${date[1].trim().split(' ')[0]} ${date[1].trim().split(' ')[1]}`);
+      setTime(date[2]);
+    }, 1000);
+
+    return () => clearInterval(oneSecInterval);
+  }, [localLang, country.timeZone]);
 
   let infoToRender = (<p className={classes.root}>Loading....</p>);
 
