@@ -10,5 +10,5 @@ export const COUNTRY_DATA = [
   { id: 'tr', name: 'Turkey', capital: 'Istanbul', timeZone: 'Europe/Istanbul' },
 ];
 
-export const COUNTRY_IDS = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'eg', 'cn', 'tr'];
-export const REACT_APP_WEATHER_KEY = '69671bc4a5a5ce9fec667fd138ce3060';
+export const COUNTRY_IDS = ['fr', 'it', 'ru', 'ic', 'gr', 'in', 'jp', 'cn', 'tr'];
+export const REACT_APP_WEATHER_KEY = 'c1b23d15ad387ce3fe178c7d2d465ccb';
