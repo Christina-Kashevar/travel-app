@@ -6,6 +6,7 @@ import CurrencyCard from './Card';
 
 function Currency({ currencyCod }) {
   const [currencyData, setCurrencyData] = useState(null);
+  const [lang, setLang] = useState('ru');
   const currencyFindCode = ['EUR', 'USD', 'RUB'];
   const classes = useStyles();
 
@@ -34,7 +35,7 @@ function Currency({ currencyCod }) {
 
   return (
     <Card className={classes.root}>
-      <CurrencyCard currencyData={currencyData} currencyCod={currencyCod} />
+      <CurrencyCard currencyData={currencyData} lang={lang} />
     </Card>
   );
 }
