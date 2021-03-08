@@ -6,19 +6,16 @@ import Footer from '../partials/Footer';
 import CountryCard from '../partials/CountryCard';
 
 import { COUNTRY_IDS } from '../../data/constants';
+import { useTranslation } from 'react-i18next';
 
 export default function Country() {
+  const { t } = useTranslation();
   return (
     <Grid>
-      <Header pageName="Travel App" />
+      <Header pageName={t('PAGE_NAME.TRAVEL_APP')} />
       <Container>
-        <Typography variant="h3">Home</Typography>
-        <Grid
-          container
-          direction="row"
-          justify="space-evenly"
-          alignItems="center"
-        >
+        <Typography variant="h3">{t('PAGE_TITLE.HOME')}</Typography>
+        <Grid container direction="row" justify="space-evenly" alignItems="center">
           {COUNTRY_IDS.map((id) => (
             <CountryCard id={id} key={id} />
           ))}

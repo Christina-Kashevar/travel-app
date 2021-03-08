@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import InputBase from '@material-ui/core/InputBase';
 import PublicIcon from '@material-ui/icons/Public';
 import SearchIcon from '@material-ui/icons/Search';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
   const { pageName } = props;
@@ -47,6 +48,7 @@ export default function Header(props) {
               />
             </div>
           }
+          <LanguageSwitcher />
         </Toolbar>
       </AppBar>
     </div>
