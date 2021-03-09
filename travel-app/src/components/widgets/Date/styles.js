@@ -3,9 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme)=>({
   root: {
     maxWidth: 250,
-    borderRadius: '16px',
+    borderRadius: 16,
     margin: '2% 0',
-    padding: '0',
+    padding: 0,
   },
   flex: {
     display: 'flex',
@@ -18,16 +18,16 @@ const useStyles = makeStyles((theme)=>({
     color: '#FFF',
     fontWeight: 300,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '10px',
+      fontSize: 10,
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '16px',
+      fontSize: 16,
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '20px',
+      fontSize: 20,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '24px',
+      fontSize: 24,
     },
     textAlign: 'center',
   }

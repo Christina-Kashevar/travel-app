@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 250,
-        borderRadius: '16px',
+        borderRadius: 16,
       },
       app: {
         backgroundSize: 'cover',
@@ -14,20 +14,20 @@ const useStyles = makeStyles((theme) => ({
       size: {
         padding:0,
         [theme.breakpoints.down('sm')]: {
-          width:'20px',
-          height: '20px',
+          width: 20,
+          height: 20,
         },
         [theme.breakpoints.between('sm', 'md')]: {
-          width:'30px',
-          height: '30px',
+          width: 30,
+          height: 30,
         },
         [theme.breakpoints.between('md', 'lg')]: {
-          width:'40px',
-          height: '40px',
+          width: 40,
+          height: 40,
         },
         [theme.breakpoints.up('lg')]: {
-          width:'50px',
-          height: '50px',
+          width: 50,
+          height: 50,
         },
       },
       currencyCode: {
@@ -37,37 +37,37 @@ const useStyles = makeStyles((theme) => ({
         margin: '2% auto',
         width: '100%',
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
-        borderRadius: '16px',
+        borderRadius: 16,
         color: '#FFF',
         [theme.breakpoints.down('sm')]: {
-          fontSize: '10px',
+          fontSize: 10,
         },
         [theme.breakpoints.between('sm', 'md')]: {
-          fontSize: '16px',
+          fontSize: 16,
         },
         [theme.breakpoints.between('md', 'lg')]: {
-          fontSize: '22px',
+          fontSize: 22,
         },
         [theme.breakpoints.up('lg')]: {
-          fontSize: '26px',
+          fontSize: 26,
         },
-        fontWeight: '800',
+        fontWeight: 800,
         textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
         boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
       },
       currency: {
         color: '#FFF',
         [theme.breakpoints.down('sm')]: {
-          fontSize: '8px',
+          fontSize: 8,
         },
         [theme.breakpoints.between('sm', 'md')]: {
-          fontSize: '10px',
+          fontSize: 10,
         },
         [theme.breakpoints.between('md', 'lg')]: {
-          fontSize: '14px',
+          fontSize: 14,
         },
         [theme.breakpoints.up('lg')]: {
-          fontSize: '18px',
+          fontSize: 18,
         },
         fontWeight: 300,
         textAlign: 'center',

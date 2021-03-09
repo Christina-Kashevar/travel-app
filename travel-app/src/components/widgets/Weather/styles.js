@@ -3,7 +3,7 @@ const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 250,
         height: 'auto',
-        borderRadius: '16px',
+        borderRadius: 16,
       },
     app: {
         backgroundSize: 'cover',
@@ -15,16 +15,16 @@ const useStyles = makeStyles((theme) => ({
     location: {
     color: '#FFF',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '10px',
+      fontSize: 10,
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '20px',
+      fontSize: 20,
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '30px',
+      fontSize: 30,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '40px',
+      fontSize: 40,
     },
     fontWeight: 500,
     textAlign: 'center',
@@ -41,34 +41,34 @@ const useStyles = makeStyles((theme) => ({
     display: 'inline-block',
     margin: '10% auto',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderRadius: '16px',
+    borderRadius: 16,
     padding: '5% 10%',
     color: '#FFF',
     [theme.breakpoints.down('sm')]: {
-      fontSize: '10px',
+      fontSize: 10,
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '20px',
+      fontSize: 20,
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '35px',
+      fontSize: 35,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '40px',
+      fontSize: 40,
     },
-    fontWeight: '900',
+    fontWeight: 900,
     textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
     textAlign: 'center',
     boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
   },
   weather: {
     color: '#FFF',
-    fontSize: '48px',
-    fontWeight: '700',
+    fontSize: 48,
+    fontWeight: 700,
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
   },
   img:{
-    borderRadius: '16px',
+    borderRadius: 16,
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
     width: '25%',
   },
@@ -76,16 +76,16 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFF',
     fontWeight: 300,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '10px',
+      fontSize: 10,
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '20px',
+      fontSize: 20,
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '30px',
+      fontSize: 30,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '35px',
+      fontSize: 35,
     },
     textAlign: 'center',
   },
@@ -93,16 +93,16 @@ const useStyles = makeStyles((theme) => ({
     color: '#FFF',
     fontWeight: 300,
     [theme.breakpoints.down('sm')]: {
-      fontSize: '8px',
+      fontSize: 8,
     },
     [theme.breakpoints.between('sm', 'md')]: {
-      fontSize: '16px',
+      fontSize: 16,
     },
     [theme.breakpoints.between('md', 'lg')]: {
-      fontSize: '22px',
+      fontSize: 22,
     },
     [theme.breakpoints.up('lg')]: {
-      fontSize: '26px',
+      fontSize: 26,
     },
     textAlign: 'center',
     padding: 10,
