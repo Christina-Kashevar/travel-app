@@ -33,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
       currency: {
         color: '#FFF',
         fontSize: '1.5vw',
-        color: '#FFF',
         fontWeight: 300,
         textAlign: 'center',
         textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
