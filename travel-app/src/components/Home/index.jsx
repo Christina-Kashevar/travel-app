@@ -14,7 +14,6 @@ export default function Country() {
     <Grid>
       <Header pageName={t('PAGE_NAME.TRAVEL_APP')} />
       <Container>
-        <Typography variant="h3">{t('PAGE_TITLE.HOME')}</Typography>
         <Grid container direction="row" justify="space-evenly" alignItems="center">
           {COUNTRY_IDS.map((id) => (
             <CountryCard id={id} key={id} />
