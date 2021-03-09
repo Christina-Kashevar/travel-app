@@ -2,6 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 250,
+        height: 'auto',
+        borderRadius: '16px',
       },
     app: {
         backgroundSize: 'cover',
@@ -12,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
       },
     location: {
     color: '#FFF',
-    fontSize: '2em',
+    fontSize: '3vw',
     fontWeight: 500,
     textAlign: 'center',
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
@@ -23,14 +25,15 @@ const useStyles = makeStyles((theme) => ({
   },
 
   temp: {
+    width: '50%',
     position: 'relative',
     display: 'inline-block',
     margin: '10% auto',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     borderRadius: '16px',
-    padding: '15px 25px',
+    padding: '5% 10%',
     color: '#FFF',
-    fontSize: '3em',
+    fontSize: '3vw',
     fontWeight: '900',
     textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
     textAlign: 'center',
@@ -50,13 +53,13 @@ const useStyles = makeStyles((theme) => ({
   h:{
     color: '#FFF',
     fontWeight: 300,
-    fontSize: '1.5em',
+    fontSize: '2.5vw',
     textAlign: 'center',
   },
   hSmall:{
     color: '#FFF',
     fontWeight: 300,
-    fontSize: '1em',
+    fontSize: '2vw',
     textAlign: 'center',
     padding: 10,
   }

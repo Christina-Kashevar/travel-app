@@ -11,6 +11,11 @@ const useStyles = makeStyles((theme) => ({
     main: {
       backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1))',
       },
+      size: {
+        padding:0,
+        width: '4vw',
+        height: '4vw',
+      },
       currencyCode: {
         textAlign: 'center',
         position: 'relative',
@@ -20,15 +25,16 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
         borderRadius: '16px',
         color: '#FFF',
-        fontSize: '1.7em',
+        fontSize: '2.5vw',
         fontWeight: '800',
         textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
         boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
       },
       currency: {
         color: '#FFF',
-        fontSize: '1em',
-        fontWeight: 800,
+        fontSize: '1.5vw',
+        color: '#FFF',
+        fontWeight: 300,
         textAlign: 'center',
         textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
       },

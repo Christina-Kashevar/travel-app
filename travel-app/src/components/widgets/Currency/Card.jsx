@@ -4,7 +4,6 @@ import {
   List,
   ListItem,
   ListItemText,
-  ListItemAvatar,
   Avatar,
   Typography,
   CardMedia,
@@ -37,10 +36,10 @@ const CurrencyCard = ({ currencyData, currencyCode, lang }) => {
           }
           if (lang === 'en') currencyLang = el.key;
           return (
-            <List key={i} style={{ padding: '0' }}>
-              <ListItem>
-                <ListItemAvatar>
-                  <Avatar
+            <List key={i} style={{ padding: '0'}}>
+              <ListItem style={{padding:'0', marginLeft:'1vw'}}>
+                <Grid> 
+                  <Avatar className={classes.size} alt='flag'
                     src={
                       el.key === 'USD'
                         ? usaIcon
@@ -49,7 +48,7 @@ const CurrencyCard = ({ currencyData, currencyCode, lang }) => {
                         : rubIcon
                     }
                   />
-                </ListItemAvatar>
+                </Grid>
                 <ListItemText
                   primary={
                     <Typography className={classes.currency}>
