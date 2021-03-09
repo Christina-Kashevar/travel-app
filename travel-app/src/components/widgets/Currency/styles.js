@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     main: {
       backgroundImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1))',
       },
-      currencyCod: {
+      currencyCode: {
         textAlign: 'center',
         position: 'relative',
         display: 'inline-block',
@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.7em',
         fontWeight: '800',
         textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
-        textAlign: 'center',
         boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
       },
       currency: {

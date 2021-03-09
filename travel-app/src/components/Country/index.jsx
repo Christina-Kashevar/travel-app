@@ -21,7 +21,7 @@ export default function Country() {
       <Typography variant="h3">{country.name}</Typography>
       <Weather capital={country.capital}/>
       <DateWidget id={id} lang={'en'}/>
-      <Currency currencyCod={country.currency}/>
+      <Currency currencyCode={country.currency}/>
       <Footer />
     </Grid>
   );

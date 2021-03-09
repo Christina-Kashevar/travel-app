@@ -4,21 +4,22 @@ import { Card } from '@material-ui/core';
 import useStyles from './styles';
 import CurrencyCard from './Card';
 
-function Currency({ currencyCod }) {
+const currencyFindCode = ['EUR', 'USD', 'RUB'];
+
+function Currency({ currencyCode }) {
   const [currencyData, setCurrencyData] = useState(null);
-  const [lang, setLang] = useState('ru');
-  const currencyFindCode = ['EUR', 'USD', 'RUB'];
+  const lang = useState('ru');
   const classes = useStyles();
 
   useEffect(() => {
     axios
-      .get(`https://api.exchangeratesapi.io/latest?base=${currencyCod}`)
+      .get(`https://api.exchangeratesapi.io/latest?base=${currencyCode}`)
       .then((response) => {
         const result = [];
         for (let key in response.data.rates) {
           if (response.data.rates.hasOwnProperty(key)) {
             currencyFindCode.forEach((el) => {
-              if (el === key&& el!==currencyCod)
+              if (el === key && el !== currencyCode)
                 result.push({
                   key: `${key}`,
                   value: `${response.data.rates[key]}`,
@@ -31,11 +32,11 @@ function Currency({ currencyCod }) {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [currencyCode]);
 
   return (
     <Card className={classes.root}>
-      <CurrencyCard currencyData={currencyData} currencyCod={currencyCod} lang={lang} />
+      <CurrencyCard currencyData={currencyData} currencyCode={currencyCode} lang={lang} />
     </Card>
   );
 }
