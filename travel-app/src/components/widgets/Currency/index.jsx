@@ -8,7 +8,7 @@ const currencyFindCode = ['EUR', 'USD', 'RUB'];
 
 function Currency({ currencyCode }) {
   const [currencyData, setCurrencyData] = useState(null);
-  const lang = useState('ru');
+  const [lang] = useState('ru');
   const classes = useStyles();
 
   useEffect(() => {
