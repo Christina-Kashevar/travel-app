@@ -1,6 +1,16 @@
 import {Entity, model, property, belongsTo} from '@loopback/repository';
 import {Country} from './country.model';
 
+export interface SightTranslationsItem {
+  name: string;
+  description: string;
+  shortDescription: string;
+  capital: string;
+}
+
+export interface SightTranslationsObject {
+  [key: string]: SightTranslationsItem;
+}
 @model()
 export class Sight extends Entity {
   @property({
@@ -27,6 +37,19 @@ export class Sight extends Entity {
     required: true,
   })
   linkToPhoto: string;
+  
+  @property({
+    type: 'array',
+    itemType: 'number',
+    required: true,
+  })
+  сoordinates: number[];
+  
+  @property({
+    type: 'object',
+    default: {},
+  })
+  translations?: SightTranslationsObject;
 
   @belongsTo(() => Country)
   countryId: string;

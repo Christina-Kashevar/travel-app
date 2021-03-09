@@ -17,7 +17,7 @@ import {
   requestBody,
   response,
 } from '@loopback/rest';
-import {Country} from '../models';
+import {Country, CountryWithRelations} from '../models';
 import {CountryRepository} from '../repositories';
 
 export class CountryController {
@@ -75,7 +75,7 @@ export class CountryController {
   async findById(
     @param.path.string('id') id: string,
   ): Promise<Country> {
-    return this.countryRepository.findById(id);
+    return this.countryRepository.findById(id, { include: [{ relation: "sights" }] });
   }
 
   @patch('/countries/{id}')
