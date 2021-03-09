@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Grid, Typography } from '@material-ui/core';
+import { Container, Grid } from '@material-ui/core';
 
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
@@ -16,9 +16,9 @@ export default function Country() {
       <Header
         pageName={t('PAGE_NAME.TRAVEL_APP')}
         onSearch={(ids)=>setCountriesId(ids)}
-        homePage={true}/>
+        homePage={true}
+      />
       <Container>
-        <Typography variant="h3">{t('PAGE_TITLE.HOME')}</Typography>
         <Grid container direction="row" justify="space-evenly" alignItems="center">
           {countriesId.map((id) => (
             <CountryCard id={id} key={id} />

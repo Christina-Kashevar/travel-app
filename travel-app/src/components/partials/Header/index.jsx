@@ -34,7 +34,6 @@ export default function Header(props) {
           { homePage &&
             <Search
               value={value}
-              onDelete={()=> setValue('')}
               onChange={(val)=> setValue(val)}
               onSearch={onSearch}
             /> }
