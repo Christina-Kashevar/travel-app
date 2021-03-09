@@ -3,7 +3,6 @@ import {
   Credentials,
   MyUserService,
   TokenServiceBindings,
-  User,
   UserRepository,
   UserServiceBindings,
 } from '@loopback/authentication-jwt';
@@ -19,6 +18,7 @@ import {
 } from '@loopback/rest';
 import {SecurityBindings, securityId, UserProfile} from '@loopback/security';
 import {genSalt, hash} from 'bcryptjs';
+import {User} from '../models/user.model';
 import _ from 'lodash';
 
 @model()
@@ -31,6 +31,11 @@ export class NewUserRequest {
 
   @property({
     type: 'string',
+  })
+  avatar?: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
   password: string;
@@ -38,7 +43,7 @@ export class NewUserRequest {
 
 const CredentialsSchema: SchemaObject = {
   type: 'object',
-  required: ['login', 'password'],
+  required: ['username', 'password'],
   properties: {
     username: {
       type: 'string',
@@ -91,17 +96,14 @@ export class UserController {
   async login(
     @requestBody(CredentialsRequestBody) credentials: any,
   ): Promise<{token: string}> {
-    // ensure the user exists, and the password is correct
     const newCredentials: Credentials = {
       password: credentials.password,
-      email: `${credentials.username}@travel.by`
-    }
-    console.log(newCredentials)
+      email: `${credentials.username}@travel.by`,
+    };
     const user = await this.userService.verifyCredentials(newCredentials);
-    // convert a User object into a UserProfile object (reduced set of properties)
+    
     const userProfile = this.userService.convertToUserProfile(user);
 
-    // create a JSON Web Token based on the user profile
     const token = await this.jwtService.generateToken(userProfile);
     return {token};
   }
@@ -125,7 +127,9 @@ export class UserController {
     @inject(SecurityBindings.USER)
     currentUserProfile: UserProfile,
   ): Promise<User> {
-    return this.userRepository.findById(currentUserProfile[securityId]);
+    return this.userRepository.findById(currentUserProfile[securityId], {
+      fields: {avatar: true, username: true, id: true},
+    });
   }
 
   @post('/signup', {
@@ -154,14 +158,19 @@ export class UserController {
     })
     newUserRequest: NewUserRequest,
   ): Promise<User> {
-    const isExists = await this.userRepository.count({username: newUserRequest.username})
+    const isExists = await this.userRepository.count({
+      username: newUserRequest.username,
+    });
     if (isExists.count) {
-      throw new HttpErrors[409]
+      throw new HttpErrors[409]();
     }
 
     const password = await hash(newUserRequest.password, await genSalt());
     const savedUser = await this.userRepository.create(
-      _.omit({...newUserRequest, email: `${newUserRequest.username}@travel.by`}, 'password'),
+      _.omit(
+        {...newUserRequest, email: `${newUserRequest.username}@travel.by`},
+        'password',
+      ),
     );
 
     await this.userRepository.userCredentials(savedUser.id).create({password});
