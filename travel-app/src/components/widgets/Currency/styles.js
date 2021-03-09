@@ -13,8 +13,22 @@ const useStyles = makeStyles((theme) => ({
       },
       size: {
         padding:0,
-        width: '4vw',
-        height: '4vw',
+        [theme.breakpoints.down('sm')]: {
+          width:'20px',
+          height: '20px',
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+          width:'30px',
+          height: '30px',
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+          width:'40px',
+          height: '40px',
+        },
+        [theme.breakpoints.up('lg')]: {
+          width:'50px',
+          height: '50px',
+        },
       },
       currencyCode: {
         textAlign: 'center',
@@ -25,14 +39,36 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(255, 255, 255, 0.2)',
         borderRadius: '16px',
         color: '#FFF',
-        fontSize: '2.5vw',
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '10px',
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+          fontSize: '16px',
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+          fontSize: '22px',
+        },
+        [theme.breakpoints.up('lg')]: {
+          fontSize: '26px',
+        },
         fontWeight: '800',
         textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
         boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
       },
       currency: {
         color: '#FFF',
-        fontSize: '1.5vw',
+        [theme.breakpoints.down('sm')]: {
+          fontSize: '8px',
+        },
+        [theme.breakpoints.between('sm', 'md')]: {
+          fontSize: '10px',
+        },
+        [theme.breakpoints.between('md', 'lg')]: {
+          fontSize: '14px',
+        },
+        [theme.breakpoints.up('lg')]: {
+          fontSize: '18px',
+        },
         fontWeight: 300,
         textAlign: 'center',
         textShadow: '3px 3px rgba(50, 50, 70, 0.5)'

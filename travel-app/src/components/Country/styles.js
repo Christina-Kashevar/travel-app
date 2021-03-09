@@ -7,7 +7,18 @@ const useStyles = makeStyles((theme) => ({
   name:{
     textAlign: 'center',
     margin: '0 0 1% 0',
-    fontSize: '5vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '20px',
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: '35px',
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: '45px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '55px',
+    },
     textStroke: '4px black',
    textFillColor: 'white',
     fontWeight: '900',
@@ -31,12 +42,34 @@ const useStyles = makeStyles((theme) => ({
     border:'solid 4px black',
     fontWeight: 300,
     margin:'3% 2% 0 0',
-    fontSize: '2vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '10px',
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: '16px',
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: '22px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '26px',
+    },
     textAlign: 'center',
   },
   text:{
     fontWeight: 300,
-    fontSize: '1.2vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '10px',
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: '14px',
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: '16px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '18px',
+    },
     textAlign: 'justify',
     lineHeight: 1.2,
   }

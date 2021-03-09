@@ -29,7 +29,7 @@ export default function Country() {
               <Typography variant="h3" className={classes.name}>
                 {country.name}
               </Typography>
-              <Grid className={classes.flex}>
+              <Grid container direction="column" className={classes.flex}>
                 <CardMedia className={classes.media} image={country.img} title="Contemplative Reptile" />
                 <Typography className={classes.capital}>Capital: {country.capital}</Typography>
               </Grid>

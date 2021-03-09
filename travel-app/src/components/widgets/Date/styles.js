@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme)=>({
   root: {
     maxWidth: 250,
     borderRadius: '16px',
@@ -17,9 +17,20 @@ const useStyles = makeStyles({
   text: {
     color: '#FFF',
     fontWeight: 300,
-    fontSize: '2vw',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '10px',
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: '16px',
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: '20px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '24px',
+    },
     textAlign: 'center',
   }
-});
+}));
 
 export default useStyles;
