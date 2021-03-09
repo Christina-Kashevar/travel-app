@@ -64,7 +64,7 @@ export default function Map(props) {
       <MapBox
         // eslint-disable-next-line react/style-prop-object
         style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
-        zoom={[5]}
+        zoom={[4]}
         className={classes.mapContainer}
         center={[long, lat]}
       >
