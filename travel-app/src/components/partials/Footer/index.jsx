@@ -43,7 +43,7 @@ export default function Footer() {
             >
               <img src="https://rs.school/images/rs_school.svg" alt="RS School logo" className={classes.logoImage}/>
             </IconButton>
-            <Typography variant="button" color="initial">2001</Typography>
+            <Typography variant="button" color="initial">2021</Typography>
           </Grid>
         </Toolbar>
       </AppBar>
