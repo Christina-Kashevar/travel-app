@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import ReactPlayer from 'react-player/lazy'
 import useStyles from './styles';
 
 import { Container, Grid, Typography, CardMedia } from '@material-ui/core';
@@ -53,7 +54,17 @@ export default function Country() {
                 neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita
                 accusamus perspiciatis voluptate quo incidunt.
               </Typography>
-              <Map id={id} capital={country.capital} />
+              <Grid container className={classes.player}>
+                <ReactPlayer
+                  url={country.linkToVideo}
+                  controls={true}
+                  width="100%"
+                  height="100%"
+                />
+              </Grid>
+              <Grid>
+                <Map id={id} capital={country.capital} />
+              </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}>
