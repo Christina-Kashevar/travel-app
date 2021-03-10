@@ -31,7 +31,7 @@ export default function Country() {
                 <Typography variant="body1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
                 </Typography>
-                <Map id={id} />
+                <Map id={id} capital={country.capital} />
                 <Typography variant="body1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
                 </Typography>
