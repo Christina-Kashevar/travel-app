@@ -38,6 +38,17 @@
   "repository": {
     "type": "git"
   },
+  "nodemonConfig": {
+    "verbose": true,
+    "watch": [
+      "src/"
+    ],
+    "ignore": [
+      "dist/*"
+    ],
+    "ext": "ts",
+    "exec": "npm start"
+  },
   "author": "Yauhen Kalanitski <kolonicki.e@gmail.com>",
   "license": "",
   "files": [
@@ -47,6 +58,8 @@
     "!*/__tests__"
   ],
   "dependencies": {
+    "@loopback/authentication": "^7.0.7",
+    "@loopback/authentication-jwt": "^0.7.7",
     "@loopback/boot": "^3.2.1",
     "@loopback/core": "^2.14.1",
     "@loopback/repository": "^3.4.1",
