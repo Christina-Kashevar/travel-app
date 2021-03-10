@@ -7,6 +7,7 @@ import { Container, Grid, Typography, CardMedia } from '@material-ui/core';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import Map from '../partials/Map';
+import Slider from '../partials/Slider';
 
 import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
@@ -54,6 +55,7 @@ export default function Country() {
                 accusamus perspiciatis voluptate quo incidunt.
               </Typography>
               <Map id={id} capital={country.capital} />
+              <Slider />
             </Container>
           </Grid>
           <Grid item xs={3}>

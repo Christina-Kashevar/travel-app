@@ -1,0 +1,36 @@
+.slider-large {
+  margin-top: 30px;
+}
+
+.slick-prev {
+  left: 10px;
+}
+
+.slick-arrow {
+  z-index: 50;
+  opacity: .8;
+  width: 25px;
+  height: 25px;
+}
+.slick-arrow:hover,
+.slick-arrow:active {
+  opacity: 1;
+}
+
+.slick-next {
+  right: 10px;
+}
+
+.slider-small {
+  margin-top: 50px;
+}
+.slick-prev:before,
+.slick-next:before {
+  font-size: 25px;
+}
+
+.slider-small .slick-current {
+  border: 2px solid red;
+  box-sizing: border-box;
+}
+
