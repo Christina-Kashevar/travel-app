@@ -1,4 +1,5 @@
 {
   "PAGE_NAME.TRAVEL_APP": "Travel app",
-  "PAGE_TITLE.HOME": "Home"
+  "PAGE_TITLE.HOME": "Home",
+  "PAGE_PLACEHOLDER.SEARCH": "Search..."
 }

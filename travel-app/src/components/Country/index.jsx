@@ -53,7 +53,7 @@ export default function Country() {
                 neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita
                 accusamus perspiciatis voluptate quo incidunt.
               </Typography>
-              <Map id={id} />
+              <Map id={id} capital={country.capital} />
             </Container>
           </Grid>
           <Grid item xs={3}>

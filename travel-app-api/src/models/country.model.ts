@@ -1,6 +1,17 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
 import {Sight} from './sight.model';
 
+export interface TranslationsItem {
+  name: string;
+  description: string;
+  shortDescription: string;
+  capital: string;
+}
+
+export interface TranslationsObject {
+  [key: string]: TranslationsItem;
+}
+
 @model()
 export class Country extends Entity {
   @property({
@@ -20,7 +31,38 @@ export class Country extends Entity {
     type: 'string',
     required: true,
   })
+  capital: string;
+
+  @property({
+    type: 'array',
+    itemType: 'number',
+    required: true,
+  })
+  capitalCoordinates: number[];
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  timeZone: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  currency: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   description: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
+  shortDescription: string;
 
   @property({
     type: 'string',
@@ -33,6 +75,12 @@ export class Country extends Entity {
     required: true,
   })
   linkToVideo: string;
+  
+  @property({
+    type: 'object',
+    default: {},
+  })
+  translations?: TranslationsObject;
 
   @hasMany(() => Sight)
   sights: Sight[];

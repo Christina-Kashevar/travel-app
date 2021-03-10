@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-import ReactMapboxGl, { Layer, Source, Feature, Marker} from 'react-mapbox-gl';
+import ReactMapboxGl, { Layer, Source, Marker } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import useStyles from './styles';
 
@@ -8,13 +8,11 @@ import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
-import { COUNTRY_COORDS, CAPITALS_COORDS } from '../../../data/geo';
+import { CAPITALS_COORDS } from '../../../data/geo';
 
-import { Grid, IconButton, Box} from '@material-ui/core';
+import { Grid, IconButton, Box, Popover, Typography} from '@material-ui/core';
 
-const MapBox = ReactMapboxGl({
-  accessToken: MAPBOX_ACCESS_TOKEN,
-});
+const MapBox = ReactMapboxGl({ accessToken: MAPBOX_ACCESS_TOKEN });
 
 const COUNTRY_BONDS_SOURCE = {
   type: 'vector',
@@ -26,24 +24,21 @@ const paint = {
   'fill-opacity': 0.15,
 };
 
-const POSITION_CIRCLE_PAINT = {
-  'circle-stroke-width': 4,
-  'circle-radius': 10,
-  'circle-blur': 0.15,
-  'circle-color': '#3770C6',
-  'circle-stroke-color': 'white',
-};
-
 export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
-  const { id } = props;
-  const coords = COUNTRY_COORDS[id];
-  const { lat, long } = coords;
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const { id, capital } = props;
   const classes = useStyles();
 
-  const trackFs = useCallback((state) => setFsState(state), []);
+  const filter = ['==', 'iso_3166_1', id.toUpperCase()];
+  const capitalCoords = CAPITALS_COORDS[id];
 
+  const open = Boolean(anchorEl);
+  const handlePopoverOpen = (event) => setAnchorEl(event.currentTarget);
+  const handlePopoverClose = () => setAnchorEl(null);
+
+  const trackFs = useCallback((state) => setFsState(state), []);
   const toggleFs = () => {
     if (handleFs.active) {
       handleFs.exit();
@@ -52,8 +47,7 @@ export default function Map(props) {
     handleFs.enter();
   };
 
-  const filter = ['==', 'iso_3166_1', id.toUpperCase()];
-  const capitalCoords = CAPITALS_COORDS[id];
+
   return (
     <FullScreen handle={handleFs} onChange={trackFs}>
       <Grid className={classes.fsWrapper}>
@@ -66,12 +60,32 @@ export default function Map(props) {
         style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
         zoom={[4]}
         className={classes.mapContainer}
-        center={[long, lat]}
+        center={capitalCoords}
       >
-        <Marker coordinates={[capitalCoords[1], capitalCoords[0]]}>
-          <Grid className={classes.marker}>
-            <Box className={classes.marketSpan}></Box>
-          </Grid>
+        <Marker coordinates={capitalCoords} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
+          <Box className={classes.markerSpan}>
+            <Popover
+              id="mouse-over-popover"
+              className={classes.popover}
+              classes={{
+                paper: classes.paper,
+              }}
+              open={open}
+              anchorEl={anchorEl}
+              anchorOrigin={{
+                vertical: 'bottom',
+                horizontal: 'left',
+              }}
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'left',
+              }}
+              onClose={handlePopoverClose}
+              disableRestoreFocus
+            >
+              <Typography>{capital}</Typography>
+            </Popover>
+          </Box>
         </Marker>
         <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
         <Layer
@@ -80,9 +94,7 @@ export default function Map(props) {
           paint={paint}
           sourceLayer="country_boundaries"
           filter={filter}
-        ></Layer>
-        <Layer type="circle" paint={POSITION_CIRCLE_PAINT}>
-          <Feature coordinates={capitalCoords} />
+        >
         </Layer>
       </MapBox>
     </FullScreen>
