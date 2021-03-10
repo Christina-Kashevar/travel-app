@@ -39,7 +39,7 @@ export default function Country() {
             </Grid>
             <Grid item xs={3}>
               <Weather capital={country.capital}/>
-              <DateWidget id={id} lang={'en'}/>
+              <DateWidget id={id}/>
               <Currency currencyCode={country.currency}/>
             </Grid>
           </Grid>
