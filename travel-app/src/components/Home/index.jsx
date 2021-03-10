@@ -15,7 +15,7 @@ export default function Country() {
     <Grid>
       <Header
         pageName={t('PAGE_NAME.TRAVEL_APP')}
-        onSearch={(ids)=>setCountriesId(ids)}
+        onSearch={setCountriesId}
         homePage={true}
       />
       <Container>

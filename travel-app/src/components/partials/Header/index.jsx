@@ -34,7 +34,7 @@ export default function Header(props) {
           { homePage &&
             <Search
               value={value}
-              onChange={(val)=> setValue(val)}
+              onChange={setValue}
               onSearch={onSearch}
             /> }
           <LanguageSwitcher />
