@@ -20,7 +20,7 @@ function Weather({ capital, lang }) {
       .catch((error) => {
         console.log(error);
       });
-  }, [capital]);
+  }, [capital, lang]);
 
   return (
     <Card className={classes.root}>
