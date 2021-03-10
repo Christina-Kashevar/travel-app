@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { Button, Grid, TextField } from '@material-ui/core';
+import { useHistory } from "react-router-dom";
 import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
@@ -11,16 +12,19 @@ export default function SignUp() {
   const classes = useStyles();
 
   const formRef = useRef();
-
+  const history = useHistory();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
   const handleUsernameChange = (e) => setUsername(e.target.value);
   const handlePasswordChange = (e) => setPassword(e.target.value);
 
-  const handleSubmit = () => {
+  const handleSubmit = async () => {
     if(formRef.current.reportValidity()) {
-      AuthService.signUp(username, password)
+      const userData = await AuthService.signUp(username, password);
+      if(userData) {
+        history.push('/');
+      }
     }
   }
 
