@@ -1,5 +1,8 @@
 {
   "PAGE_NAME.TRAVEL_APP": "Травел Апп",
   "PAGE_TITLE.HOME": "Дом",
-  "PAGE_PLACEHOLDER.SEARCH": "Поиск..."
+  "PAGE_PLACEHOLDER.SEARCH": "Поиск...",
+  "SIGNUP.USERNAME": "Имя пользователя",
+  "SIGNUP.PASSWORD": "Пароль",
+  "SIGNUP.SUBMIT": "Зарегистрироваться"
 }

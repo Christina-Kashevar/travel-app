@@ -1,5 +1,8 @@
 {
   "PAGE_NAME.TRAVEL_APP": "Travel app",
   "PAGE_TITLE.HOME": "Home",
-  "PAGE_PLACEHOLDER.SEARCH": "Search..."
+  "PAGE_PLACEHOLDER.SEARCH": "Search...",
+  "SIGNUP.USERNAME": "Username",
+  "SIGNUP.PASSWORD": "Password",
+  "SIGNUP.SUBMIT": "Sign Up"
 }

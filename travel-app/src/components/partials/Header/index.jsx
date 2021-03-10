@@ -38,6 +38,7 @@ export default function Header(props) {
               onSearch={onSearch}
             /> }
           <LanguageSwitcher />
+          <Link className={classes.signupLink} to="signup">Sign Up</Link>
         </Toolbar>
       </AppBar>
     </div>
