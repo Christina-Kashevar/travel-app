@@ -6,9 +6,8 @@ import CurrencyCard from './Card';
 
 const currencyFindCode = ['EUR', 'USD', 'RUB'];
 
-function Currency({ currencyCode }) {
+function Currency({ currencyCode, lang }) {
   const [currencyData, setCurrencyData] = useState(null);
-  const [lang] = useState('ru');
   const classes = useStyles();
 
   useEffect(() => {

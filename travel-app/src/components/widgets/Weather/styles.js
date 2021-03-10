@@ -2,6 +2,8 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
     root: {
         maxWidth: 250,
+        height: 'auto',
+        borderRadius: 16,
       },
     app: {
         backgroundSize: 'cover',
@@ -12,7 +14,18 @@ const useStyles = makeStyles((theme) => ({
       },
     location: {
     color: '#FFF',
-    fontSize: '2em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 10,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: 20,
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: 30,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 40,
+    },
     fontWeight: 500,
     textAlign: 'center',
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
@@ -23,40 +36,74 @@ const useStyles = makeStyles((theme) => ({
   },
 
   temp: {
+    width: '50%',
     position: 'relative',
     display: 'inline-block',
     margin: '10% auto',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
-    borderRadius: '16px',
-    padding: '15px 25px',
+    borderRadius: 16,
+    padding: '5% 10%',
     color: '#FFF',
-    fontSize: '3em',
-    fontWeight: '900',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 10,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: 20,
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: 35,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 40,
+    },
+    fontWeight: 900,
     textShadow: '3px 6px rgba(50, 50, 70, 0.5)',
     textAlign: 'center',
     boxShadow: '3px 6px rgba(0, 0, 0, 0.2)',
   },
   weather: {
     color: '#FFF',
-    fontSize: '48px',
-    fontWeight: '700',
+    fontSize: 48,
+    fontWeight: 700,
     textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
   },
   img:{
-    borderRadius: '16px',
+    borderRadius: 16,
     backgroundColor: 'rgba(255, 255, 255, 0.7)',
     width: '25%',
   },
   h:{
     color: '#FFF',
     fontWeight: 300,
-    fontSize: '1.5em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 10,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: 20,
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: 30,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 35,
+    },
     textAlign: 'center',
   },
   hSmall:{
     color: '#FFF',
     fontWeight: 300,
-    fontSize: '1em',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: 8,
+    },
+    [theme.breakpoints.between('sm', 'md')]: {
+      fontSize: 16,
+    },
+    [theme.breakpoints.between('md', 'lg')]: {
+      fontSize: 22,
+    },
+    [theme.breakpoints.up('lg')]: {
+      fontSize: 26,
+    },
     textAlign: 'center',
     padding: 10,
   }
