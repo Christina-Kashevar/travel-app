@@ -4,5 +4,9 @@
   "PAGE_PLACEHOLDER.SEARCH": "Search...",
   "SIGNUP.USERNAME": "Username",
   "SIGNUP.PASSWORD": "Password",
-  "SIGNUP.SUBMIT": "Sign Up"
+  "SIGNUP.SUBMIT": "Sign Up",
+  "SIGNUP.ADD_PHOTO": "Add photo",
+  "SIGNUP.USER_EXISTS": "User with this username already exists",
+  "SIGNUP.SOMETHIG_WENT_WRONG": "Something went wrong, try later",
+  "SIGNUP.AVATAR_SIZE_ERROR": "Size should be less than 2MB"
 }
