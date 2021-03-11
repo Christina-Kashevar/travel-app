@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import { Player, BigPlayButton } from 'video-react';
+import 'video-react/dist/video-react.css';
 import useStyles from './styles';
 
 import { Container, Grid, Typography, CardMedia } from '@material-ui/core';
@@ -53,7 +55,14 @@ export default function Country() {
                 neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita
                 accusamus perspiciatis voluptate quo incidunt.
               </Typography>
-              <Map id={id} capital={country.capital} />
+              <Grid container className={classes.player}>
+                <Player src={country.linkToVideo}>
+                  <BigPlayButton position="center" />
+                </Player>
+              </Grid>
+              <Grid>
+                <Map id={id} capital={country.capital} />
+              </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}>
