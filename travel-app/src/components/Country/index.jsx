@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ReactPlayer from 'react-player/lazy'
+import { Player, BigPlayButton } from 'video-react';
+import 'video-react/dist/video-react.css';
 import useStyles from './styles';
 
 import { Container, Grid, Typography, CardMedia } from '@material-ui/core';
@@ -55,12 +56,9 @@ export default function Country() {
                 accusamus perspiciatis voluptate quo incidunt.
               </Typography>
               <Grid container className={classes.player}>
-                <ReactPlayer
-                  url={country.linkToVideo}
-                  controls={true}
-                  width="100%"
-                  height="100%"
-                />
+                <Player src={country.linkToVideo}>
+                  <BigPlayButton position="center" />
+                </Player>
               </Grid>
               <Grid>
                 <Map id={id} capital={country.capital} />

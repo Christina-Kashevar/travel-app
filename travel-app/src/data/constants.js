@@ -12,6 +12,7 @@ export const COUNTRY_DATA = [
   {
     id: 'fr', name: 'France', capital: 'Paris', timeZone: 'Europe/Paris', currency: 'EUR', img:franceImg,
     shortDescription:'France, officially the French Republic is a country primarily located in Western Europe, consisting of metropolitan France and several overseas regions and territories...',
+    // linkToVideo: 'https://www.youtube.com/watch?v=2N7l6SSKeds',
     linkToVideo: 'https://www.youtube.com/watch?v=2N7l6SSKeds',
   },
   {

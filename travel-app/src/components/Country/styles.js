@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: 1.2,
   },
   player: {
-    height: theme.spacing(55),
+    '& *:focus': { outline: 'none' },
     padding: `${theme.spacing(2)}px 0`,
   },
 
