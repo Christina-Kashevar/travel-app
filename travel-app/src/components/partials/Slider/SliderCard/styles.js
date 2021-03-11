@@ -6,7 +6,10 @@ const useStyles = makeStyles((theme) => ({
     },
     large: {
       height: 500,
-      margin: 0
+      margin: 0,
+      '&:fullscreen': {
+        height: 700,
+      }
     },
     card: {
       backgroundColor: 'rgba(0,0,0,0.4)',
@@ -18,7 +21,6 @@ const useStyles = makeStyles((theme) => ({
       [theme.breakpoints.down('sm')]: {
         fontSize: 10,
         lineHeight: 1.1,
-
       },
       [theme.breakpoints.between('sm', 'md')]: {
         fontSize: 14,
@@ -29,10 +31,10 @@ const useStyles = makeStyles((theme) => ({
       },
       [theme.breakpoints.up('lg')]: {
         fontSize: 18,
+        lineHeight: 1.3,
       },
     },
     name: {
-      textOverflow: 'ellipsis',
       [theme.breakpoints.down('sm')]: {
         fontSize: 14,
         lineHeight: 1.1,
@@ -42,7 +44,10 @@ const useStyles = makeStyles((theme) => ({
         lineHeight: 1.2,
       },
       [theme.breakpoints.between('md', 'lg')]: {
-        fontSize: 20,
+        fontSize: 22,
+      },
+      [theme.breakpoints.up('lg')]: {
+        fontSize: 28,
       },
     }
   })

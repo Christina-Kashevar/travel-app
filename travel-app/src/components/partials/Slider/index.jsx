@@ -1,23 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
+import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard';
-import info from './info'
+import RatingBlock from '../Rating';
+import info from './info';
 
 import './index.css';
+import useStyles from './style';
 
-import img1 from '../../../assets/images/sightseen/italy-colosseum.jpg'
-import img2 from '../../../assets/images/sightseen/italy-florence-duomo-santa-maria-del-fiore.jpg'
-import img3 from '../../../assets/images/sightseen/italy-leaning-tower-of-pisa.jpg'
-import img4 from '../../../assets/images/sightseen/italy-milan-duomo-facade.jpg'
-import img5 from '../../../assets/images/sightseen/italy-pompeii-mt-vesuvius.jpg'
-import img6 from '../../../assets/images/sightseen/italy-venice-canals.jpg'
+import FullscreenIcon from '@material-ui/icons/Fullscreen';
+import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
+import Rating from '@material-ui/lab/Rating';
+
+import { Grid, IconButton, Box, Button } from '@material-ui/core';
 
 export default function SliderComponent(props) {
-  const [nav1, setNav1] = useState(null)
-  const [nav2, setNav2] = useState(null)
+  const [nav1, setNav1] = useState(null);
+  const [nav2, setNav2] = useState(null);
+  const [value, setValue] = useState(5);
+  const [openRating, setOpenRating] = useState(false);
+  const handleFs = useFullScreenHandle();
+  const [fsState, setFsState] = useState(handleFs.active);
 
+  const classes = useStyles();
   let slider1;
   let slider2;
 
@@ -61,34 +68,71 @@ export default function SliderComponent(props) {
     ]
   }
 
+  const trackFs = useCallback((state) => setFsState(state), []);
+  const toggleFs = () => {
+    if (handleFs.active) {
+      handleFs.exit();
+      return;
+    }
+    handleFs.enter();
+  };
+
   return (
-    <div >
+    <div>
+      { openRating && <RatingBlock handleClose={setOpenRating}/> }
+      <FullScreen handle={handleFs} onChange={trackFs}>
+        <Box
+          component="fieldset"
+          borderColor="transparent"
+          position="absolute"
+          className={classes.rating}
+          >
+          <Rating
+            name="simple-controlled"
+            value={value}
+            onChange={(event, newValue) => {
+              setValue(newValue);
+            }}
+            className={classes.stars}
+          />
+          <Button
+            color='inherit'
+            onClick={()=>setOpenRating(true)}
+            className={classes.button}
+          >Оценки</Button>
+        </Box>
+        <Grid className={classes.fsWrapper}>
+          <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
+            {fsState ? <FullscreenExitIcon /> : <FullscreenIcon />}
+          </IconButton>
+        </Grid>
+          <Slider
+            {...settings}
+            asNavFor={nav2}
+            ref={slider => (slider1 = slider)}
+            className={'slider-large'}
+          >
+            {info.map((card) => (
+              < SliderCard
+                key={card.img}
+                imgUrl={card.img}
+                name={card.name}
+                description={card.description}
+                size={'large'} />
+            ))}
+          </Slider>
+      </FullScreen>
       <Slider
-        {...settings}
-        asNavFor={nav2}
-        ref={slider => (slider1 = slider)}
-        className={'slider-large'}
-      >
-        {info.map((card) => (
-          < SliderCard
-            key={card.img}
-            imgUrl={card.img}
-            name={card.name}
-            description={card.description}
-            size={'large'} />
-        ))}
-      </Slider>
-      <Slider
-          {...settingsSmall}
-          className={'slider-small'}
-          asNavFor={nav1}
-          ref={slider => (slider2 = slider)}
-        >
-          { info.map((card) => (
-            < SliderCard key={card.img} imgUrl={card.img} size={'small'}/>
-           )) }
-        </Slider>
-    </div>
+      {...settingsSmall}
+      className={'slider-small'}
+      asNavFor={nav1}
+      ref={slider => (slider2 = slider)}
+    >
+      { info.map((card) => (
+        < SliderCard key={card.img} imgUrl={card.img} size={'small'}/>
+      )) }
+    </Slider>
+  </div>
   );
 }
 
