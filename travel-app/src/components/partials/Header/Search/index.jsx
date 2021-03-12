@@ -1,6 +1,5 @@
 import React from 'react';
 import { COUNTRY_DATA, COUNTRY_IDS  } from '../../../../data/constants';
-// import languagesCodes from '../../../../data/languagesCodes';
 import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';

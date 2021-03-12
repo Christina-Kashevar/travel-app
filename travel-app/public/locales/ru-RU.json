@@ -9,4 +9,5 @@
   "SIGNUP.USER_EXISTS": "Такой пользователь уже существует",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Что-то пошло не так, попробуте позже",
   "SIGNUP.AVATAR_SIZE_ERROR": "Максимальный размер: 2МБ"
+  "PAGE_RATING.MARKS": "Оценки"
 }
