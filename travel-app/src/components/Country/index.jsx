@@ -9,6 +9,7 @@ import { Container, Grid, Typography, CardMedia } from '@material-ui/core';
 import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import Map from '../partials/Map';
+import Slider from '../partials/Slider';
 
 import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
@@ -59,6 +60,9 @@ export default function Country() {
                 <Player src={country.linkToVideo}>
                   <BigPlayButton position="center" />
                 </Player>
+              </Grid>
+              <Grid>
+                <Slider />
               </Grid>
               <Grid>
                 <Map id={id} capital={country.capital} />
