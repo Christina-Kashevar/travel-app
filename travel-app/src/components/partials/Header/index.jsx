@@ -15,7 +15,7 @@ export default function Header(props) {
   const [value, setValue] = useState('');
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
         <Toolbar>
           <IconButton

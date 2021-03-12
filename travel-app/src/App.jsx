@@ -5,6 +5,7 @@ import i18n from './i18n';
 
 import Home from './components/Home';
 import Country from './components/Country';
+import ErrorPage from './components/ErrorPage';
 import Loading from './components/partials/Loading';
 
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
             <Route path="/country">
               <Route path="/country/:id" render={(props) => <Country {...props} />} />
             </Route>
+            <Route component={ErrorPage}/>
           </Switch>
         </div>
       </Router>
