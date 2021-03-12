@@ -12,14 +12,12 @@ import useStyles from './style';
 
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
-import Rating from '@material-ui/lab/Rating';
 
-import { Grid, IconButton, Box, Button } from '@material-ui/core';
+import { Grid, IconButton } from '@material-ui/core';
 
 export default function SliderComponent(props) {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
-  const [value, setValue] = useState(5);
   const [openRating, setOpenRating] = useState(false);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
@@ -81,26 +79,6 @@ export default function SliderComponent(props) {
     <div>
       { openRating && <RatingBlock handleClose={setOpenRating}/> }
       <FullScreen handle={handleFs} onChange={trackFs}>
-        <Box
-          component="fieldset"
-          borderColor="transparent"
-          position="absolute"
-          className={classes.rating}
-          >
-          <Rating
-            name="simple-controlled"
-            value={value}
-            onChange={(event, newValue) => {
-              setValue(newValue);
-            }}
-            className={classes.stars}
-          />
-          <Button
-            color='inherit'
-            onClick={()=>setOpenRating(true)}
-            className={classes.button}
-          >Оценки</Button>
-        </Box>
         <Grid className={classes.fsWrapper}>
           <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
             {fsState ? <FullscreenExitIcon /> : <FullscreenIcon />}
@@ -118,7 +96,10 @@ export default function SliderComponent(props) {
                 imgUrl={card.img}
                 name={card.name}
                 description={card.description}
-                size={'large'} />
+                size={'large'}
+                mark={5}
+                handleBackdrop={setOpenRating}
+              />
             ))}
           </Slider>
       </FullScreen>

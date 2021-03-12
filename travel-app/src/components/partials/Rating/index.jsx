@@ -8,7 +8,7 @@ import IconButton from '@material-ui/core/IconButton';
 export default function RatingBlock({handleClose}) {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
-  const closeBlockHanler = () => {
+  const closeBlockHandler = () => {
     setOpen(false);
     handleClose(false)
   };
@@ -19,7 +19,7 @@ export default function RatingBlock({handleClose}) {
         aria-label="close"
         color="inherit"
         className={classes.closeIcon}
-        onClick={closeBlockHanler}
+        onClick={closeBlockHandler}
       >
         <CloseIcon />
       </IconButton>
