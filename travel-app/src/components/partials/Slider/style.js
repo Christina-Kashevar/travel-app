@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
     top: 10,
     backgroundColor: 'rgba(0, 0, 0, 0.3)',
     borderRadius: 10,
+    [theme.breakpoints.down('sm')]: {
+      padding: 0
+    },
   },
   stars: {
     [theme.breakpoints.down('sm')]: {

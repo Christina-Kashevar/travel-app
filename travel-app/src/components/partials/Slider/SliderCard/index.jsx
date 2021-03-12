@@ -1,5 +1,6 @@
 import React from 'react';
 import useStyles from './styles';
+
 import { Box, Card, Typography } from '@material-ui/core/';
 
 export default function SliderCard({imgUrl, size, name, description}) {
