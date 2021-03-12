@@ -24,6 +24,8 @@ export default function Country() {
   const error = Object.keys(country).length === 0
   const classes = useStyles();
 
+  const [capitalDesc, capitalName] = country.capital;
+
 
   return (
     <>
@@ -40,7 +42,7 @@ export default function Country() {
               <Grid container direction="column" className={classes.flex}>
                 <CardMedia className={classes.media} image={country.img} title="Contemplative Reptile" />
                 <Typography className={classes.capital}>
-                  {country.capital[0]}: {country.capital[1]}
+                  {capitalDesc}: {capitalName}
                 </Typography>
               </Grid>
               {country.description.map((el, i) => {
@@ -59,12 +61,12 @@ export default function Country() {
                 <Slider />
               </Grid>
               <Grid>
-                <Map id={id} capital={country.capital} />
+                <Map id={id} capital={capitalName} />
               </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}>
-            <Weather capital={country.capital} lang={'en'} />
+            <Weather capital={capitalName} lang={'en'} />
             <DateWidget id={id} lang={'en'} />
             <Currency currencyCode={country.currency} lang={'en'} />
           </Grid>
