@@ -14,6 +14,11 @@ const useStyles = makeStyles((theme) => ({
       display: 'block',
     },
   },
+  signupLink: {
+    color: 'white',
+    textDecoration: 'none',
+    marginLeft: 20,
+  }
 }));
 
 export default useStyles;
