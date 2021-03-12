@@ -35,7 +35,7 @@ export default function CountryCard(props) {
               {country.name}
             </Typography>
             <Typography gutterBottom variant="h6" component="h3">
-              Capital: {country.capital}
+            {country.capital[0]}: {country.capital[1]}
             </Typography>
             <Typography variant="body2" component="p">
               {country.shortDescription}

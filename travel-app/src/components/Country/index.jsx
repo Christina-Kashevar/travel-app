@@ -39,28 +39,17 @@ export default function Country() {
               </Typography>
               <Grid container direction="column" className={classes.flex}>
                 <CardMedia className={classes.media} image={country.img} title="Contemplative Reptile" />
-                <Typography className={classes.capital}>Capital: {country.capital}</Typography>
+                <Typography className={classes.capital}>
+                  {country.capital[0]}: {country.capital[1]}
+                </Typography>
               </Grid>
-              <Typography variant="body1" className={classes.text}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti
-                neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita
-                accusamus perspiciatis voluptate quo incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Doloribus suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio
-                cupiditate soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt. Lorem
-                ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti neque
-                qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita accusamus
-                perspiciatis voluptate quo incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-                suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate
-                soluta nostrum consequuntur expedita accusamus perspiciatis voluptate quo incidunt.
-                erspiciatis voluptate quo incidunt. Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus
-                suscipit dignissimos, optio deleniti neque qui saepe eveniet explicabo omnis distinctio cupiditate
-                soluta nostrum
-              </Typography>
-              <Typography variant="body1" className={classes.text}>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus suscipit dignissimos, optio deleniti
-                neque qui saepe eveniet explicabo omnis distinctio cupiditate soluta nostrum consequuntur expedita
-                accusamus perspiciatis voluptate quo incidunt.
-              </Typography>
+              {country.description.map((el, i) => {
+                return (
+                  <Typography variant="body1" className={classes.text} key={i}>
+                    {el}
+                  </Typography>
+                );
+              })}
               <Grid container className={classes.player}>
                 <Player src={country.linkToVideo}>
                   <BigPlayButton position="center" />
