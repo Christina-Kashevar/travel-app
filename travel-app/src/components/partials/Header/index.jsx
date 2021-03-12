@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
+import LoginWindow from './Modal';
 import useStyles from './styles';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -18,26 +19,18 @@ export default function Header(props) {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            className={classes.menuButton}
-            color="inherit"
-            aria-label="open drawer"
-          >
+          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer">
             <Link to="/">
-              <PublicIcon />
+              <PublicIcon style={{ color: '#FFF' }}/>
             </Link>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
-            { pageName }
+            {pageName}
           </Typography>
-          { homePage &&
-            <Search
-              value={value}
-              onChange={setValue}
-              onSearch={onSearch}
-            /> }
+          {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
+          <LoginWindow/>
+          <Link className={classes.signupLink} to="signup">Sign Up</Link>
         </Toolbar>
       </AppBar>
     </div>
