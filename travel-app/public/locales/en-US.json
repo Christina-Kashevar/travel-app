@@ -2,6 +2,11 @@
   "PAGE_NAME.TRAVEL_APP": "Travel app",
   "PAGE_TITLE.HOME": "Home",
   "PAGE_PLACEHOLDER.SEARCH": "Search...",
+  "PAGE_RATING.MARKS": "Marks",
+  "PAGE_ERROR.SORRY": "Sorry... Page is not found",
+  "PAGE_ERROR.GO": "Let's go ",
+  "PAGE_ERROR.HOME": "Home",
+  "PAGE_ERROR.TRY": "and try from there.",
   "SIGNUP.USERNAME": "Username",
   "SIGNUP.PASSWORD": "Password",
   "SIGNUP.SUBMIT": "Sign Up",
@@ -9,5 +14,4 @@
   "SIGNUP.USER_EXISTS": "User with this username already exists",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Something went wrong, try later",
   "SIGNUP.AVATAR_SIZE_ERROR": "Size should be less than 2MB",
-  "PAGE_RATING.MARKS": "Marks"
 }

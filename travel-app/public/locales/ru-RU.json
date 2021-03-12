@@ -2,6 +2,11 @@
   "PAGE_NAME.TRAVEL_APP": "Травел Апп",
   "PAGE_TITLE.HOME": "Дом",
   "PAGE_PLACEHOLDER.SEARCH": "Поиск...",
+  "PAGE_RATING.MARKS": "Оценки",
+  "PAGE_ERROR.SORRY": "Извините... Страница не найдена",
+  "PAGE_ERROR.GO": "Перейдите на ",
+  "PAGE_ERROR.HOME": "Главную страницу ",
+  "PAGE_ERROR.TRY": "и попробуйте поискать там.",
   "SIGNUP.USERNAME": "Имя пользователя",
   "SIGNUP.PASSWORD": "Пароль",
   "SIGNUP.SUBMIT": "Зарегистрироваться",
@@ -9,5 +14,4 @@
   "SIGNUP.USER_EXISTS": "Такой пользователь уже существует",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Что-то пошло не так, попробуте позже",
   "SIGNUP.AVATAR_SIZE_ERROR": "Максимальный размер: 2МБ",
-  "PAGE_RATING.MARKS": "Оценки"
 }

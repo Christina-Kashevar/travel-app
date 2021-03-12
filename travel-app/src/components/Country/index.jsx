@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import ErrorPage from '../ErrorPage';
 import { Player, BigPlayButton } from 'video-react';
 import 'video-react/dist/video-react.css';
 import useStyles from './styles';
@@ -20,10 +21,14 @@ import { getCountryById } from '../../engine';
 export default function Country() {
   const { id } = useParams();
   const country = getCountryById(id);
+  const error = Object.keys(country).length === 0
   const classes = useStyles();
 
+
   return (
-    <Grid>
+    <>
+    { error ? <ErrorPage/>
+      : <Grid>
       <Header pageName={country.name} />
       <Container>
         <Grid container spacing={1} className={classes.root}>
@@ -78,5 +83,7 @@ export default function Country() {
       </Container>
       <Footer />
     </Grid>
+    }
+    </>
   );
 }

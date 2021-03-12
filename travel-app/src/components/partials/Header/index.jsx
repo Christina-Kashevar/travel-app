@@ -16,7 +16,7 @@ export default function Header(props) {
   const [value, setValue] = useState('');
   const classes = useStyles();
   return (
-    <div className={classes.root}>
+    <div>
       <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer">
