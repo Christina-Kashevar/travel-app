@@ -8,6 +8,6 @@
   "SIGNUP.ADD_PHOTO": "Add photo",
   "SIGNUP.USER_EXISTS": "User with this username already exists",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Something went wrong, try later",
-  "SIGNUP.AVATAR_SIZE_ERROR": "Size should be less than 2MB"
-  "PAGE_RATING.MARKS": "Marks"
+  "SIGNUP.AVATAR_SIZE_ERROR": "Size should be less than 2MB",
+  "PAGE_RATING.MARKS": "Marks",
 }
