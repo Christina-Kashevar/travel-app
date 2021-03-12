@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import useStyles from './styles';
 
+import { useTranslation } from 'react-i18next';
+
 import { Box, Card, Typography, Button } from '@material-ui/core/';
 import Rating from '@material-ui/lab/Rating';
 
@@ -14,6 +16,8 @@ export default function SliderCard({imgUrl, size, name, description, mark, handl
   };
 
   const showRating = size === 'large'
+
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -37,7 +41,7 @@ export default function SliderCard({imgUrl, size, name, description, mark, handl
               color='inherit'
               onClick={()=>handleBackdrop(true)}
               className={classes.button}
-            >Оценки</Button>
+            >{t('PAGE_RATING.MARKS')}</Button>
         </Box>
         }
         { name && description
