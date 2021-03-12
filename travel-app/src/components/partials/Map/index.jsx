@@ -47,7 +47,6 @@ export default function Map(props) {
     handleFs.enter();
   };
 
-
   return (
     <FullScreen handle={handleFs} onChange={trackFs}>
       <Grid className={classes.fsWrapper}>
@@ -59,8 +58,9 @@ export default function Map(props) {
         // eslint-disable-next-line react/style-prop-object
         style="mapbox://styles/mapbox/satellite-streets-v11?optimize=true"
         zoom={[4]}
-        className={classes.mapContainer}
+        className={classes.mapBox}
         center={capitalCoords}
+        onStyleLoad={(map) => map.resize()}
       >
         <Marker coordinates={capitalCoords} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
           <Box className={classes.markerSpan}>
