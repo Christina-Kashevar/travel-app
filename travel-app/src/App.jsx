@@ -25,7 +25,9 @@ export default function App() {
             <Route path="/country">
               <Route path="/country/:id" render={(props) => <Country {...props} />} />
             </Route>
-            <Route component={ErrorPage}/>
+            <Route path="*">
+              <ErrorPage />
+            </Route>
           </Switch>
         </div>
       </Router>
