@@ -3,10 +3,10 @@ import { blue } from '@material-ui/core/colors';
 
 
 const useStyles = makeStyles((theme) => ({
-  mapContainer: {
+  mapBox: {
     width: '100%',
-    height: '100%',
-    minHeight: theme.spacing(50),
+    height: 0,
+    paddingTop: '56.25%',
   },
   fsWrapper: {
     position: 'relative',
