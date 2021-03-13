@@ -1,11 +1,13 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
-    minWidth: 200,
+    minWidth: theme.spacing(18),
   },
-  select: {
-    marginLeft: 10,
+  flag: {
+    width: theme.spacing(4),
+    height: theme.spacing(3),
+    marginRight: theme.spacing(2),
   },
 }));
 
