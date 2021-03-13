@@ -8,6 +8,7 @@ const WeatherCard = ({ weatherData }) => {
     return Math.round((k - 273.15).toFixed(2));
   };
   const classes = useStyles();
+
   return !weatherData ? (
     <p>Loading...</p>
   ) : (

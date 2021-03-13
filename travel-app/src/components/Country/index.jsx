@@ -68,8 +68,8 @@ export default function Country() {
             </Container>
           </Grid>
           <Grid item xs={3}>
-            <Weather capital={capitalName} lang={'en'} />
-            <DateWidget id={id} lang={'en'} />
+            <Weather capital={capitalName} lang={language.slice(0, 2)} />
+            <DateWidget id={id} />
             <Currency currencyCode={country.currency} lang={language} />
           </Grid>
         </Grid>
