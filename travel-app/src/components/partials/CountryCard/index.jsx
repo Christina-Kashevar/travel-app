@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import useStyles from './styles';
 
 import Card from '@material-ui/core/Card';
@@ -14,8 +15,12 @@ import { getCountryById } from '../../../engine';
 export default function CountryCard(props) {
   const history = useHistory();
   const { id } = props;
-  const country = getCountryById(id);
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  const country = getCountryById(id, language);
   const classes = useStyles();
+
+  const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
 
   function handleClick() {
     history.push(`/country/${country.id}`);
@@ -35,7 +40,7 @@ export default function CountryCard(props) {
               {country.name}
             </Typography>
             <Typography gutterBottom variant="h6" component="h3">
-            {country.capital[0]}: {country.capital[1]}
+            {capitalDesc}: {capitalName}
             </Typography>
             <Typography variant="body2" component="p">
               {country.shortDescription}

@@ -23,11 +23,9 @@ export default function Country() {
   const country = getCountryById(id);
   const error = Object.keys(country).length === 0
   const classes = useStyles();
+  const [capitalDesc, capitalName] = ['', ''];
 
-  const [capitalDesc, capitalName] = country.capital;
-
-
-  return (
+    return (
     <>
     { error ? <ErrorPage/>
       : <Grid>

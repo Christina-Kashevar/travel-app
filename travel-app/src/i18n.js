@@ -14,7 +14,7 @@ i18n
 
     interpolation: {
       escapeValue: false,
-      format: function(value, format) {
+      format: function (value, format) {
         if (format === 'capitalize') return value.charAt(0).toUpperCase() + value.slice(1);
         return value;
       },
