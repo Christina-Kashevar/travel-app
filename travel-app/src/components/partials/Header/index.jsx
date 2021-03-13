@@ -4,6 +4,8 @@ import Search from './Search';
 import LoginWindow from './Modal';
 import useStyles from './styles';
 
+import { useTranslation } from 'react-i18next';
+
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
@@ -15,6 +17,7 @@ export default function Header(props) {
   const { pageName, homePage, onSearch } = props;
   const [value, setValue] = useState('');
   const classes = useStyles();
+  const { t } = useTranslation();
   return (
     <div>
       <AppBar position="static">
@@ -30,7 +33,7 @@ export default function Header(props) {
           {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
           <LoginWindow/>
-          <Link className={classes.signupLink} to="signup">Sign Up</Link>
+          <Link className={classes.signupLink} to="signup">{t('SIGNUP.TITLE')}</Link>
         </Toolbar>
       </AppBar>
     </div>
