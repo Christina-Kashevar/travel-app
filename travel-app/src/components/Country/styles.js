@@ -3,8 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: theme.spacing(1),
+    marginTop: theme.spacing(8),
   },
-  name:{
+  name: {
     textAlign: 'center',
     margin: '0 0 1% 0',
     [theme.breakpoints.down('sm')]: {
@@ -20,9 +21,9 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 55,
     },
     textStroke: '4px black',
-   textFillColor: 'white',
+    textFillColor: 'white',
     fontWeight: '900',
-    textShadow: '3px 3px rgba(50, 50, 70, 0.5)'
+    textShadow: '3px 3px rgba(50, 50, 70, 0.5)',
   },
   media: {
     height: 0,
@@ -32,16 +33,16 @@ const useStyles = makeStyles((theme) => ({
     margin: '0 2% 0 0',
     borderRadius: 16,
   },
-  flex:{
+  flex: {
     float: 'left',
-    width:'45%',
+    width: '45%',
     display: 'flex',
-    flexDirection:'column',
+    flexDirection: 'column',
   },
-  capital:{
-    border:'solid 4px black',
+  capital: {
+    border: 'solid 4px black',
     fontWeight: 300,
-    margin:'3% 2% 0 0',
+    margin: '3% 2% 0 0',
     [theme.breakpoints.down('sm')]: {
       fontSize: 10,
     },
@@ -56,7 +57,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textAlign: 'center',
   },
-  text:{
+  text: {
     fontWeight: 300,
     [theme.breakpoints.down('sm')]: {
       fontSize: 10,
@@ -77,7 +78,6 @@ const useStyles = makeStyles((theme) => ({
     '& *:focus': { outline: 'none' },
     padding: `${theme.spacing(2)}px 0`,
   },
-
 }));
 
 export default useStyles;

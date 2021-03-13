@@ -20,9 +20,9 @@ export default function Header(props) {
 
   return (
     <div>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar>
-          <IconButton className={classes.logoButton} color="inherit" aria-label="start page">
+          <IconButton color="inherit" aria-label="start page">
             <Link to="/">
             <SvgIcon fontSize="large">
               <Logo />
@@ -35,7 +35,6 @@ export default function Header(props) {
           {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
           <LoginWindow/>
-          <Link className={classes.signupLink} to="signup">Sign Up</Link>
         </Toolbar>
       </AppBar>
     </div>
