@@ -70,7 +70,7 @@ export default function Country() {
           <Grid item xs={3}>
             <Weather capital={capitalName} lang={'en'} />
             <DateWidget id={id} lang={'en'} />
-            <Currency currencyCode={country.currency} lang={'en'} />
+            <Currency currencyCode={country.currency} lang={language} />
           </Grid>
         </Grid>
       </Container>

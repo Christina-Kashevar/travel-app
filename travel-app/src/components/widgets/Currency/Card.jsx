@@ -24,21 +24,21 @@ const CurrencyCard = ({ currencyData, currencyCode, lang }) => {
         </Grid>
         {currencyData.map((el, i) => {
           let currencyLang = '';
-          if (lang === 'ru') {
+          if (lang === 'ru-RU') {
             if (el.key === 'USD') currencyLang = 'долл. США';
             if (el.key === 'EUR') currencyLang = 'ЕВРО';
             if (el.key === 'RUB') currencyLang = 'pocc. руб.';
           }
-          if (lang === 'zh') {
-            if (el.key === 'USD') currencyLang = '美元';
-            if (el.key === 'EUR') currencyLang = '歐元';
-            if (el.key === 'RUB') currencyLang = '俄羅斯盧布';
+          if (lang === 'de-DE') {
+            if (el.key === 'USD') currencyLang = 'US Dollar';
+            if (el.key === 'EUR') currencyLang = 'EUR';
+            if (el.key === 'RUB') currencyLang = 'REIBEN';
           }
-          if (lang === 'en') currencyLang = el.key;
+          if (lang === 'en-US') currencyLang = el.key;
           return (
             <List key={i} style={{ padding: '0'}}>
               <ListItem style={{padding:'0', marginLeft:'1vw'}}>
-                <Grid> 
+                <Grid>
                   <Avatar className={classes.size} alt='flag'
                     src={
                       el.key === 'USD'
