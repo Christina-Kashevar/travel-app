@@ -1,10 +1,11 @@
 {
+  "PAGE_CAPITAL": "Capital",
   "PAGE_NAME.TRAVEL_APP": "Travel app",
   "PAGE_TITLE.HOME": "Home",
   "PAGE_PLACEHOLDER.SEARCH": "Search...",
   "PAGE_RATING.MARKS": "Marks",
   "PAGE_ERROR.SORRY": "Sorry... Page is not found",
-  "PAGE_ERROR.GO": "Let's go ",
+  "PAGE_ERROR.GO": "Let's go",
   "PAGE_ERROR.HOME": "Home",
   "PAGE_ERROR.TRY": "and try from there.",
   "SIGNUP.USERNAME": "Username",

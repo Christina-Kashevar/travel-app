@@ -1,10 +1,11 @@
 {
+  "PAGE_CAPITAL": "Столица",
   "PAGE_NAME.TRAVEL_APP": "Травел Апп",
   "PAGE_TITLE.HOME": "Дом",
   "PAGE_PLACEHOLDER.SEARCH": "Поиск...",
   "PAGE_RATING.MARKS": "Оценки",
   "PAGE_ERROR.SORRY": "Извините... Страница не найдена",
-  "PAGE_ERROR.GO": "Перейдите на ",
+  "PAGE_ERROR.GO": "Перейдите на",
   "PAGE_ERROR.HOME": "Главную страницу ",
   "PAGE_ERROR.TRY": "и попробуйте поискать там.",
   "SIGNUP.USERNAME": "Имя пользователя",

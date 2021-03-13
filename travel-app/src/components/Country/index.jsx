@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ErrorPage from '../ErrorPage';
+import { useTranslation } from 'react-i18next';
 import { Player, BigPlayButton } from 'video-react';
 import 'video-react/dist/video-react.css';
 import useStyles from './styles';
@@ -11,6 +11,7 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import Map from '../partials/Map';
 import Slider from '../partials/Slider';
+import ErrorPage from '../ErrorPage';
 
 import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
@@ -20,12 +21,15 @@ import { getCountryById } from '../../engine';
 
 export default function Country() {
   const { id } = useParams();
-  const country = getCountryById(id);
-  const error = Object.keys(country).length === 0
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  const country = getCountryById(id, language);
+  const error = Object.keys(country).length === 0;
   const classes = useStyles();
 
+  const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
 
-  return (
+    return (
     <>
     { error ? <ErrorPage/>
       : <Grid>
@@ -40,7 +44,7 @@ export default function Country() {
               <Grid container direction="column" className={classes.flex}>
                 <CardMedia className={classes.media} image={country.img} title="Contemplative Reptile" />
                 <Typography className={classes.capital}>
-                  {country.capital[0]}: {country.capital[1]}
+                  {capitalDesc}: {capitalName}
                 </Typography>
               </Grid>
               {country.description.map((el, i) => {
@@ -59,14 +63,14 @@ export default function Country() {
                 <Slider />
               </Grid>
               <Grid>
-                <Map id={id} capital={country.capital} />
+                <Map id={id} capital={capitalName} />
               </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}>
-            <Weather capital={country.capital} lang={'en'} />
-            <DateWidget id={id} lang={'en'} />
-            <Currency currencyCode={country.currency} lang={'en'} />
+            <Weather capital={capitalName} lang={language.slice(0, 2)} />
+            <DateWidget id={id} />
+            <Currency currencyCode={country.currency} lang={language} />
           </Grid>
         </Grid>
       </Container>
