@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import ErrorPage from '../ErrorPage';
+import { useTranslation } from 'react-i18next';
 import { Player, BigPlayButton } from 'video-react';
 import 'video-react/dist/video-react.css';
 import useStyles from './styles';
@@ -11,6 +11,7 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import Map from '../partials/Map';
 import Slider from '../partials/Slider';
+import ErrorPage from '../ErrorPage';
 
 import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
@@ -20,10 +21,13 @@ import { getCountryById } from '../../engine';
 
 export default function Country() {
   const { id } = useParams();
-  const country = getCountryById(id);
-  const error = Object.keys(country).length === 0
+  const { t, i18n } = useTranslation();
+  const { language } = i18n;
+  const country = getCountryById(id, language);
+  const error = Object.keys(country).length === 0;
   const classes = useStyles();
-  const [capitalDesc, capitalName] = ['', ''];
+
+  const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
 
     return (
     <>
