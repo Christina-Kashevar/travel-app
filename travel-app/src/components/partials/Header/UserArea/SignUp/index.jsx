@@ -151,7 +151,7 @@ export default function SignUp(props) {
           {signError && <Typography className={classes.signError}>{t(signError)}</Typography>}
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2" onClick={callBack('signIn')}>
+              <Link variant="body2" className={classes.interactive} onClick={callBack('signIn')}>
                 {t('SIGNUP.HAVE_ACCOUNT')}
               </Link>
             </Grid>

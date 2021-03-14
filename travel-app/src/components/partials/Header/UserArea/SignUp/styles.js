@@ -83,6 +83,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: 10,
     color: theme.palette.error.dark,
   },
+  interactive: {
+    cursor: 'pointer',
+  },
 }));
 
 export default useStyles;

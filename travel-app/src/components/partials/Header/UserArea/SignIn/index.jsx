@@ -66,7 +66,7 @@ export default function SignIn(props) {
             </Link>
           </Grid>
           <Grid item>
-            <Link href="#" variant="body2" onClick={callBack('signUp')}>
+            <Link variant="body2" className={classes.interactive} onClick={callBack('signUp')}>
               {t('SIGNIN.NO_ACCOUNT')}
             </Link>
           </Grid>
