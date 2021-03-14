@@ -18,7 +18,9 @@ export const COUNTRY_DATA = [
     img: franceImg,
     shortDescription:
       'France, officially the French Republic is a country primarily located in Western Europe, consisting of metropolitan France and several overseas regions and territories...',
-    description: [''],
+    description: ['The official name is the French Republic (Republique Francaise). The population is 66.9 million people according to the data of 2020. Most of France is in Western Europe, its mainland in the northeast, borders with Belgium, Luxembourg and Germany, in the east - Switzerland, in the southeast - with Monaco and Italy, in the southwest - with Spain and Andorra. France is washed by four bodies of water (English Channel, Atlantic Ocean, North Sea and Mediterranean Sea). France is the largest country in Europe in terms of territory: it occupies almost one fifth of the territory of the European Union, vast maritime areas.',
+    'The state also includes the island of Corsica in the Mediterranean Sea and more than twenty overseas departments and dependent territories. The total area of the country is 547,030 km² (674,685 km² including overseas possessions).', 'The monetary unit is the euro (since 2002, before that the French franc).', 'In total, there are three types of climate in the European territory of France: oceanic (in the west), Mediterranean (in the south), continental (in the center and in the east). Summers are quite hot and dry - the average temperature in July is + 23 - 25 degrees, while the winter months are characterized by rains at an air temperature of + 7-8 ° C. The main share of precipitation is from January to April.',
+    'France is the most visited country in the world (in terms of the number of foreigners arriving).'],
     // linkToVideo: 'https://www.youtube.com/watch?v=2N7l6SSKeds',
     linkToVideo: 'https://travel-app-videos.netlify.app/france.mp4',
     translations: {
@@ -27,14 +29,20 @@ export const COUNTRY_DATA = [
         capital: 'Париж',
         shortDescription:
           'Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря. Париж, столица государства...',
-        description: [''],
+        description: ['Официальное название — Французская Республика (Republique Francaise, French Republic). Численность населения по данным 2020 года составляет 66,9 млн человек. Большая часть Франции расположена в Западной Европе, её материковая часть на северо-востоке граничит с Бельгией, Люксембургом и Германией, на востоке - со Швейцарией, на юго-востоке - с Монако и Италией, на юго-западе - с Испанией и Андоррой. Францию омывают четыре водных пространства (Ла-Манш, Атлантический океан, Северное море и Средиземное море). Франция является самой крупной по территории страной Западной Европы: она занимает почти одну пятую часть территории Европейского Союза, имеет обширные морские пространства.',
+        'Также в состав государства входят остров Корсика в Средиземном море и более двадцати заморских департаментов и зависимых территорий. Общая площадь страны составляет 547 030 км² (674 685 км² вместе с заморскими владениями).',
+        'Денежная единица — евро (с 2002, до этого французский франк).', 'Всего можно выделить три типа климата на европейской территории Франции: океанический (на западе), средиземноморский (на юге), континентальный (в центре и на востоке). Лето достаточно жаркое и сухое - средняя температура в июле достигает + 23 - 25 градусов, в то время как для зимних месяцев характерны дожди при температуре воздуха +7- 8 °С. Основная доля осадков приходится на период с января по апрель.',
+        'Франция - самая посещаемая страна в мире (по количеству приезжающих иностранцев).'],
       },
       de: {
         name: 'Frankreich',
         capital: 'Paris',
         shortDescription:
           'Frankreich, offiziell die Französische Republik, ist ein Land, das hauptsächlich in Westeuropa liegt und aus der französischen Metropole und mehreren überseeischen Regionen und Gebieten besteht...',
-        description: [''],
+        description: ['Der offizielle Name ist die Französische Republik (Republique Francaise, Französische Republik). Die Bevölkerung ab 2020 beträgt 66,9 Millionen Menschen. Der größte Teil Frankreichs liegt in Westeuropa, sein Festland im Nordosten grenzt an Belgien, Luxemburg und Deutschland, im Osten an die Schweiz, im Südosten an Monaco und Italien, im Südwesten an Spanien und Andorra. Frankreich wird von vier Gewässern gewaschen (Ärmelkanal, Atlantik, Nordsee und Mittelmeer). Frankreich ist das territorial größte Land Westeuropas: Es nimmt fast ein Fünftel des Territoriums der Europäischen Union ein und verfügt über riesige Seegebiete.',
+        'Zum Staat gehören auch die Insel Korsika im Mittelmeer sowie mehr als zwanzig überseeische Departements und abhängige Gebiete. Die Gesamtfläche des Landes beträgt 547.030 km² (674.685 km² einschließlich ausländischer Besitztümer).',
+        'Die Währungseinheit ist der Euro (seit 2002, davor der französische Franken).', 'Insgesamt können drei Arten von Klima auf dem europäischen Territorium Frankreichs unterschieden werden: ozeanisch (im Westen), mediterran (im Süden), kontinental (im Zentrum und im Osten). Die Sommer sind ziemlich heiß und trocken - die Durchschnittstemperatur im Juli erreicht + 23 - 25 Grad, während die Wintermonate durch Regen bei einer Lufttemperatur von + 7 - 8 ° C gekennzeichnet sind. Der Hauptniederschlagsanteil fällt im Zeitraum von Januar bis April.',
+        'Frankreich ist das meistbesuchte Land der Welt (gemessen an der Anzahl der ankommenden Ausländer).'],
       },
     },
   },
@@ -47,7 +55,11 @@ export const COUNTRY_DATA = [
     img: italyImg,
     shortDescription:
       'Italy (Italian, officially the Italian Republic, is a country consisting of a continental part, delimited by the Alps, a peninsula and several islands surrounding it...',
-    description: [''],
+    description: ['Italy, the official name is the Italian Republic (Italian Repubblica Italiana), a state in Southern Europe, in the center of the Mediterranean. It is a member of the European Union and NATO since their inception, and is the third largest economy in the eurozone. The population of Italy is estimated at 60.6 million in 2019. The total area is 301 thousand square kilometers.',
+    'It shares borders with France in the northwest, Switzerland and Austria in the north, Slovenia in the northeast. Inside the territory of Italy there are two enclave states: the state of San Marino and the Vatican state, located inside the territory of Rome, associated with Italy, with each of which Italy has an internal border with a length of 39 km and 3.2 km, respectively.',
+    'Occupies the Apennine Peninsula, the extreme northwest of the Balkan Peninsula, the Padan Plain, the southern slopes of the Alps, the islands of Sicily, Sardinia and a number of small islands.',
+    'Italy is located in the temperate and, for the most part, in the subtropical zones. The climate of Italy is very different depending on regions: from close to arctic high in the Alps to subtropical on the coast of the Ligurian Sea and the western coast of the southern part of the peninsula.',
+    'In Italy, the currency in circulation is the euro.'],
     // linkToVideo: 'https://www.youtube.com/watch?v=FlRwssZYRM0',
     linkToVideo: 'https://travel-app-videos.netlify.app/italy.mp4',
     translations: {
@@ -56,14 +68,24 @@ export const COUNTRY_DATA = [
         capital: 'Рим',
         shortDescription:
           'Италия – средиземноморское государство в Южной Европе с длинной береговой линией, которое оказало огромное влияние на западную культуру и кухню. На территории столицы страны...',
-        description: [''],
+        description: ['Италия, официальное название — Итальянская Республика (итал. Repubblica Italiana) —государсто в Южной Европе, в центре Средиземноморья. Входит в Евросоюз и НАТО с момента их создания, является третьей по величине экономикой еврозоны. Население Италие по оценкам 2019 года составляет 60,6 млн. чел. Общая площадь - 301 тыс кв км.',
+        'Граничит с Францией на северо-западе, Швейцарией и Австрией — на севере, Словенией — на северо-востоке. Внутри территории Италии находятся два государства-анклава: государство Сан-Марино и расположенное внутри территории Рима ассоциированное с Италией государство Ватикан, с каждым из которых Италия имеет внутреннюю границу протяжённостью соответственно 39 км и 3,2 км.',
+        'Занимает Апеннинский полуостров, крайний северо-запад Балканского полуострова, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.',
+        'На территории Италии находится 55 памятников Всемирного наследия ЮНЕСКО — Италия разделяет с Китаем первое место по их количеству.',
+        'Италия располагается в умеренном и, большей частью, в субтропическом поясах. Климат Италии сильно отличается в различных регионах: от близкого к арктическому высоко в Альпах до субтропического на побережье Лигурийского моря и западном побережье южной части полуострова.',
+        'В Италии в денежном обращении валюта – евро.'],
       },
       de: {
         name: 'Italien',
         capital: 'Rom',
         shortDescription:
           'Italien ist ein Mittelmeerstaat in Südeuropa mit einer langen Küste, die einen großen Einfluss auf die westliche Kultur und Küche hatte. Auf dem Gebiet der Hauptstadt des Landes...',
-        description: [''],
+        description: ['Italien, der offizielle Name ist die Italienische Republik (Italian Repubblica Italiana), ein Staat in Südeuropa im Zentrum des Mittelmeers. Es ist seit seiner Gründung Mitglied der Europäischen Union und der NATO und die drittgrößte Volkswirtschaft in der Eurozone. Die Bevölkerung Italiens wird 2019 auf 60,6 Millionen geschätzt. Die Gesamtfläche beträgt 301 Tausend Quadratkilometer.',
+        'Es grenzt im Nordwesten an Frankreich, im Norden an die Schweiz und an Österreich, im Nordosten an Slowenien. Innerhalb des Territoriums Italiens gibt es zwei Enklavenstaaten: den Staat San Marino und den Staat Vatikan, die sich auf dem Territorium Roms befinden und mit Italien verbunden sind. Italien hat jeweils eine Binnengrenze mit einer Länge von 39 km und 3,2 km , beziehungsweise.',
+        'Besetzt die Apenninenhalbinsel, den äußersten Nordwesten der Balkanhalbinsel, die Padan-Ebene, die Südhänge der Alpen, die Inseln Sizilien, Sardinien und eine Reihe kleiner Inseln.',
+        'Es gibt 55 UNESCO-Welterbestätten auf dem Territorium Italiens - Italien teilt den ersten Platz mit China in Bezug auf ihre Anzahl.',
+        'Italien liegt in den gemäßigten und größtenteils in den subtropischen Zonen. Das Klima Italiens ist in verschiedenen Regionen sehr unterschiedlich: von nahezu arktischem Hoch in den Alpen bis subtropisch an der Küste des Ligurischen Meeres und an der Westküste des südlichen Teils der Halbinsel.',
+        'In Italien ist die im Umlauf befindliche Währung der Euro.'],
       },
     },
   },

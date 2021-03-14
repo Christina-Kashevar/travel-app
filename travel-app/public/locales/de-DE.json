@@ -14,5 +14,6 @@
   "SIGNUP.ADD_PHOTO": "Foto hinzufügen",
   "SIGNUP.USER_EXISTS": "Benutzer mit dieser Benutzerkennung existiert bereits",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Etwas ist schief gelaufen, versuchen Sie es später",
-  "SIGNUP.AVATAR_SIZE_ERROR": "Die Größe sollte weniger als 2 MB betragen"
+  "SIGNUP.AVATAR_SIZE_ERROR": "Die Größe sollte weniger als 2 MB betragen",
+  "SIGNUP.TITLE": "Anmelden"
 }
