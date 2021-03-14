@@ -97,6 +97,7 @@ export default function SignUp(props) {
                 value={username}
                 autoComplete="username"
                 onChange={handleUsernameChange}
+                autoFocus
               />
             </Grid>
             <Grid item xs={12}>
@@ -151,7 +152,7 @@ export default function SignUp(props) {
           <Grid container justify="flex-end">
             <Grid item>
               <Link href="#" variant="body2" onClick={callBack('signIn')}>
-                Already have an account? Sign in
+                {t('SIGNUP.HAVE_ACCOUNT')}
               </Link>
             </Grid>
           </Grid>

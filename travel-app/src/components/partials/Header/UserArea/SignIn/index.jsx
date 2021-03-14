@@ -10,10 +10,13 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 
+import { useTranslation } from 'react-i18next';
+
 import useStyles from './styles';
 
 export default function SignIn(props) {
   const { callBack } = props;
+  const { t } = useTranslation();
   const classes = useStyles();
   return (
     <Container component="main" maxWidth="xs">
@@ -22,34 +25,29 @@ export default function SignIn(props) {
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Sign in
+       {t('SIGNIN.SIGNIN')}
       </Typography>
-      <form className={classes.form} noValidate>
+      <form className={classes.form}>
         <TextField
           variant="outlined"
           margin="normal"
           required
           fullWidth
-          id="email"
-          label="Email Address"
-          name="email"
-          autoComplete="email"
+          label={t('SIGNUP.USERNAME')}
+          autoComplete="username"
           autoFocus
         />
         <TextField
           variant="outlined"
-          margin="normal"
           required
           fullWidth
-          name="password"
-          label="Password"
+          label={t('SIGNUP.PASSWORD')}
           type="password"
-          id="password"
           autoComplete="current-password"
         />
         <FormControlLabel
           control={<Checkbox value="remember" color="primary" />}
-          label="Remember me"
+          label={t('SIGNIN.REMEMBER_ME')}
         />
         <Button
           type="submit"
@@ -58,17 +56,18 @@ export default function SignIn(props) {
           color="primary"
           className={classes.submit}
         >
-          Sign In
+          {t('SIGNIN.SUBMIT')}
         </Button>
         <Grid container>
           <Grid item xs>
             <Link href="#" variant="body2">
-              Forgot password?
+              {t('SIGNIN.FORGOT_PASSWORD')}
+
             </Link>
           </Grid>
           <Grid item>
             <Link href="#" variant="body2" onClick={callBack('signUp')}>
-              {"Don't have an account? Sign Up"}
+              {t('SIGNIN.NO_ACCOUNT')}
             </Link>
           </Grid>
         </Grid>
