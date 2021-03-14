@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
-import LoginWindow from './Modal';
+import UserArea from './UserArea';
 import useStyles from './styles';
 
 import AppBar from '@material-ui/core/AppBar';
@@ -34,7 +34,7 @@ export default function Header(props) {
           </Typography>
           {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
-          <LoginWindow/>
+          <UserArea />
         </Toolbar>
       </AppBar>
     </div>
