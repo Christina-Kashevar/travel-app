@@ -30,7 +30,7 @@ export default function Header(props) {
           {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
           <LoginWindow/>
-          <Link className={classes.signupLink} to="signup">Sign Up</Link>
+          <Link className={classes.signupLink} to="/signup">Sign Up</Link>
         </Toolbar>
       </AppBar>
     </div>
