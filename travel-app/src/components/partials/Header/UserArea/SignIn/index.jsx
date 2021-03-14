@@ -12,7 +12,8 @@ import Container from '@material-ui/core/Container';
 
 import useStyles from './styles';
 
-export default function SignIn() {
+export default function SignIn(props) {
+  const { callBack } = props;
   const classes = useStyles();
   return (
     <Container component="main" maxWidth="xs">
@@ -66,7 +67,7 @@ export default function SignIn() {
             </Link>
           </Grid>
           <Grid item>
-            <Link href="#" variant="body2">
+            <Link href="#" variant="body2" onClick={callBack('signUp')}>
               {"Don't have an account? Sign Up"}
             </Link>
           </Grid>

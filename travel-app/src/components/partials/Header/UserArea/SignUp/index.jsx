@@ -17,13 +17,13 @@ import Container from '@material-ui/core/Container';
 import useStyles from './styles';
 import { useTranslation } from 'react-i18next';
 
-
 import Loading from '../../../../partials/Loading';
 import { AuthService } from '../../../../../services/auth.service';
 
 const MAX_AVATAR_SIZE = 2 * 1024 * 1024;
 
-export default function SignUp() {
+export default function SignUp(props) {
+  const { callBack } = props;
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -84,7 +84,7 @@ export default function SignUp() {
         <LockOutlinedIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Sign up
+      {t('SIGNUP.SIGNUP')}
       </Typography>
       <form className={classes.form} ref={formRef}>
           <Grid container spacing={2}>
@@ -150,7 +150,7 @@ export default function SignUp() {
           {signError && <Typography className={classes.signError}>{t(signError)}</Typography>}
           <Grid container justify="flex-end">
             <Grid item>
-              <Link href="#" variant="body2">
+              <Link href="#" variant="body2" onClick={callBack('signIn')}>
                 Already have an account? Sign in
               </Link>
             </Grid>
