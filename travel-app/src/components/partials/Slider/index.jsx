@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
+import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard';
 import RatingBlock from '../Rating';
-import info from './info';
 
 import './index.css';
 import useStyles from './style';
@@ -15,12 +15,18 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { Grid, IconButton } from '@material-ui/core';
 
+import { getSightsById } from '../../../engine';
+
 export default function SliderComponent(props) {
+  const { id } = props;
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [openRating, setOpenRating] = useState(false);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
+  const { i18n } = useTranslation();
+  const { language } = i18n;
+  const info = getSightsById(id, language);
 
   const classes = useStyles();
   let slider1;

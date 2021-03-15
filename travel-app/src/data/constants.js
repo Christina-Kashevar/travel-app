@@ -1,45 +1,3 @@
-import franceImg from '../assets/images/countries/france.jpg';
-import italyImg from '../assets/images/countries/italy.jpg';
-import russiaImg from '../assets/images/countries/russia.jpg';
-import mexicoImg from '../assets/images/countries/mexico.jpg';
-import greeceImg from '../assets/images/countries/greece.jpg';
-import indiaImg from '../assets/images/countries/india.jpg';
-import japanImg from '../assets/images/countries/japan.jpg';
-import chinaImg from '../assets/images/countries/china.jpg';
-import turkeyImg from '../assets/images/countries/turkey.jpg';
-
-import img25 from '../assets/images/sightseen/mount_athos-min.jpg'
-import img26 from '../assets/images/sightseen/mystras-min.jpg'
-import img27 from '../assets/images/sightseen/lindos-min.jpg'
-import img28 from '../assets/images/sightseen/samaria_gorge-min.jpg'
-import img29 from '../assets/images/sightseen/santorini-min.jpg'
-import img30 from '../assets/images/sightseen/parthenon-min.jpg'
-import img31 from '../assets/images/sightseen/rajasthan-min.jpg'
-import img32 from '../assets/images/sightseen/agra.jpg'
-import img33 from '../assets/images/sightseen/kerala-min.jpg'
-import img34 from '../assets/images/sightseen/varanasi-min.jpg'
-import img35 from '../assets/images/sightseen/ellora.jpg'
-import img36 from '../assets/images/sightseen/goa_beaches-min.jpg'
-import img37 from '../assets/images/sightseen/hiroshima_peace_memorial-min.jpg'
-import img38 from '../assets/images/sightseen/kiyomizu_dera-min.jpg'
-import img39 from '../assets/images/sightseen/himeji_castle-min.jpg'
-import img40 from '../assets/images/sightseen/great_buddha_of_kamakura-min.jpg'
-import img41 from '../assets/images/sightseen/tokyo_tower-min.jpg'
-import img42 from '../assets/images/sightseen/mount_fuji-min.jpg'
-import img43 from '../assets/images/sightseen/great_wall_of_china-min.jpg'
-import img44 from '../assets/images/sightseen/xian-min.jpg'
-import img45 from '../assets/images/sightseen/lhasa-min.jpg'
-import img46 from '../assets/images/sightseen/yangshuo-min.jpg'
-import img47 from '../assets/images/sightseen/hangzhou-min.jpg'
-import img48 from '../assets/images/sightseen/jiuzhaigou-min.jpg'
-import img49 from '../assets/images/sightseen/mardin-min.jpg'
-import img50 from '../assets/images/sightseen/antalya.jpg'
-import img51 from '../assets/images/sightseen/marmaris-min.jpg'
-import img52 from '../assets/images/sightseen/side-min.jpg'
-import img53 from '../assets/images/sightseen/cappadocia-min.jpg'
-import img54 from '../assets/images/sightseen/ephesus-min.jpg'
-
-
 export const COUNTRY_DATA = [
   {
     id: 'fr',
@@ -47,12 +5,16 @@ export const COUNTRY_DATA = [
     capital: 'Paris',
     timeZone: 'Europe/Paris',
     currency: 'EUR',
-    img: franceImg,
+    img: './images/countries/france.jpg',
     shortDescription:
       'France, officially the French Republic is a country primarily located in Western Europe, consisting of metropolitan France and several overseas regions and territories...',
-    description: ['The official name is the French Republic (Republique Francaise). The population is 66.9 million people according to the data of 2020. Most of France is in Western Europe, its mainland in the northeast, borders with Belgium, Luxembourg and Germany, in the east - Switzerland, in the southeast - with Monaco and Italy, in the southwest - with Spain and Andorra. France is washed by four bodies of water (English Channel, Atlantic Ocean, North Sea and Mediterranean Sea). France is the largest country in Europe in terms of territory: it occupies almost one fifth of the territory of the European Union, vast maritime areas.',
-    'The state also includes the island of Corsica in the Mediterranean Sea and more than twenty overseas departments and dependent territories. The total area of the country is 547,030 km² (674,685 km² including overseas possessions).', 'The monetary unit is the euro (since 2002, before that the French franc).', 'In total, there are three types of climate in the European territory of France: oceanic (in the west), Mediterranean (in the south), continental (in the center and in the east). Summers are quite hot and dry - the average temperature in July is + 23 - 25 degrees, while the winter months are characterized by rains at an air temperature of + 7-8 ° C. The main share of precipitation is from January to April.',
-    'France is the most visited country in the world (in terms of the number of foreigners arriving).'],
+    description: [
+      'The official name is the French Republic (Republique Francaise). The population is 66.9 million people according to the data of 2020. Most of France is in Western Europe, its mainland in the northeast, borders with Belgium, Luxembourg and Germany, in the east - Switzerland, in the southeast - with Monaco and Italy, in the southwest - with Spain and Andorra. France is washed by four bodies of water (English Channel, Atlantic Ocean, North Sea and Mediterranean Sea). France is the largest country in Europe in terms of territory: it occupies almost one fifth of the territory of the European Union, vast maritime areas.',
+      'The state also includes the island of Corsica in the Mediterranean Sea and more than twenty overseas departments and dependent territories. The total area of the country is 547,030 km² (674,685 km² including overseas possessions).',
+      'The monetary unit is the euro (since 2002, before that the French franc).',
+      'In total, there are three types of climate in the European territory of France: oceanic (in the west), Mediterranean (in the south), continental (in the center and in the east). Summers are quite hot and dry - the average temperature in July is + 23 - 25 degrees, while the winter months are characterized by rains at an air temperature of + 7-8 ° C. The main share of precipitation is from January to April.',
+      'France is the most visited country in the world (in terms of the number of foreigners arriving).',
+    ],
     // linkToVideo: 'https://www.youtube.com/watch?v=2N7l6SSKeds',
     linkToVideo: 'https://travel-app-videos.netlify.app/france.mp4',
     translations: {
@@ -61,20 +23,26 @@ export const COUNTRY_DATA = [
         capital: 'Париж',
         shortDescription:
           'Франция – это страна в Западной Европе, на территории которой находятся средневековые города, альпийские деревни и пляжи Средиземного моря. Париж, столица государства...',
-        description: ['Официальное название — Французская Республика (Republique Francaise, French Republic). Численность населения по данным 2020 года составляет 66,9 млн человек. Большая часть Франции расположена в Западной Европе, её материковая часть на северо-востоке граничит с Бельгией, Люксембургом и Германией, на востоке - со Швейцарией, на юго-востоке - с Монако и Италией, на юго-западе - с Испанией и Андоррой. Францию омывают четыре водных пространства (Ла-Манш, Атлантический океан, Северное море и Средиземное море). Франция является самой крупной по территории страной Западной Европы: она занимает почти одну пятую часть территории Европейского Союза, имеет обширные морские пространства.',
-        'Также в состав государства входят остров Корсика в Средиземном море и более двадцати заморских департаментов и зависимых территорий. Общая площадь страны составляет 547 030 км² (674 685 км² вместе с заморскими владениями).',
-        'Денежная единица — евро (с 2002, до этого французский франк).', 'Всего можно выделить три типа климата на европейской территории Франции: океанический (на западе), средиземноморский (на юге), континентальный (в центре и на востоке). Лето достаточно жаркое и сухое - средняя температура в июле достигает + 23 - 25 градусов, в то время как для зимних месяцев характерны дожди при температуре воздуха +7- 8 °С. Основная доля осадков приходится на период с января по апрель.',
-        'Франция - самая посещаемая страна в мире (по количеству приезжающих иностранцев).'],
+        description: [
+          'Официальное название — Французская Республика (Republique Francaise, French Republic). Численность населения по данным 2020 года составляет 66,9 млн человек. Большая часть Франции расположена в Западной Европе, её материковая часть на северо-востоке граничит с Бельгией, Люксембургом и Германией, на востоке - со Швейцарией, на юго-востоке - с Монако и Италией, на юго-западе - с Испанией и Андоррой. Францию омывают четыре водных пространства (Ла-Манш, Атлантический океан, Северное море и Средиземное море). Франция является самой крупной по территории страной Западной Европы: она занимает почти одну пятую часть территории Европейского Союза, имеет обширные морские пространства.',
+          'Также в состав государства входят остров Корсика в Средиземном море и более двадцати заморских департаментов и зависимых территорий. Общая площадь страны составляет 547 030 км² (674 685 км² вместе с заморскими владениями).',
+          'Денежная единица — евро (с 2002, до этого французский франк).',
+          'Всего можно выделить три типа климата на европейской территории Франции: океанический (на западе), средиземноморский (на юге), континентальный (в центре и на востоке). Лето достаточно жаркое и сухое - средняя температура в июле достигает + 23 - 25 градусов, в то время как для зимних месяцев характерны дожди при температуре воздуха +7- 8 °С. Основная доля осадков приходится на период с января по апрель.',
+          'Франция - самая посещаемая страна в мире (по количеству приезжающих иностранцев).',
+        ],
       },
       de: {
         name: 'Frankreich',
         capital: 'Paris',
         shortDescription:
           'Frankreich, offiziell die Französische Republik, ist ein Land, das hauptsächlich in Westeuropa liegt und aus der französischen Metropole und mehreren überseeischen Regionen und Gebieten besteht...',
-        description: ['Der offizielle Name ist die Französische Republik (Republique Francaise, Französische Republik). Die Bevölkerung ab 2020 beträgt 66,9 Millionen Menschen. Der größte Teil Frankreichs liegt in Westeuropa, sein Festland im Nordosten grenzt an Belgien, Luxemburg und Deutschland, im Osten an die Schweiz, im Südosten an Monaco und Italien, im Südwesten an Spanien und Andorra. Frankreich wird von vier Gewässern gewaschen (Ärmelkanal, Atlantik, Nordsee und Mittelmeer). Frankreich ist das territorial größte Land Westeuropas: Es nimmt fast ein Fünftel des Territoriums der Europäischen Union ein und verfügt über riesige Seegebiete.',
-        'Zum Staat gehören auch die Insel Korsika im Mittelmeer sowie mehr als zwanzig überseeische Departements und abhängige Gebiete. Die Gesamtfläche des Landes beträgt 547.030 km² (674.685 km² einschließlich ausländischer Besitztümer).',
-        'Die Währungseinheit ist der Euro (seit 2002, davor der französische Franken).', 'Insgesamt können drei Arten von Klima auf dem europäischen Territorium Frankreichs unterschieden werden: ozeanisch (im Westen), mediterran (im Süden), kontinental (im Zentrum und im Osten). Die Sommer sind ziemlich heiß und trocken - die Durchschnittstemperatur im Juli erreicht + 23 - 25 Grad, während die Wintermonate durch Regen bei einer Lufttemperatur von + 7 - 8 ° C gekennzeichnet sind. Der Hauptniederschlagsanteil fällt im Zeitraum von Januar bis April.',
-        'Frankreich ist das meistbesuchte Land der Welt (gemessen an der Anzahl der ankommenden Ausländer).'],
+        description: [
+          'Der offizielle Name ist die Französische Republik (Republique Francaise, Französische Republik). Die Bevölkerung ab 2020 beträgt 66,9 Millionen Menschen. Der größte Teil Frankreichs liegt in Westeuropa, sein Festland im Nordosten grenzt an Belgien, Luxemburg und Deutschland, im Osten an die Schweiz, im Südosten an Monaco und Italien, im Südwesten an Spanien und Andorra. Frankreich wird von vier Gewässern gewaschen (Ärmelkanal, Atlantik, Nordsee und Mittelmeer). Frankreich ist das territorial größte Land Westeuropas: Es nimmt fast ein Fünftel des Territoriums der Europäischen Union ein und verfügt über riesige Seegebiete.',
+          'Zum Staat gehören auch die Insel Korsika im Mittelmeer sowie mehr als zwanzig überseeische Departements und abhängige Gebiete. Die Gesamtfläche des Landes beträgt 547.030 km² (674.685 km² einschließlich ausländischer Besitztümer).',
+          'Die Währungseinheit ist der Euro (seit 2002, davor der französische Franken).',
+          'Insgesamt können drei Arten von Klima auf dem europäischen Territorium Frankreichs unterschieden werden: ozeanisch (im Westen), mediterran (im Süden), kontinental (im Zentrum und im Osten). Die Sommer sind ziemlich heiß und trocken - die Durchschnittstemperatur im Juli erreicht + 23 - 25 Grad, während die Wintermonate durch Regen bei einer Lufttemperatur von + 7 - 8 ° C gekennzeichnet sind. Der Hauptniederschlagsanteil fällt im Zeitraum von Januar bis April.',
+          'Frankreich ist das meistbesuchte Land der Welt (gemessen an der Anzahl der ankommenden Ausländer).',
+        ],
       },
     },
   },
@@ -84,14 +52,16 @@ export const COUNTRY_DATA = [
     capital: 'Rome',
     timeZone: 'Europe/Rome',
     currency: 'EUR',
-    img: italyImg,
+    img: './images/countries/italy.jpg',
     shortDescription:
       'Italy (Italian, officially the Italian Republic, is a country consisting of a continental part, delimited by the Alps, a peninsula and several islands surrounding it...',
-    description: ['Italy, the official name is the Italian Republic (Italian Repubblica Italiana), a state in Southern Europe, in the center of the Mediterranean. It is a member of the European Union and NATO since their inception, and is the third largest economy in the eurozone. The population of Italy is estimated at 60.6 million in 2019. The total area is 301 thousand square kilometers.',
-    'It shares borders with France in the northwest, Switzerland and Austria in the north, Slovenia in the northeast. Inside the territory of Italy there are two enclave states: the state of San Marino and the Vatican state, located inside the territory of Rome, associated with Italy, with each of which Italy has an internal border with a length of 39 km and 3.2 km, respectively.',
-    'Occupies the Apennine Peninsula, the extreme northwest of the Balkan Peninsula, the Padan Plain, the southern slopes of the Alps, the islands of Sicily, Sardinia and a number of small islands.',
-    'Italy is located in the temperate and, for the most part, in the subtropical zones. The climate of Italy is very different depending on regions: from close to arctic high in the Alps to subtropical on the coast of the Ligurian Sea and the western coast of the southern part of the peninsula.',
-    'In Italy, the currency in circulation is the euro.'],
+    description: [
+      'Italy, the official name is the Italian Republic (Italian Repubblica Italiana), a state in Southern Europe, in the center of the Mediterranean. It is a member of the European Union and NATO since their inception, and is the third largest economy in the eurozone. The population of Italy is estimated at 60.6 million in 2019. The total area is 301 thousand square kilometers.',
+      'It shares borders with France in the northwest, Switzerland and Austria in the north, Slovenia in the northeast. Inside the territory of Italy there are two enclave states: the state of San Marino and the Vatican state, located inside the territory of Rome, associated with Italy, with each of which Italy has an internal border with a length of 39 km and 3.2 km, respectively.',
+      'Occupies the Apennine Peninsula, the extreme northwest of the Balkan Peninsula, the Padan Plain, the southern slopes of the Alps, the islands of Sicily, Sardinia and a number of small islands.',
+      'Italy is located in the temperate and, for the most part, in the subtropical zones. The climate of Italy is very different depending on regions: from close to arctic high in the Alps to subtropical on the coast of the Ligurian Sea and the western coast of the southern part of the peninsula.',
+      'In Italy, the currency in circulation is the euro.',
+    ],
     // linkToVideo: 'https://www.youtube.com/watch?v=FlRwssZYRM0',
     linkToVideo: 'https://travel-app-videos.netlify.app/italy.mp4',
     translations: {
@@ -100,24 +70,28 @@ export const COUNTRY_DATA = [
         capital: 'Рим',
         shortDescription:
           'Италия – средиземноморское государство в Южной Европе с длинной береговой линией, которое оказало огромное влияние на западную культуру и кухню. На территории столицы страны...',
-        description: ['Италия, официальное название — Итальянская Республика (итал. Repubblica Italiana) —государсто в Южной Европе, в центре Средиземноморья. Входит в Евросоюз и НАТО с момента их создания, является третьей по величине экономикой еврозоны. Население Италие по оценкам 2019 года составляет 60,6 млн. чел. Общая площадь - 301 тыс кв км.',
-        'Граничит с Францией на северо-западе, Швейцарией и Австрией — на севере, Словенией — на северо-востоке. Внутри территории Италии находятся два государства-анклава: государство Сан-Марино и расположенное внутри территории Рима ассоциированное с Италией государство Ватикан, с каждым из которых Италия имеет внутреннюю границу протяжённостью соответственно 39 км и 3,2 км.',
-        'Занимает Апеннинский полуостров, крайний северо-запад Балканского полуострова, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.',
-        'На территории Италии находится 55 памятников Всемирного наследия ЮНЕСКО — Италия разделяет с Китаем первое место по их количеству.',
-        'Италия располагается в умеренном и, большей частью, в субтропическом поясах. Климат Италии сильно отличается в различных регионах: от близкого к арктическому высоко в Альпах до субтропического на побережье Лигурийского моря и западном побережье южной части полуострова.',
-        'В Италии в денежном обращении валюта – евро.'],
+        description: [
+          'Италия, официальное название — Итальянская Республика (итал. Repubblica Italiana) —государсто в Южной Европе, в центре Средиземноморья. Входит в Евросоюз и НАТО с момента их создания, является третьей по величине экономикой еврозоны. Население Италие по оценкам 2019 года составляет 60,6 млн. чел. Общая площадь - 301 тыс кв км.',
+          'Граничит с Францией на северо-западе, Швейцарией и Австрией — на севере, Словенией — на северо-востоке. Внутри территории Италии находятся два государства-анклава: государство Сан-Марино и расположенное внутри территории Рима ассоциированное с Италией государство Ватикан, с каждым из которых Италия имеет внутреннюю границу протяжённостью соответственно 39 км и 3,2 км.',
+          'Занимает Апеннинский полуостров, крайний северо-запад Балканского полуострова, Паданскую равнину, южные склоны Альп, острова Сицилия, Сардиния и ряд мелких островов.',
+          'На территории Италии находится 55 памятников Всемирного наследия ЮНЕСКО — Италия разделяет с Китаем первое место по их количеству.',
+          'Италия располагается в умеренном и, большей частью, в субтропическом поясах. Климат Италии сильно отличается в различных регионах: от близкого к арктическому высоко в Альпах до субтропического на побережье Лигурийского моря и западном побережье южной части полуострова.',
+          'В Италии в денежном обращении валюта – евро.',
+        ],
       },
       de: {
         name: 'Italien',
         capital: 'Rom',
         shortDescription:
           'Italien ist ein Mittelmeerstaat in Südeuropa mit einer langen Küste, die einen großen Einfluss auf die westliche Kultur und Küche hatte. Auf dem Gebiet der Hauptstadt des Landes...',
-        description: ['Italien, der offizielle Name ist die Italienische Republik (Italian Repubblica Italiana), ein Staat in Südeuropa im Zentrum des Mittelmeers. Es ist seit seiner Gründung Mitglied der Europäischen Union und der NATO und die drittgrößte Volkswirtschaft in der Eurozone. Die Bevölkerung Italiens wird 2019 auf 60,6 Millionen geschätzt. Die Gesamtfläche beträgt 301 Tausend Quadratkilometer.',
-        'Es grenzt im Nordwesten an Frankreich, im Norden an die Schweiz und an Österreich, im Nordosten an Slowenien. Innerhalb des Territoriums Italiens gibt es zwei Enklavenstaaten: den Staat San Marino und den Staat Vatikan, die sich auf dem Territorium Roms befinden und mit Italien verbunden sind. Italien hat jeweils eine Binnengrenze mit einer Länge von 39 km und 3,2 km , beziehungsweise.',
-        'Besetzt die Apenninenhalbinsel, den äußersten Nordwesten der Balkanhalbinsel, die Padan-Ebene, die Südhänge der Alpen, die Inseln Sizilien, Sardinien und eine Reihe kleiner Inseln.',
-        'Es gibt 55 UNESCO-Welterbestätten auf dem Territorium Italiens - Italien teilt den ersten Platz mit China in Bezug auf ihre Anzahl.',
-        'Italien liegt in den gemäßigten und größtenteils in den subtropischen Zonen. Das Klima Italiens ist in verschiedenen Regionen sehr unterschiedlich: von nahezu arktischem Hoch in den Alpen bis subtropisch an der Küste des Ligurischen Meeres und an der Westküste des südlichen Teils der Halbinsel.',
-        'In Italien ist die im Umlauf befindliche Währung der Euro.'],
+        description: [
+          'Italien, der offizielle Name ist die Italienische Republik (Italian Repubblica Italiana), ein Staat in Südeuropa im Zentrum des Mittelmeers. Es ist seit seiner Gründung Mitglied der Europäischen Union und der NATO und die drittgrößte Volkswirtschaft in der Eurozone. Die Bevölkerung Italiens wird 2019 auf 60,6 Millionen geschätzt. Die Gesamtfläche beträgt 301 Tausend Quadratkilometer.',
+          'Es grenzt im Nordwesten an Frankreich, im Norden an die Schweiz und an Österreich, im Nordosten an Slowenien. Innerhalb des Territoriums Italiens gibt es zwei Enklavenstaaten: den Staat San Marino und den Staat Vatikan, die sich auf dem Territorium Roms befinden und mit Italien verbunden sind. Italien hat jeweils eine Binnengrenze mit einer Länge von 39 km und 3,2 km , beziehungsweise.',
+          'Besetzt die Apenninenhalbinsel, den äußersten Nordwesten der Balkanhalbinsel, die Padan-Ebene, die Südhänge der Alpen, die Inseln Sizilien, Sardinien und eine Reihe kleiner Inseln.',
+          'Es gibt 55 UNESCO-Welterbestätten auf dem Territorium Italiens - Italien teilt den ersten Platz mit China in Bezug auf ihre Anzahl.',
+          'Italien liegt in den gemäßigten und größtenteils in den subtropischen Zonen. Das Klima Italiens ist in verschiedenen Regionen sehr unterschiedlich: von nahezu arktischem Hoch in den Alpen bis subtropisch an der Küste des Ligurischen Meeres und an der Westküste des südlichen Teils der Halbinsel.',
+          'In Italien ist die im Umlauf befindliche Währung der Euro.',
+        ],
       },
     },
   },
@@ -127,7 +101,7 @@ export const COUNTRY_DATA = [
     capital: 'Moscow',
     timeZone: 'Europe/Moscow',
     currency: 'RUB',
-    img: russiaImg,
+    img: './images/countries/russia.jpg',
     shortDescription:
       'Russia or the Russian Federation, is a transcontinental country spanning Eastern Europe and Northern Asia. It is the largest country in the world; covering over ...',
     description: [
@@ -175,7 +149,7 @@ export const COUNTRY_DATA = [
     capital: 'Mexico',
     timeZone: 'America/Mexico_City',
     currency: 'MXN',
-    img: mexicoImg,
+    img: './images/countries/mexico.jpg',
     shortDescription:
       'Mexico officially the United Mexican States is a country in the southern portion of North America. It is bordered to the north by the United States; to the south and ...',
     description: [
@@ -218,7 +192,7 @@ export const COUNTRY_DATA = [
     capital: 'Athens',
     timeZone: 'Europe/Athens',
     currency: 'EUR',
-    img: greeceImg,
+    img: './images/countries/greece.jpg',
     shortDescription:
       'Greece also known as Hellas, and officially the Hellenic Republic, is a country located in Southeast Europe. Its population is approximately 10.7 million as of ...',
     description: [
@@ -267,7 +241,7 @@ export const COUNTRY_DATA = [
     capital: 'New Delhi',
     timeZone: 'Asia/Kolkata',
     currency: 'INR',
-    img: indiaImg,
+    img: './images/countries/india.jpg',
     shortDescription:
       'India, officially the Republic of India, is a country in South Asia. It is the second-most populous country, the seventh-largest country by land area, and the most populous...',
     description: [
@@ -312,7 +286,7 @@ export const COUNTRY_DATA = [
     capital: 'Tokyo',
     timeZone: 'Asia/Tokyo',
     currency: 'JPY',
-    img: japanImg,
+    img: './images/countries/japan.jpg',
     shortDescription:
       'Japan is an island country in East Asia, located in the northwest Pacific Ocean. It is bordered on the west by the Sea of Japan, and extends from the Sea of ...',
     description: [
@@ -361,7 +335,7 @@ export const COUNTRY_DATA = [
     capital: 'Beijing',
     timeZone: 'Asia/Shanghai',
     currency: 'CNY',
-    img: chinaImg,
+    img: './images/countries/china.jpg',
     shortDescription:
       "China, officially the People's Republic of China, is a country in East Asia. It is the world's most populous country, with a population of around 1.4 billion ...",
     description: [
@@ -406,7 +380,7 @@ export const COUNTRY_DATA = [
     capital: 'Istanbul',
     timeZone: 'Europe/Istanbul',
     currency: 'TRY',
-    img: turkeyImg,
+    img: './images/countries/turkey.jpg',
     shortDescription:
       'Turkey officially the Republic of Turkey is a transcontinental country straddling Southeastern Europe and Western Asia. It is bordered on its northwest by Greece ...',
     description: [
@@ -449,478 +423,613 @@ export const COUNTRY_DATA = [
 export const SIGHTS_DATA = [
   {
     id: 'gr',
-    sights:[
+    sights: [
       {
-        img: img25,
+        img: './images/sightseen/mount_athos-min.jpg',
         name: 'Mount Athos',
-        description: 'Mount Athos is a mountain and a peninsula in northern Greece. The peninsula, the easternmost “leg” of the larger Halkidiki peninsula houses some 1,400 monks in 20 Eastern Orthodox monasteries. An autonomous state under Greek sovereignty, entry into Mount Athos is strictly controlled and only males are allowed entrance.',
+        description:
+          'Mount Athos is a mountain and a peninsula in northern Greece. The peninsula, the easternmost “leg” of the larger Halkidiki peninsula houses some 1,400 monks in 20 Eastern Orthodox monasteries. An autonomous state under Greek sovereignty, entry into Mount Athos is strictly controlled and only males are allowed entrance.',
         translations: {
           ru: {
             name: 'Гора Афон',
-            description:'Афон — гора и крупнейшее в мире средоточие православного монашества на полуострове Айон-Орос на северо-восточном побережье Греции, между заливами Айон-Орос и Иерисос Эгейского моря. В системе административных районов Греции имеет название «Автономное монашеское государство Святой Горы».',
+            description:
+              'Афон — гора и крупнейшее в мире средоточие православного монашества на полуострове Айон-Орос на северо-восточном побережье Греции, между заливами Айон-Орос и Иерисос Эгейского моря. В системе административных районов Греции имеет название «Автономное монашеское государство Святой Горы».',
           },
           de: {
             name: 'Der Berg Athos',
-            description:'Der Berg Athos ist eine orthodoxe Mönchsrepublik mit autonomem Status unter griechischer Souveränität in Griechenland.',
-          }
-        }
+            description:
+              'Der Berg Athos ist eine orthodoxe Mönchsrepublik mit autonomem Status unter griechischer Souveränität in Griechenland.',
+          },
+        },
       },
       {
-        img: img26,
+        img: './images/sightseen/mystras-min.jpg',
         name: 'Mystras',
-        description: 'Situated near ancient Sparta, Mystras served as the capital of the Peloponnesus in the 14th and 15th centuries, ruled by relatives of the Byzantine emperor. The site remained inhabited throughout the Ottoman period but was abandoned in 1832, leaving only the breathtaking medieval ruins, standing in a beautiful landscape.',
+        description:
+          'Situated near ancient Sparta, Mystras served as the capital of the Peloponnesus in the 14th and 15th centuries, ruled by relatives of the Byzantine emperor. The site remained inhabited throughout the Ottoman period but was abandoned in 1832, leaving only the breathtaking medieval ruins, standing in a beautiful landscape.',
         translations: {
           ru: {
             name: 'Мистра',
-            description:'Мистра — село в Греции, на Пелопоннесе, близ современного города Спарта. Один из важнейших культурных и политических центров поздней Византии и центр Морейского деспотата.',
+            description:
+              'Мистра — село в Греции, на Пелопоннесе, близ современного города Спарта. Один из важнейших культурных и политических центров поздней Византии и центр Морейского деспотата.',
           },
-         de:{
+          de: {
             name: 'Mystras',
-            description:'Mystras bzw. Mistra ist eine als UNESCO-Weltkulturerbestätte ausgewiesene byzantinische Ruinenstadt in der Nähe des gleichnamigen Dorfes in Griechenland, nordwestlich von Sparta auf einem Hügel im Vorfeld des Taygetos-Gebirges.',
-          }
-        }
+            description:
+              'Mystras bzw. Mistra ist eine als UNESCO-Weltkulturerbestätte ausgewiesene byzantinische Ruinenstadt in der Nähe des gleichnamigen Dorfes in Griechenland, nordwestlich von Sparta auf einem Hügel im Vorfeld des Taygetos-Gebirges.',
+          },
+        },
       },
       {
-        img: img27,
+        img: './images/sightseen/lindos-min.jpg',
         name: 'Lindos',
-        description: 'Lindos is a medieval village on the island of Rhodes that is made up of a network of cobbled streets amid whitewashed houses. Above the town rises the acropolis of Lindos, offering spectacular views of the surrounding harbors and coastline. Lindos beach and Saint Pauls beach are only a short distance from the town center.',
+        description:
+          'Lindos is a medieval village on the island of Rhodes that is made up of a network of cobbled streets amid whitewashed houses. Above the town rises the acropolis of Lindos, offering spectacular views of the surrounding harbors and coastline. Lindos beach and Saint Pauls beach are only a short distance from the town center.',
         translations: {
           ru: {
             name: 'Линдос',
-            description:'Линдос – это город на греческом острове Родос. Он известен расположенным на скале акрополем, где можно увидеть монументальные ворота IV века и барельефы, созданные в 280 г. до н. э. Над бухтой возвышается храм Афины Линдийской.',
+            description:
+              'Линдос – это город на греческом острове Родос. Он известен расположенным на скале акрополем, где можно увидеть монументальные ворота IV века и барельефы, созданные в 280 г. до н. э. Над бухтой возвышается храм Афины Линдийской.',
           },
-         de:{
+          de: {
             name: 'Lindos',
-            description:'Lindos ist ein Gemeindebezirk auf der griechischen Dodekanesinsel Rhodos. Der Gemeindebezirk besteht aus zwei Stadtbezirken und drei Ortsgemeinschaften, die zusammen knapp 4000 Einwohner aufweisen und etwa ein Achtel der Inselfläche einnehmen. In Lindos finden sich die Ruinen der gleichnamigen antiken Polis.',
-          }
-        }
+            description:
+              'Lindos ist ein Gemeindebezirk auf der griechischen Dodekanesinsel Rhodos. Der Gemeindebezirk besteht aus zwei Stadtbezirken und drei Ortsgemeinschaften, die zusammen knapp 4000 Einwohner aufweisen und etwa ein Achtel der Inselfläche einnehmen. In Lindos finden sich die Ruinen der gleichnamigen antiken Polis.',
+          },
+        },
       },
       {
-        img: img28,
+        img: './images/sightseen/samaria_gorge-min.jpg',
         name: 'Samaria Gorge',
-        description: 'The Samariá Gorge is a 16 km (10 miles) long canyon in southwest Crete. Walking the Samariá Gorge is extremely popular and more than a quarter million tourists do so each year. The walk takes 4 to 7 hours and passes through forests of ancient cypresses and pines, then cuts between vertical cliffs through the mountains to emerge at Agia Roumeli on the Libyan sea.',
+        description:
+          'The Samariá Gorge is a 16 km (10 miles) long canyon in southwest Crete. Walking the Samariá Gorge is extremely popular and more than a quarter million tourists do so each year. The walk takes 4 to 7 hours and passes through forests of ancient cypresses and pines, then cuts between vertical cliffs through the mountains to emerge at Agia Roumeli on the Libyan sea.',
         translations: {
           ru: {
             name: 'Самарийское ущелье',
-            description:'Самарийское ущелье, также Национальный парк «Самария» — крупнейшее ущелье в Европе, расположено в горах Лефка-Ори на юго-западной оконечности Крита, в общине Сфакион в периферийной единице Ханье в периферии Крит. Одна из наиболее известных достопримечательностей Крита.',
+            description:
+              'Самарийское ущелье, также Национальный парк «Самария» — крупнейшее ущелье в Европе, расположено в горах Лефка-Ори на юго-западной оконечности Крита, в общине Сфакион в периферийной единице Ханье в периферии Крит. Одна из наиболее известных достопримечательностей Крита.',
           },
-         de:{
+          de: {
             name: 'Die Samaria-Schlucht',
-            description:'Die Samaria-Schlucht im Südwesten der griechischen Insel Kreta ist mit 17 Kilometern Länge eine der längsten Schluchten Europas. Sie führt aus über 1200 m Höhe fast von der Mitte der Insel bis zum Libyschen Meer. An Länge wird die Samaria-Schlucht durch die Verdonschlucht in Frankreich mit über 20 Kilometern Länge und die Tara-Schlucht in Montenegro mit 78 Kilometern übertroffen.',
-          }
-        }
+            description:
+              'Die Samaria-Schlucht im Südwesten der griechischen Insel Kreta ist mit 17 Kilometern Länge eine der längsten Schluchten Europas. Sie führt aus über 1200 m Höhe fast von der Mitte der Insel bis zum Libyschen Meer. An Länge wird die Samaria-Schlucht durch die Verdonschlucht in Frankreich mit über 20 Kilometern Länge und die Tara-Schlucht in Montenegro mit 78 Kilometern übertroffen.',
+          },
+        },
       },
       {
-        img: img29,
+        img: './images/sightseen/santorini-min.jpg',
         name: 'Santorini',
-        description: 'Santorini is a volcanic island in the Cyclades group of the Greek islands. It is famous for its dramatic views, stunning sunsets, the white-washed houses, and its very own active volcano. Fira, the capital of Santorini, is a marriage of Venetian and Cycladic architecture, whose white cobblestone streets bustle with shops, tavernas, hotels and cafes, while clinging on the edge of the 400 meter (1,300 ft) high cliffs.',
+        description:
+          'Santorini is a volcanic island in the Cyclades group of the Greek islands. It is famous for its dramatic views, stunning sunsets, the white-washed houses, and its very own active volcano. Fira, the capital of Santorini, is a marriage of Venetian and Cycladic architecture, whose white cobblestone streets bustle with shops, tavernas, hotels and cafes, while clinging on the edge of the 400 meter (1,300 ft) high cliffs.',
         translations: {
           ru: {
             name: 'Санторини',
-            description:'Города Санторини, известны своими белоснежными домами кубической формы, возведенными на скалах над подводной кальдерой. Из них открывается чудесный вид на море, небольшие острова на западе и пляжи с черной, красной и белой галькой вулканического происхождения.',
+            description:
+              'Города Санторини, известны своими белоснежными домами кубической формы, возведенными на скалах над подводной кальдерой. Из них открывается чудесный вид на море, небольшие острова на западе и пляжи с черной, красной и белой галькой вулканического происхождения.',
           },
-         de:{
+          de: {
             name: 'Santorin',
-            description:'Santorin ist ein griechischer Archipel im Süden der Kykladen, gleichnamig mit dessen Hauptinsel, die im Griechischen zumeist Thira, genannt wird. Santorin wurde 2011 von etwa 15.550 Einwohnern bewohnt. Seit der Verwaltungsreform 2010 ist es unter dem Namen Thira gleichzeitig eine Gemeinde in der Region Südliche Ägäis.',
-          }
-        }
+            description:
+              'Santorin ist ein griechischer Archipel im Süden der Kykladen, gleichnamig mit dessen Hauptinsel, die im Griechischen zumeist Thira, genannt wird. Santorin wurde 2011 von etwa 15.550 Einwohnern bewohnt. Seit der Verwaltungsreform 2010 ist es unter dem Namen Thira gleichzeitig eine Gemeinde in der Region Südliche Ägäis.',
+          },
+        },
       },
       {
-        img: img30,
+        img: './images/sightseen/parthenon-min.jpg',
         name: 'Parthenon',
-        description: 'The Parthenon on top of the Acropolis is one of the most famous Greece tourist attractions and a visit to Athens is not complete without visiting this temple. The construction of the Parthenon started in 447 BC, replacing and older temple that was destroyed by the Persians, and completed in 432 BC. During its long life the Parthenon has served as a temple, fortress, a church, a mosque and even as a powder magazine.',
+        description:
+          'The Parthenon on top of the Acropolis is one of the most famous Greece tourist attractions and a visit to Athens is not complete without visiting this temple. The construction of the Parthenon started in 447 BC, replacing and older temple that was destroyed by the Persians, and completed in 432 BC. During its long life the Parthenon has served as a temple, fortress, a church, a mosque and even as a powder magazine.',
         translations: {
           ru: {
             name: 'Парфенон',
-            description:'Парфенон — памятник античной архитектуры, древнегреческий храм, расположенный на афинском Акрополе, главный храм в древних Афинах, посвящённый покровительнице этого города и всей Аттики, богине Афине-Девственнице.',
+            description:
+              'Парфенон — памятник античной архитектуры, древнегреческий храм, расположенный на афинском Акрополе, главный храм в древних Афинах, посвящённый покровительнице этого города и всей Аттики, богине Афине-Девственнице.',
           },
-         de:{
+          de: {
             name: 'Der Parthenon',
-            description:'Der Parthenon ist der Tempel für die Stadtgöttin Pallas Athena Parthenos auf der Athener Akropolis. Er wurde zum Dank für die Rettung der Athener und Griechen durch die Göttin nach dem letzten Perserkrieg als dorischer Peripteros erbaut. Im Laufe der Geschichte Griechenlands diente das Gebäude unter anderem auch als Schatzkammer des Attischen Seebunds. Der Parthenon ist eines der berühmtesten noch existierenden Baudenkmäler des antiken Griechenlands und eines der bekanntesten Gebäude weltweit.',
-          }
-        }
+            description:
+              'Der Parthenon ist der Tempel für die Stadtgöttin Pallas Athena Parthenos auf der Athener Akropolis. Er wurde zum Dank für die Rettung der Athener und Griechen durch die Göttin nach dem letzten Perserkrieg als dorischer Peripteros erbaut. Im Laufe der Geschichte Griechenlands diente das Gebäude unter anderem auch als Schatzkammer des Attischen Seebunds. Der Parthenon ist eines der berühmtesten noch existierenden Baudenkmäler des antiken Griechenlands und eines der bekanntesten Gebäude weltweit.',
+          },
+        },
       },
-    ]
+    ],
   },
-  {id: 'in',
-    sights:[
+  {
+    id: 'in',
+    sights: [
       {
-        img: img31,
+        img: './images/sightseen/rajasthan-min.jpg',
         name: 'Rajasthan',
-        description: 'Northwest India is where you’ll find the state of Rajasthan, which borders Pakistan and is home to the Thar Desert. Whether you’re interested in Rajput history or views of the Aravallis Mountains, Rajasthan contains some of the best places to visit in India. Jaipur, or the Pink City, is the capital of Rajasthan and a wonderful place to begin your trip.',
+        description:
+          'Northwest India is where you’ll find the state of Rajasthan, which borders Pakistan and is home to the Thar Desert. Whether you’re interested in Rajput history or views of the Aravallis Mountains, Rajasthan contains some of the best places to visit in India. Jaipur, or the Pink City, is the capital of Rajasthan and a wonderful place to begin your trip.',
         translations: {
           ru: {
             name: 'Раджастхан',
-            description:'Местные дворцы и крепости напоминают о многочисленных королевствах, которые боролись за власть в регионе. Столица штата Джайпур (Розовый город) славится своим Городским дворцом XVIII века и королевским гаремом Хава-Махал, пятиярусный фасад которого выполнен из розового песчаника.',
+            description:
+              'Местные дворцы и крепости напоминают о многочисленных королевствах, которые боролись за власть в регионе. Столица штата Джайпур (Розовый город) славится своим Городским дворцом XVIII века и королевским гаремом Хава-Махал, пятиярусный фасад которого выполнен из розового песчаника.',
           },
-         de:{
+          de: {
             name: 'Rajasthan',
-            description:'Rajasthan ist ein indischer Bundesstaat mit einer Fläche von 342.239 km² und 68,5 Millionen Einwohnern. Die Hauptstadt Rajasthans ist Jaipur, und die Amtssprache ist Hindi.',
-          }
-        }
+            description:
+              'Rajasthan ist ein indischer Bundesstaat mit einer Fläche von 342.239 km² und 68,5 Millionen Einwohnern. Die Hauptstadt Rajasthans ist Jaipur, und die Amtssprache ist Hindi.',
+          },
+        },
       },
       {
-        img: img32,
+        img: './images/sightseen/agra.jpg',
         name: 'Agra',
-        description: 'Agra is one of the most-visited cities in all of India. Once the capital of the Mughal Empire, Agra is now home to the iconic structure known as the Taj Mahal. The white marble mausoleum was built in the 17th century, and it is widely regarded as a monument of love.',
+        description:
+          'Agra is one of the most-visited cities in all of India. Once the capital of the Mughal Empire, Agra is now home to the iconic structure known as the Taj Mahal. The white marble mausoleum was built in the 17th century, and it is widely regarded as a monument of love.',
         translations: {
           ru: {
             name: 'Агра',
-            description:'Агра – город в штате Уттар-Прадеш на севере Индии. Он получил всемирную известность благодаря Тадж-Махалу – мавзолею, построенному для Мумтаз-Махал, жены падишаха империи Великих Моголов Шах-Джахана, которая умерла в 1631 г. при родах.',
+            description:
+              'Агра – город в штате Уттар-Прадеш на севере Индии. Он получил всемирную известность благодаря Тадж-Махалу – мавзолею, построенному для Мумтаз-Махал, жены падишаха империи Великих Моголов Шах-Джахана, которая умерла в 1631 г. при родах.',
           },
-         de:{
+          de: {
             name: 'Agra',
-            description:'Agra ist eine etwa 1,7 Millionen Einwohner zählende Stadt im Westen des Bundesstaats Uttar Pradesh in Indien. Sie war mit Unterbrechungen von 1526 bis 1648 die Hauptstadt des Mogulreiches und weist mehrere zum UNESCO-Weltkulturerbe zählende Stätten auf. Seit dem Jahr 1886 ist Agra Sitz eines katholischen Erzbistums.',
-          }
-        }
+            description:
+              'Agra ist eine etwa 1,7 Millionen Einwohner zählende Stadt im Westen des Bundesstaats Uttar Pradesh in Indien. Sie war mit Unterbrechungen von 1526 bis 1648 die Hauptstadt des Mogulreiches und weist mehrere zum UNESCO-Weltkulturerbe zählende Stätten auf. Seit dem Jahr 1886 ist Agra Sitz eines katholischen Erzbistums.',
+          },
+        },
       },
       {
-        img: img33,
+        img: './images/sightseen/kerala-min.jpg',
         name: 'Kerala',
-        description: 'The southwestern state of India known as Kerala is a place of tropical beauty. Palm trees, white sand beaches and eco-tourism are all big reasons to explore the region. Besides its famous backwaters, elegant houseboats and temple festivals, Kerala is also home to Thekkady, a tiger preserve which allows you to admire flora and fauna without crowds.',
+        description:
+          'The southwestern state of India known as Kerala is a place of tropical beauty. Palm trees, white sand beaches and eco-tourism are all big reasons to explore the region. Besides its famous backwaters, elegant houseboats and temple festivals, Kerala is also home to Thekkady, a tiger preserve which allows you to admire flora and fauna without crowds.',
         translations: {
           ru: {
             name: 'Керала',
-            description:'Керала славится своими пляжами, окаймленными зарослями пальм, и огромной сетью заводей. Во внутренней части Кералы тянутся горы Западные Гаты, на склонах которых можно увидеть диких животных, а также плантации чая, кофе и специй.',
+            description:
+              'Керала славится своими пляжами, окаймленными зарослями пальм, и огромной сетью заводей. Во внутренней части Кералы тянутся горы Западные Гаты, на склонах которых можно увидеть диких животных, а также плантации чая, кофе и специй.',
           },
-         de:{
+          de: {
             name: 'Kerala',
-            description:'Kerala ist ein Bundesstaat an der Malabarküste im Südwesten Indiens mit einer Fläche von 38.863 km² und etwa 33,4 Millionen Einwohnern. Hauptstadt ist Thiruvananthapuram, das ehemalige Trivandrum.',
-          }
-        }
+            description:
+              'Kerala ist ein Bundesstaat an der Malabarküste im Südwesten Indiens mit einer Fläche von 38.863 km² und etwa 33,4 Millionen Einwohnern. Hauptstadt ist Thiruvananthapuram, das ehemalige Trivandrum.',
+          },
+        },
       },
       {
-        img: img34,
+        img: './images/sightseen/varanasi-min.jpg',
         name: 'Varanasi',
-        description: 'With a history dating back to more than 3,000 years, Varanasi is one of the world’s oldest living cities. Located in North India on the banks of the River Ganges, Varanasi has been an important center of learning for ages as well as a chief pilgrimage destination for many Hindus.',
+        description:
+          'With a history dating back to more than 3,000 years, Varanasi is one of the world’s oldest living cities. Located in North India on the banks of the River Ganges, Varanasi has been an important center of learning for ages as well as a chief pilgrimage destination for many Hindus.',
         translations: {
           ru: {
             name: 'Варанаси',
-            description:'Считается священным центром Индии и привлекает индуистских паломников. Здесь они совершают похоронные обряды и омовения в водах священного Ганга. На извилистых улочках Варанаси расположено около двух тысяч храмов, в том числе храм Каши-Вишванатх.',
+            description:
+              'Считается священным центром Индии и привлекает индуистских паломников. Здесь они совершают похоронные обряды и омовения в водах священного Ганга. На извилистых улочках Варанаси расположено около двух тысяч храмов, в том числе храм Каши-Вишванатх.',
           },
-         de:{
+          de: {
             name: 'Varanasi',
-            description:'Varanasi ist eine Stadt im indischen Bundesstaat Uttar Pradesh. Sie liegt am Ganges und hat rund 1,2 Millionen Einwohner. Varanasi ist eine der ältesten Städte Indiens und gilt als heiligste Stadt des Hinduismus.',
-          }
-        }
+            description:
+              'Varanasi ist eine Stadt im indischen Bundesstaat Uttar Pradesh. Sie liegt am Ganges und hat rund 1,2 Millionen Einwohner. Varanasi ist eine der ältesten Städte Indiens und gilt als heiligste Stadt des Hinduismus.',
+          },
+        },
       },
       {
-        img: img35,
+        img: './images/sightseen/ellora.jpg',
         name: 'Ellora & Ajanta Caves',
-        description: 'In the state of Maharashtra, you can explore the caves of both Ellora and Ajanta. At Ellora, there is an enormous complex of shrines carved from the rocky landscape. These 34 cave shrines are up to 1,500 years old, and they are from three distinct religions: Buddhism, Jainism and Hinduism.',
+        description:
+          'In the state of Maharashtra, you can explore the caves of both Ellora and Ajanta. At Ellora, there is an enormous complex of shrines carved from the rocky landscape. These 34 cave shrines are up to 1,500 years old, and they are from three distinct religions: Buddhism, Jainism and Hinduism.',
         translations: {
           ru: {
             name: 'Эллора',
-            description:'Эллора — деревня в индийском штате Махараштра, около 30 километров западнее города Аурангабад. С 1983 года система пещер и многочисленные замки причислены ЮНЕСКО к всемирному наследию. Создание пещер датируется примерно с VI по IX столетия нашей эры.',
+            description:
+              'Эллора — деревня в индийском штате Махараштра, около 30 километров западнее города Аурангабад. С 1983 года система пещер и многочисленные замки причислены ЮНЕСКО к всемирному наследию. Создание пещер датируется примерно с VI по IX столетия нашей эры.',
           },
-         de:{
+          de: {
             name: 'Ajanta-Höhlen',
-            description:'Die seit dem Jahr 1983 zum UNESCO-Weltkulturerbe zählenden Ajanta-Höhlen im Bundesstaat Maharashtra gehören – neben denen von Ellora – zu den meistbesuchten Kulturstätten Indiens.',
-          }
-        }
+            description:
+              'Die seit dem Jahr 1983 zum UNESCO-Weltkulturerbe zählenden Ajanta-Höhlen im Bundesstaat Maharashtra gehören – neben denen von Ellora – zu den meistbesuchten Kulturstätten Indiens.',
+          },
+        },
       },
       {
-        img: img36,
+        img: './images/sightseen/goa_beaches-min.jpg',
         name: 'Goa',
-        description: 'On the western coast of India is Goa, a former colony of Portugal that blends Indian culture with colonial influences and plenty of international tourism. Goa is popular largely because of its spectacular beaches.',
+        description:
+          'On the western coast of India is Goa, a former colony of Portugal that blends Indian culture with colonial influences and plenty of international tourism. Goa is popular largely because of its spectacular beaches.',
         translations: {
           ru: {
             name: 'Гoa',
-            description:'Самый маленький (всего около 100 километров с севера на юг) штат страны, находится на юго-западном побережье Индии. Вместе с тем, несмотря на свою малость, это самый посещаемый российскими туристами штат.',
+            description:
+              'Самый маленький (всего около 100 километров с севера на юг) штат страны, находится на юго-западном побережье Индии. Вместе с тем, несмотря на свою малость, это самый посещаемый российскими туристами штат.',
           },
-         de:{
+          de: {
             name: 'Goa',
-            description:'Goa ist nach der ehemals gleichnamigen Stadt, heute Velha Goa, benannt. Die Region war als Teil Portugiesisch-Indiens rund 450 Jahre lang portugiesische Kolonie und weist daher eine besondere kulturelle Prägung auf. Kaum ein indischer Bundesstaat ist kulturell so nachhaltig von einer europäischen Kolonialmacht beeinflusst worden wie Goa. Dies zeigt auch der hohe katholische Bevölkerungsanteil.',
-          }
-        }
+            description:
+              'Goa ist nach der ehemals gleichnamigen Stadt, heute Velha Goa, benannt. Die Region war als Teil Portugiesisch-Indiens rund 450 Jahre lang portugiesische Kolonie und weist daher eine besondere kulturelle Prägung auf. Kaum ein indischer Bundesstaat ist kulturell so nachhaltig von einer europäischen Kolonialmacht beeinflusst worden wie Goa. Dies zeigt auch der hohe katholische Bevölkerungsanteil.',
+          },
+        },
       },
-    ]
+    ],
   },
-  {id: 'jp',
-    sights:[
+  {
+    id: 'jp',
+    sights: [
       {
-        img: img37,
+        img: './images/sightseen/hiroshima_peace_memorial-min.jpg',
         name: 'Hiroshima Peace Memorial',
-        description: 'The Hiroshima Peace Memorial is a haunting tribute to the lives lost when the atomic bomb was dropped on Hiroshima on August 6, 1945. Set in a park, the memorial features Genbaku Dome, the only building left standing in the vicinity after the bomb dropped. This harsh reminder of a world at war reminds visitors of the importance of human life and honors the victims so they will never be forgotten.',
+        description:
+          'The Hiroshima Peace Memorial is a haunting tribute to the lives lost when the atomic bomb was dropped on Hiroshima on August 6, 1945. Set in a park, the memorial features Genbaku Dome, the only building left standing in the vicinity after the bomb dropped. This harsh reminder of a world at war reminds visitors of the importance of human life and honors the victims so they will never be forgotten.',
         translations: {
           ru: {
             name: 'Мемориал мира в Хиросиме',
-            description:'Парк, расположенный на территории бывшего округа Накадзима в префектуре Хиросима, целиком уничтоженного в результате атомной бомбардировки японского города Хиросимы в 1945 году.',
+            description:
+              'Парк, расположенный на территории бывшего округа Накадзима в префектуре Хиросима, целиком уничтоженного в результате атомной бомбардировки японского города Хиросимы в 1945 году.',
           },
-          de:{
+          de: {
             name: 'Das Friedensdenkmal in Hiroshima',
-            description:'Das Friedensdenkmal in Hiroshima ist eine Gedenkstätte für den ersten kriegerischen Einsatz einer Atombombe. Es befindet sich im Friedenspark von Hiroshima.',
-          },  
-      }
+            description:
+              'Das Friedensdenkmal in Hiroshima ist eine Gedenkstätte für den ersten kriegerischen Einsatz einer Atombombe. Es befindet sich im Friedenspark von Hiroshima.',
+          },
+        },
       },
       {
-        img: img38,
+        img: './images/sightseen/kiyomizu_dera-min.jpg',
         name: 'Kiyomizu-dera',
-        description: 'The Kiyomizu-dera Buddhist temple is located in Eastern Kyoto and can be traced back as far as the year 798. An indoor waterfall fed from the outside river keeps the temple in harmony with nature and not one nail was used in construction. While locals used to jump off the edge to have a wish granted (with a survival rate of 85.4%), modern visitors can enjoy the shrines and talismans and artwork on display without risking life and limb.',
+        description:
+          'The Kiyomizu-dera Buddhist temple is located in Eastern Kyoto and can be traced back as far as the year 798. An indoor waterfall fed from the outside river keeps the temple in harmony with nature and not one nail was used in construction. While locals used to jump off the edge to have a wish granted (with a survival rate of 85.4%), modern visitors can enjoy the shrines and talismans and artwork on display without risking life and limb.',
         translations: {
           ru: {
             name: 'Киёмидзу-дэра',
-            description:'Киёмидзу-дэра — буддийский храмовый комплекс в районе Хигасияма города Киото. Полное название — Отовасан Киёмидзудэра в восточном Киото, это одна из основных достопримечательностей города Киото. Храм был основан в 778, но современные строения относятся к 1633.',
+            description:
+              'Киёмидзу-дэра — буддийский храмовый комплекс в районе Хигасияма города Киото. Полное название — Отовасан Киёмидзудэра в восточном Киото, это одна из основных достопримечательностей города Киото. Храм был основан в 778, но современные строения относятся к 1633.',
           },
-          de:{
+          de: {
             name: 'Kiyomizu-dere',
-            description:'Kiyomizu-dere bezeichnet mehrere buddhistische Tempel, aber meistens ist damit der Otowasan Kiyomizudera in Ost-Kyōto gemeint, eine der bekanntesten Sehenswürdigkeiten der Stadt. Der Tempel wurde 1994 zusammen mit anderen Stätten zum UNESCO-Weltkulturerbe Historisches Kyōto ernannt. Der Kiyomizu-dera ist der sechzehnte Tempel des Saigoku-Pilgerweges ',
-          },  
-      }
-     },
+            description:
+              'Kiyomizu-dere bezeichnet mehrere buddhistische Tempel, aber meistens ist damit der Otowasan Kiyomizudera in Ost-Kyōto gemeint, eine der bekanntesten Sehenswürdigkeiten der Stadt. Der Tempel wurde 1994 zusammen mit anderen Stätten zum UNESCO-Weltkulturerbe Historisches Kyōto ernannt. Der Kiyomizu-dera ist der sechzehnte Tempel des Saigoku-Pilgerweges ',
+          },
+        },
+      },
       {
-        img: img39,
+        img: './images/sightseen/himeji_castle-min.jpg',
         name: 'Himeji Castle',
-        description: 'The Himeji Castle is considered the best existing example of Japanese castle architecture. It was fortified to defend against enemies during the feudal period, but it has been rebuilt many times throughout the centuries and reflects the different design periods. It survived the bombings of World War II and is frequently seen in domestic and foreign films, including the James Bond movie “You Only Live Twice”. The white exterior and design give the castle the appearance of a bird taking flight, earning the the castle the nickname ‘white egret castle’.',
+        description:
+          'The Himeji Castle is considered the best existing example of Japanese castle architecture. It was fortified to defend against enemies during the feudal period, but it has been rebuilt many times throughout the centuries and reflects the different design periods. It survived the bombings of World War II and is frequently seen in domestic and foreign films, including the James Bond movie “You Only Live Twice”. The white exterior and design give the castle the appearance of a bird taking flight, earning the the castle the nickname ‘white egret castle’.',
         translations: {
           ru: {
             name: 'Замок Химэдзи',
-            description:'Замок Химэдзи — один из древнейших сохранившихся японских замков и самый популярный среди туристов. В 1993 году занесён в Список всемирного наследия ЮНЕСКО. Всего в замковый комплекс входит 83 здания, практически все они построены из дерева. У подножия замка раскинулся одноимённый город.',
+            description:
+              'Замок Химэдзи — один из древнейших сохранившихся японских замков и самый популярный среди туристов. В 1993 году занесён в Список всемирного наследия ЮНЕСКО. Всего в замковый комплекс входит 83 здания, практически все они построены из дерева. У подножия замка раскинулся одноимённый город.',
           },
-          de:{
+          de: {
             name: 'Die Burg Himeji',
-            description:'Die Burg Himeji befindet sich in der Stadt Himeji in der japanischen Präfektur Hyōgo. Sie ist eines der ältesten erhaltenen Bauwerke aus dem Japan des 17. Jahrhunderts. Die Burganlage, die aus 83 einzelnen Gebäuden besteht, gilt als schönstes Beispiel des japanischen Burgenbaus und hat den Beinamen Shirasagijō eine Anspielung auf ihre weißen Außenmauern und Dächer. Trotz ihrer architektonischen Schönheit, wie z. B. ihr spiralförmiger Grundriss, sind ihre Wehranlagen hoch entwickelt, so dass die Burg als praktisch uneinnehmbar galt.',
-          },  
-      }
-    },
+            description:
+              'Die Burg Himeji befindet sich in der Stadt Himeji in der japanischen Präfektur Hyōgo. Sie ist eines der ältesten erhaltenen Bauwerke aus dem Japan des 17. Jahrhunderts. Die Burganlage, die aus 83 einzelnen Gebäuden besteht, gilt als schönstes Beispiel des japanischen Burgenbaus und hat den Beinamen Shirasagijō eine Anspielung auf ihre weißen Außenmauern und Dächer. Trotz ihrer architektonischen Schönheit, wie z. B. ihr spiralförmiger Grundriss, sind ihre Wehranlagen hoch entwickelt, so dass die Burg als praktisch uneinnehmbar galt.',
+          },
+        },
+      },
       {
-        img: img40,
+        img: './images/sightseen/great_buddha_of_kamakura-min.jpg',
         name: 'Great Buddha of Kamakura',
-        description: 'The Great Buddha of Kamakura is a colossal outdoor representation of Amida Buddha, one of Japan’s most celebrated Buddhist figures. Cast in bronze, the Great Buddha stands at over 13 meters (40 feet) high and weighs nearly 93 tons. The statue reportedly dates from 1252. Although it originally was housed in a small wooden temple, the Great Buddha now stands in the open air as the original temple was washed away in a tsunami in the 15th century.',
+        description:
+          'The Great Buddha of Kamakura is a colossal outdoor representation of Amida Buddha, one of Japan’s most celebrated Buddhist figures. Cast in bronze, the Great Buddha stands at over 13 meters (40 feet) high and weighs nearly 93 tons. The statue reportedly dates from 1252. Although it originally was housed in a small wooden temple, the Great Buddha now stands in the open air as the original temple was washed away in a tsunami in the 15th century.',
         translations: {
           ru: {
             name: 'Котоку-ин',
-            description:'Котоку-ин — буддийский храм школы дзёдо в городе Камакура в префектуре Канагава, Япония. Храм известен своим «Большим Буддой», монументальной открытой бронзовой статуей амитабхи Будды, которая является одним из самых известных символов Японии.',
+            description:
+              'Котоку-ин — буддийский храм школы дзёдо в городе Камакура в префектуре Канагава, Япония. Храм известен своим «Большим Буддой», монументальной открытой бронзовой статуей амитабхи Будды, которая является одним из самых известных символов Японии.',
           },
-          de:{
+          de: {
             name: 'Der Kotoku-in',
-            description:'Der Kotoku-in ist ein buddhistischer Tempel in der japanischen Stadt Kamakura. Er beherbergt den Großen Buddha, eine der bedeutendsten Darstellungen des Buddha Amitabha ',
-          },  
-      }
-    },
+            description:
+              'Der Kotoku-in ist ein buddhistischer Tempel in der japanischen Stadt Kamakura. Er beherbergt den Großen Buddha, eine der bedeutendsten Darstellungen des Buddha Amitabha ',
+          },
+        },
+      },
       {
-        img: img41,
+        img: './images/sightseen/tokyo_tower-min.jpg',
         name: 'Tokyo Tower',
-        description: 'The Tokyo Tower is a testament to the advancement of technology and modern life. Inspired by the Eiffel tower design, it is the second tallest man-made structure in Japan and functions as a communications and observation tower. Visitors can climb the tower for unparalleled views of Tokyo and the surrounding areas as well as visit shops and restaurants.',
+        description:
+          'The Tokyo Tower is a testament to the advancement of technology and modern life. Inspired by the Eiffel tower design, it is the second tallest man-made structure in Japan and functions as a communications and observation tower. Visitors can climb the tower for unparalleled views of Tokyo and the surrounding areas as well as visit shops and restaurants.',
         translations: {
           ru: {
             name: 'Телевизионная башня Токио',
-            description:'Телевизионная башня Токио — теле- и радиокоммуникационная башня, расположенная в г. Минато, Токио. Высота башни — 332,6 метра. На момент постройки — самое высокое в мире сооружение из стали.',
+            description:
+              'Телевизионная башня Токио — теле- и радиокоммуникационная башня, расположенная в г. Минато, Токио. Высота башни — 332,6 метра. На момент постройки — самое высокое в мире сооружение из стали.',
           },
-          de:{
+          de: {
             name: 'Der Tokyo Tower',
-            description:'Der Tokyo Tower ist ein 1958 nach dem Vorbild des Eiffelturms in Stahlfachwerkbauweise erbauter Fernsehturm im Shiba-Park im Stadtbezirk Minato und eines der Wahrzeichen der japanischen Hauptstadt Tokio. Der Tokyo Tower dient zur Ausstrahlung von 24 Fernseh- und Radioprogrammen und verzeichnet jährlich etwa drei Millionen Besucher.',
-          },  
-      }
-    },
+            description:
+              'Der Tokyo Tower ist ein 1958 nach dem Vorbild des Eiffelturms in Stahlfachwerkbauweise erbauter Fernsehturm im Shiba-Park im Stadtbezirk Minato und eines der Wahrzeichen der japanischen Hauptstadt Tokio. Der Tokyo Tower dient zur Ausstrahlung von 24 Fernseh- und Radioprogrammen und verzeichnet jährlich etwa drei Millionen Besucher.',
+          },
+        },
+      },
       {
-        img: img42,
+        img: './images/sightseen/mount_fuji-min.jpg',
         name: 'Mount Fuji',
-        description: 'Mount Fuji is the highest mountain in Japan at 3,776 meters (12,388 ft). The volcano’s exceptionally symmetrical cone is a well-known symbol of Japan and it is frequently depicted in art and photographs, as well as a popular tourist attraction for sightseers and climbers. An estimated 200,000 people climb Mount Fuji every year, 30% of whom are foreigners. The ascent can take anywhere between three and eight hours while the descent can take from two to five hours.',
+        description:
+          'Mount Fuji is the highest mountain in Japan at 3,776 meters (12,388 ft). The volcano’s exceptionally symmetrical cone is a well-known symbol of Japan and it is frequently depicted in art and photographs, as well as a popular tourist attraction for sightseers and climbers. An estimated 200,000 people climb Mount Fuji every year, 30% of whom are foreigners. The ascent can take anywhere between three and eight hours while the descent can take from two to five hours.',
         translations: {
           ru: {
             name: 'Фудзияма',
-            description:'Фудзияма — действующий стратовулкан на японском острове Хонсю в 90 километрах к юго-западу от Токио. Высота вулкана — 3776 м. В настоящее время вулкан считается слабоактивным, последнее извержение было в 1707—1708 годах.',
+            description:
+              'Фудзияма — действующий стратовулкан на японском острове Хонсю в 90 километрах к юго-западу от Токио. Высота вулкана — 3776 м. В настоящее время вулкан считается слабоактивным, последнее извержение было в 1707—1708 годах.',
           },
-          de:{
+          de: {
             name: 'Der Fuji',
-            description:'Der Fuji ist ein Vulkan und mit 3776,24 m Höhe über dem Meeresspiegel der höchste Berg Japans. Sein Gipfel befindet sich auf der japanischen Hauptinsel Honshū an der Grenze zwischen den Präfekturen Yamanashi und Shizuoka. Seit 2013 ist er Teil des Weltkulturerbes.',
-          },  
-      }
-     },
-    ]
-  },
-  {id: 'cn',
-  sights:[
-    {
-      img: img43,
-      name: 'Great Wall of China',
-      description: 'One of the world’s greatest architectural and engineering triumphs, the Great Wall of China spans over 6,000 kilometers and is the country’s most famous sight. In total, it passes through 15 Chinese provinces. Its watchtowers, gates, and fortifications are strung from the Desert in the west to the Bohai Sea in the east.',
-      translations: {
-        ru: {
-          name: 'Великая Китайская стена',
-          description:'Великая Китайская стена — разделительная стена длиной почти 9000 км, построенная в древнем Китае. Крупнейший памятник архитектуры. В китайском языке слово, обозначающее сам проект, приобрело также образное значение «несгибаемая могущественная сила, непреодолимый барьер».',
+            description:
+              'Der Fuji ist ein Vulkan und mit 3776,24 m Höhe über dem Meeresspiegel der höchste Berg Japans. Sein Gipfel befindet sich auf der japanischen Hauptinsel Honshū an der Grenze zwischen den Präfekturen Yamanashi und Shizuoka. Seit 2013 ist er Teil des Weltkulturerbes.',
+          },
         },
-        de:{
-          name: 'Chinesischer Mauer',
-          description:'Die Anlage ist in Abschnitten zu unterschiedlichen Zeiten mit unterschiedlichen Bautechniken in der Ming-Dynastie gebaut worden. Breite, begehbare Mauern im Norden Pekings aus dem 16. Jahrhundert bilden das ikonische Bild der Chinesischen Mauer und sind zu einem Sinnbild Chinas geworden. In anderen Abschnitten, besonders im Westen, ist Befestigung oftmals aus festgeklopftem Lehm erbaut worden. Die Länge der Schutzanlage wird mit 6260 Kilometern angegeben.',
-        },  
-    }
+      },
+    ],
   },
-    {
-      img: img44,
-      name: 'Xi\'an',
-      description: 'Xi’an is roughly as old as Beijing and serves as the capital city of the Shaanxi Province in northwest China. The history of Xi’an is one of its biggest draws. It was the start of the once indispensable Silk Road that made commerce between many countries in Eurasia possible.',
-      translations: {
-        ru: {
-          name: 'Сиань',
-          description:'Сиань – крупный город в центральной части Китая и столица провинции Шэньси. Старое название города, Чанъань, в переводе значит "долгий мир". Здесь жили королевские династии Чжоу, Цинь, Хань и Тан и находился восточный конец Великого шелкового пути.',
+  {
+    id: 'cn',
+    sights: [
+      {
+        img: './images/sightseen/great_wall_of_china-min.jpg',
+        name: 'Great Wall of China',
+        description:
+          'One of the world’s greatest architectural and engineering triumphs, the Great Wall of China spans over 6,000 kilometers and is the country’s most famous sight. In total, it passes through 15 Chinese provinces. Its watchtowers, gates, and fortifications are strung from the Desert in the west to the Bohai Sea in the east.',
+        translations: {
+          ru: {
+            name: 'Великая Китайская стена',
+            description:
+              'Великая Китайская стена — разделительная стена длиной почти 9000 км, построенная в древнем Китае. Крупнейший памятник архитектуры. В китайском языке слово, обозначающее сам проект, приобрело также образное значение «несгибаемая могущественная сила, непреодолимый барьер».',
+          },
+          de: {
+            name: 'Chinesischer Mauer',
+            description:
+              'Die Anlage ist in Abschnitten zu unterschiedlichen Zeiten mit unterschiedlichen Bautechniken in der Ming-Dynastie gebaut worden. Breite, begehbare Mauern im Norden Pekings aus dem 16. Jahrhundert bilden das ikonische Bild der Chinesischen Mauer und sind zu einem Sinnbild Chinas geworden. In anderen Abschnitten, besonders im Westen, ist Befestigung oftmals aus festgeklopftem Lehm erbaut worden. Die Länge der Schutzanlage wird mit 6260 Kilometern angegeben.',
+          },
         },
-        de:{
-          name: 'Xi’an',
-          description:'Xi’an ist die Hauptstadt der chinesischen Provinz Shaanxi und eine der 15 Unterprovinzstädte Chinas. Xi’an besitzt eine nahezu vollständig erhaltene Stadtmauer und war der Ausgangspunkt der Seidenstraße. Die Stadt ist Sitz der Universität Nordwestchinas und Ausgangspunkt für Besichtigungen der Terrakotta-Armee.',
-        },  
-    }
+      },
+      {
+        img: './images/sightseen/xian-min.jpg',
+        name: "Xi'an",
+        description:
+          'Xi’an is roughly as old as Beijing and serves as the capital city of the Shaanxi Province in northwest China. The history of Xi’an is one of its biggest draws. It was the start of the once indispensable Silk Road that made commerce between many countries in Eurasia possible.',
+        translations: {
+          ru: {
+            name: 'Сиань',
+            description:
+              'Сиань – крупный город в центральной части Китая и столица провинции Шэньси. Старое название города, Чанъань, в переводе значит "долгий мир". Здесь жили королевские династии Чжоу, Цинь, Хань и Тан и находился восточный конец Великого шелкового пути.',
+          },
+          de: {
+            name: 'Xi’an',
+            description:
+              'Xi’an ist die Hauptstadt der chinesischen Provinz Shaanxi und eine der 15 Unterprovinzstädte Chinas. Xi’an besitzt eine nahezu vollständig erhaltene Stadtmauer und war der Ausgangspunkt der Seidenstraße. Die Stadt ist Sitz der Universität Nordwestchinas und Ausgangspunkt für Besichtigungen der Terrakotta-Armee.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/lhasa-min.jpg',
+        name: 'Lhasa',
+        description:
+          'Lhasa is one of the most important cities in Tibet and one of the highest elevated in the world at 3,500 meters (11,500 feet). Lhasa, in spite of its absorption into greater China, has retained much of its culture. During the 7th century, Tibet was unified under Songtsen Gampo, who built a palace on Mount Mapori. Over time, Lhasa went in and out of being the capital of Tibet, but it has always remained an important spiritual center.',
+        translations: {
+          ru: {
+            name: 'Лхаса',
+            description:
+              'Лхаса, столица Тибетского автономного района, расположена на северном берегу реки Лхасы в долине Гималаев. Возведенный на вершине Красного холма высотой 3700 метров красно-белый дворец Потала когда-то служил зимней резиденцией Далай-ламы.',
+          },
+          de: {
+            name: 'Lhasa',
+            description:
+              'Lhasa ist die Hauptstadt des Autonomen Gebiets Tibet der Volksrepublik China. Sie liegt in einem Hochgebirgstal und wurde bei einem Tempel begründet. Noch heute hat sie große religiöse Bedeutung und beherbergt viele Mönche. Eine wichtige Sehenswürdigkeit ist der Potala-Palast, der ehemalige Palast des Dalai Lama.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/yangshuo-min.jpg',
+        name: 'Yangshuo',
+        description:
+          'Yangshuo in south China was once a magnet for backpackers because of its cheap prices and laid-back atmosphere, but today it draws all sorts of travelers to enjoy its scenic beauty.',
+        translations: {
+          ru: {
+            name: 'Яншо',
+            description:
+              'Яншо, уезд и курорт в области Гуанси на юге Китая, известен своим ландшафтом с карстовыми пиками и множеством возможностей для активного отдыха на свежем воздухе. Город находится в окружении гор, среди которых выделяется пик Зеленого лотоса.',
+          },
+          de: {
+            name: 'Yangshuo',
+            description:
+              'Yangshuo ist ein Kreis der bezirksfreien Stadt Guilin im Autonomen Gebiet Guangxi der Zhuang in der Volksrepublik China. Yangshuo liegt im Karstgebiet südlich des Stadtzentrums von Guilin, etwa 65 km vom Hauptbahnhof entfernt.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/hangzhou-min.jpg',
+        name: 'Hangzhou',
+        description:
+          'Hangzhou is the capital city of the Zhejiang Province. Famed for its natural scenery, Hangzhou and its West Lake have been immortalized by countless poets and artists. In the 13th century Marco Polo described the city as the most beautiful and magnificent in the world.',
+        translations: {
+          ru: {
+            name: 'Ханчжоу',
+            description:
+              'Ханчжоу – столица китайской провинции Чжэцзян, самый южный город на судоходном Великом канале, который сооружен в древности и берет начало в Пекине. Город известен своим озером Сиху, которому с IX века поэты посвящали стихи, а художники – картины.',
+          },
+          de: {
+            name: 'Hangzhou',
+            description:
+              'Hangzhou ist die Hauptstadt der chinesischen Provinz Zhejiang, eine der 15 Unterprovinzstädte Chinas und das Zentrum der Metropolregion Hangzhou. Die eigentliche Stadtregion hat über neun Millionen Einwohner und liegt an der Mündung des Qiantang-Flusses in die Hangzhou-Bucht.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/jiuzhaigou-min.jpg',
+        name: 'Jiuzhaigou',
+        description:
+          'Jiuzhaigou Valley is a place that will appeal to travelers who enjoy the great outdoors and like their scenery pristine and uncluttered. A national park in Sichuan Province, it is home to several Tibetan villages, offering visitors a chance to see another lifestyle without having to brave the high altitudes of the Himalayan region. The region’s name means “nine Tibetan villages.”',
+        translations: {
+          ru: {
+            name: 'Национальный парк Цзючжайгоу',
+            description:
+              'Национальный парк Цзючжайгоу — заповедник на севере провинции Сычуань в центральном Китае. Известен своими многоуровневыми водопадами и цветными озёрами, объявлен ЮНЕСКО всемирным наследием в 1992 году.',
+          },
+          de: {
+            name: 'Jiuzhaigou',
+            description:
+              'Jiuzhaigou ist ein Naturschutzgebiet in der chinesischen Provinz Sichuan und seit 1992 Teil des UNESCO-Weltnaturerbes.',
+          },
+        },
+      },
+    ],
   },
-    {
-      img: img45,
-      name: 'Lhasa',
-      description: 'Lhasa is one of the most important cities in Tibet and one of the highest elevated in the world at 3,500 meters (11,500 feet). Lhasa, in spite of its absorption into greater China, has retained much of its culture. During the 7th century, Tibet was unified under Songtsen Gampo, who built a palace on Mount Mapori. Over time, Lhasa went in and out of being the capital of Tibet, but it has always remained an important spiritual center.',
-      translations: {
-        ru: {
-          name: 'Лхаса',
-          description:'Лхаса, столица Тибетского автономного района, расположена на северном берегу реки Лхасы в долине Гималаев. Возведенный на вершине Красного холма высотой 3700 метров красно-белый дворец Потала когда-то служил зимней резиденцией Далай-ламы.',
+  {
+    id: 'tr',
+    sights: [
+      {
+        img: './images/sightseen/mardin-min.jpg',
+        name: 'Mardin',
+        description:
+          'Perched on a strategic hilltop overlooking the plains of Mesopotamia in southeastern Turkey, Mardin is the capital of the Mardin Province. One of the oldest settlements in the region, Mardin is best known for its cultural diversity and Old City of sandstone buildings that cascade down the hill.',
+        translations: {
+          ru: {
+            name: 'Мардин',
+            description:
+              'Мардин — город на юго-востоке Турции, столица одноимённой провинции. Известен архитектурными строениями в арабском стиле, а также своим расположением на скалистой местности с видом на северные равнины Сирии.',
+          },
+          de: {
+            name: 'Mardin',
+            description:
+              'Mardin ist die Hauptstadt der gleichnamigen Provinz Mardin im türkischen Teil Mesopotamiens. Die uralte Stadt liegt in der türkischen Region Südostanatolien, rund 20 km nördlich der Grenze zu Syrien und nicht weit von der zum Irak.',
+          },
         },
-        de:{
-          name: 'Lhasa',
-          description:'Lhasa ist die Hauptstadt des Autonomen Gebiets Tibet der Volksrepublik China. Sie liegt in einem Hochgebirgstal und wurde bei einem Tempel begründet. Noch heute hat sie große religiöse Bedeutung und beherbergt viele Mönche. Eine wichtige Sehenswürdigkeit ist der Potala-Palast, der ehemalige Palast des Dalai Lama.',
-        },  
-    }
+      },
+      {
+        img: './images/sightseen/antalya.jpg',
+        name: 'Antalya',
+        description:
+          'Nestled along the beautiful Turkish Riviera on the Mediterranean coastline, Antalya is a large, vibrant city welcoming tourists with numerous resorts, hotels, bars and restaurants. Spectacular scenery frames the city with gorgeous beaches and lush green mountains dotted with ancient ruins. From swimming and sailing to mountain climbing, sightseeing and family fun, Antalya offers something for everyone.',
+        translations: {
+          ru: {
+            name: 'Анталья',
+            description:
+              'Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями. Он расположен на Турецкой Ривьере – участке средиземноморского побережья Турции, который привлекает туристов благодаря прозрачным голубым водам.',
+          },
+          de: {
+            name: 'Antalya',
+            description:
+              'Antalya ist eine türkische Großstadt am Mittelmeer. Sie ist Hauptort der fruchtbaren Küstenebene im Süden Kleinasiens, die seit antiker Zeit als Pamphylien bezeichnet wird.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/marmaris-min.jpg',
+        name: 'Marmaris',
+        description:
+          'One of Turkey’s most popular seaside resorts, Marmaris is a picture-perfect setting of pine-clad mountains, sandy white beaches, turquoise waters and historic architecture. Located along the Turkish Riviera in southwest Turkey, this stunning cruise port is a tourist paradise with exceptional sightseeing opportunities, water sports, fantastic dining and buzzing nightlife.',
+        translations: {
+          ru: {
+            name: 'Мармарис',
+            description:
+              'Мармарис – курортный город Турецкой Ривьеры с оживленным галечным пляжем и бульваром вдоль побережья. Город славится активной ночной жизнью на улице Баров, где под открытым небом расположено множество клубов и концертных площадок.',
+          },
+          de: {
+            name: 'Marmaris',
+            description:
+              'Marmaris ist eine Küstenstadt in der Provinz Muğla im südwestlichen Teil der Türkei. Sie hat 94.749 Einwohner und ist vom Tourismus geprägt. Marmaris ist zugleich der Name des Landkreises. Seit einer Gebietsreform ist der Landkreis flächen- und einwohnermäßig identisch mit der Kreisstadt.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/side-min.jpg',
+        name: 'Side',
+        description:
+          'A major port in ancient Pamphylia and occupied by Alexander the Great in 4th century BC, Side today is a picturesque town of classic ruins and modern day resorts overlooking sandy white beaches. Located on Turkey’s Mediterranean Coast in the Antalya Province on a small peninsula, Side offers fantastic sightseeing, nightlife and outdoor adventure.',
+        translations: {
+          ru: {
+            name: 'Сиде',
+            description:
+              'Сиде – древний курортный портовый город на юге средиземноморского побережья Турции. Он известен протяженными пляжами и греко-римскими руинами.',
+          },
+          de: {
+            name: 'Side',
+            description:
+              'Side ist ein Urlaubsort an der Türkischen Riviera im Bezirk Manavgat der türkischen Provinz Antalya. Side umfasst den modernen Ferienort und – auf einer Halbinsel gelegen – die Ruinen der antiken Stadt.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/cappadocia-min.jpg',
+        name: 'Cappadocia',
+        description:
+          'Situated in Central Anatolia of Turkey, Cappadocia is best known for its fairytale landscape of unusual formations resembling chimneys, cones, mushrooms and pinnacles. Natural processes such as ancient volcanic eruptions and erosion have all sculpted these odd formations over the ages, with some of them rising as much as 130 feet (40 meters) high. However, thousands of years ago, mankind added remarkable touches to the landscape by carving out houses, churches and underground cities from the soft rock.',
+        translations: {
+          ru: {
+            name: 'Каппадокия',
+            description:
+              'Каппадокия – полупустынный регион в центральной части Турции. Он известен своими волшебными дымоходами – высокими конусообразными скальными образованиями, которых особенно много в Пашабаге и долине Гёреме.',
+          },
+          de: {
+            name: 'Kappadokien',
+            description:
+              'Kappadokien ist eine Landschaft in Zentralanatolien in der Türkei.  Das Gebiet, das als Kappadokien bezeichnet wird, umfasst heutzutage hauptsächlich die Provinzen Nevsehir, Nigde, Aksaray, Kırsehir und Kayseri.',
+          },
+        },
+      },
+      {
+        img: './images/sightseen/ephesus-min.jpg',
+        name: 'Ephesus',
+        description:
+          'Europe’s most complete classical metropolis, Ephesus is an ancient site located in Aegean Turkey. By the 1st century BC, Ephesus was one of the largest cities in all of the Roman Empire, boasting one of the Seven Wonders of the Ancient World, the Temple of Artemis. The ruins of Ephesus are well preserved and contained within a large archaeological site, making it one of Turkey’s most popular tourist attractions.',
+        translations: {
+          ru: {
+            name: 'Эфес',
+            description:
+              'Эфес — древний город на западном побережье Малой Азии, при впадении реки Каистр, южнее Смирны и западнее города Сельчук. По одним мнениям, в I веке н. э. население города достигало 225 тысяч жителей, по другим — около 50 тысяч, и город занимал третье место по численности населения в римской провинции Азия после Сардиса и Александрии Троадской.',
+          },
+          de: {
+            name: 'Ephesos',
+            description:
+              'Ephesos, in der Landschaft Ionien gelegen, war im Altertum eine der ältesten, größten und bedeutendsten Städte Kleinasiens und beherbergte mit dem Tempel der Artemis eines der Sieben Weltwunder. ',
+          },
+        },
+      },
+    ],
   },
-    {
-      img: img46,
-      name: 'Yangshuo',
-      description: 'Yangshuo in south China was once a magnet for backpackers because of its cheap prices and laid-back atmosphere, but today it draws all sorts of travelers to enjoy its scenic beauty.',
-      translations: {
-        ru: {
-          name: 'Яншо',
-          description:'Яншо, уезд и курорт в области Гуанси на юге Китая, известен своим ландшафтом с карстовыми пиками и множеством возможностей для активного отдыха на свежем воздухе. Город находится в окружении гор, среди которых выделяется пик Зеленого лотоса.',
-        },
-        de:{
-          name: 'Yangshuo',
-          description:'Yangshuo ist ein Kreis der bezirksfreien Stadt Guilin im Autonomen Gebiet Guangxi der Zhuang in der Volksrepublik China. Yangshuo liegt im Karstgebiet südlich des Stadtzentrums von Guilin, etwa 65 km vom Hauptbahnhof entfernt.',
-        },  
-    }
+  {
+    id: 'it',
+    sights: [
+      {
+        img: './images/sightseen/italy-colosseum.jpg',
+        name: 'Колизей',
+        description:
+          'Этот огромный амфитеатр, самый большой в своем роде, когда-либо построенный Римской империей, и самая большая из сохранившихся построек, оставался образцом для спортивных сооружений вплоть до наших дней.Построенный Веспасианом в 72 году нашей эры и расширенный за счет добавления четвертого этажа его сыном Титом, Колизей был местом для публичных выступлений и представлений, даже для имитации морских сражений.Деревянный пол размером 83 на 48 метров перекрывал два дополнительных подземных этажа с туннелями, комнатами, камерами и переходами, в которых были места для гладиаторов, рабочих, диких животных и хранилища.Сегодня это строение резко контрастирует с окружающими его современными постройками и является ярким напоминанием о древних временах и обширной истории Рима.',
+      },
+      {
+        img: './images/sightseen/italy-florence-duomo-santa-maria-del-fiore.jpg',
+        name: 'Флорентийский собор Санта-Мария-дель-Фьоре',
+        description:
+          'Считающийся одним из лучших соборов в мире, Дуомо Санта-Мария-дель-Фьоре или собор Санта-Мария-дель-Фьоре возвышается над горизонтом Флоренции. Собор был построен между 13 и 15 веками, а самой известной его частью является необычный купол, построенный Филиппо Брунеллески в 1434 году. Колокольня собора стоит рядом с собором на площади Пьяцца дель Дуомо, покрытая тем же узорчатым мрамором, типичным для тосканской романской архитектуры. Колокольня, спроектированная Джотто, имеет высоту 82 метра, можно подняться по 414 ступеням на смотровую площадку с фантастическим видом на город и купол.',
+      },
+      {
+        img: './images/sightseen/italy-venice-canals.jpg',
+        name: 'Гранд-канал в Венеции',
+        description:
+          'Прогулка на гондоле по каналам Венеции - традиция, которой путешественники наслаждаются веками. Венеция - город островов, и каналы давно стали главными улицами города, соединенными лабиринтом узких проходов. Гранд-канал - самый большой и известный из этих водных путей, пересекающий широкий S-образный маршрут через город. По бокам расположены величайшие из дворцов, когда-то принадлежавшие самым богатым и влиятельным семьям Венецианской республики. Лучший способ увидеть многие из великих дворцов, фасады которых обращены к воде, - это прокатиться на вапоретто по Гранд-каналу.',
+      },
+      {
+        img: './images/sightseen/italy-leaning-tower-of-pisa.jpg',
+        name: 'Пизанская башня',
+        description:
+          'Пизанская башня — колокольная башня, часть ансамбля городского собора Санта-Мария-Ассунта (Пизанский собор) в городе Пиза, получившая всемирную известность благодаря непреднамеренному наклону. Расположенная позади собора, она является третьей старейшей постройкой на Площади чудес Пизы после самого собора и баптистерия. Наклон башни возник в ходе её строительства в 12 веке из-за мягкого грунта, который не мог должным образом выдержать вес сооружения, и в последующее время медленно увеличивался, пока не был стабилизирован (и частично скорректирован) благодаря усилиям по укреплению в 1993-2001 гг.',
+      },
+      {
+        img: './images/sightseen/italy-milan-duomo-facade.jpg',
+        name: 'Миланский собор',
+        description:
+          'Великолепный Миланский собор Санта-Мария-Насенте, называемый местными жителями «Il Duomo», является одной из крупнейших церквей в мире (вмещает до 40 000 человек) и, вероятно, лучшим образцом яркого готического стиля. Строительство собора было начато в 14 веке, но его фасад не был завершен до начала 1800-х годов при Наполеоне. Крыша увенчана 135 изящно вырезанными каменными башнями, а внешняя сторона украшена 2245 мраморными статуями. Пятьдесят две огромные колонны поддерживают высокий потолок нефа, а его стены украшают крупнейшие в мире витражи. Основные моменты в нефе - гробница Джан Джакомо Медичи и бронзовый канделябр 12-го века.',
+      },
+      {
+        img: './images/sightseen/italy-pompeii-mt-vesuvius.jpg',
+        name: 'Помпеи и Везувий',
+        description:
+          'Разрушенный город Помпеи расположен у подножия Везувия, вулкана, извержение которого в 79 г. н.э. поглотило и впоследствии покрыло город шестиметровым слоем пепла и пемзы. Но это же извержение также сохранило многие из сокровищ искусства города: фрески, мозаики и скульптуры, которые были заключены в застывшую лаву. В ходе нескольких столетий раскопок были обнаружены остатки домов, рынков, бань, храмов, театров, улиц и человеческие останки. Сейчас можно посетить это место, прогуляться по старым улицам, покрытым следами колесниц, и увидеть инженерные сооружения, использовавшиеся римлянами более 2000 лет назад.',
+      },
+    ],
   },
-    {
-      img: img47,
-      name: 'Hangzhou',
-      description: 'Hangzhou is the capital city of the Zhejiang Province. Famed for its natural scenery, Hangzhou and its West Lake have been immortalized by countless poets and artists. In the 13th century Marco Polo described the city as the most beautiful and magnificent in the world.',
-      translations: {
-        ru: {
-          name: 'Ханчжоу',
-          description:'Ханчжоу – столица китайской провинции Чжэцзян, самый южный город на судоходном Великом канале, который сооружен в древности и берет начало в Пекине. Город известен своим озером Сиху, которому с IX века поэты посвящали стихи, а художники – картины.',
-        },
-        de:{
-          name: 'Hangzhou',
-          description:'Hangzhou ist die Hauptstadt der chinesischen Provinz Zhejiang, eine der 15 Unterprovinzstädte Chinas und das Zentrum der Metropolregion Hangzhou. Die eigentliche Stadtregion hat über neun Millionen Einwohner und liegt an der Mündung des Qiantang-Flusses in die Hangzhou-Bucht.',
-        },  
-    }
-   },
-    {
-      img: img48,
-      name: 'Jiuzhaigou',
-      description: 'Jiuzhaigou Valley is a place that will appeal to travelers who enjoy the great outdoors and like their scenery pristine and uncluttered. A national park in Sichuan Province, it is home to several Tibetan villages, offering visitors a chance to see another lifestyle without having to brave the high altitudes of the Himalayan region. The region’s name means “nine Tibetan villages.”',
-      translations: {
-        ru: {
-          name: 'Национальный парк Цзючжайгоу',
-          description:'Национальный парк Цзючжайгоу — заповедник на севере провинции Сычуань в центральном Китае. Известен своими многоуровневыми водопадами и цветными озёрами, объявлен ЮНЕСКО всемирным наследием в 1992 году.',
-        },
-        de:{
-          name: 'Jiuzhaigou',
-          description:'Jiuzhaigou ist ein Naturschutzgebiet in der chinesischen Provinz Sichuan und seit 1992 Teil des UNESCO-Weltnaturerbes.',
-        },  
-    }
-  },
-  ]
-},
-{id: 'tr',
-  sights:[
-    {
-      img: img49,
-      name: 'Mardin',
-      description: 'Perched on a strategic hilltop overlooking the plains of Mesopotamia in southeastern Turkey, Mardin is the capital of the Mardin Province. One of the oldest settlements in the region, Mardin is best known for its cultural diversity and Old City of sandstone buildings that cascade down the hill.',
-      translations: {
-        ru: {
-          name: 'Мардин',
-          description:'Мардин — город на юго-востоке Турции, столица одноимённой провинции. Известен архитектурными строениями в арабском стиле, а также своим расположением на скалистой местности с видом на северные равнины Сирии.',
-        },
-        de:{
-          name: 'Mardin',
-          description:'Mardin ist die Hauptstadt der gleichnamigen Provinz Mardin im türkischen Teil Mesopotamiens. Die uralte Stadt liegt in der türkischen Region Südostanatolien, rund 20 km nördlich der Grenze zu Syrien und nicht weit von der zum Irak.',
-        },  
-    }
-  },
-    {
-      img: img50,
-      name: 'Antalya',
-      description: 'Nestled along the beautiful Turkish Riviera on the Mediterranean coastline, Antalya is a large, vibrant city welcoming tourists with numerous resorts, hotels, bars and restaurants. Spectacular scenery frames the city with gorgeous beaches and lush green mountains dotted with ancient ruins. From swimming and sailing to mountain climbing, sightseeing and family fun, Antalya offers something for everyone.',
-      translations: {
-        ru: {
-          name: 'Анталья',
-          description:'Анталья – курортный город, который славится своей Старой гаванью, где швартуются яхты, и пляжами, окруженными огромными отелями. Он расположен на Турецкой Ривьере – участке средиземноморского побережья Турции, который привлекает туристов благодаря прозрачным голубым водам.',
-        },
-        de:{
-          name: 'Antalya',
-          description:'Antalya ist eine türkische Großstadt am Mittelmeer. Sie ist Hauptort der fruchtbaren Küstenebene im Süden Kleinasiens, die seit antiker Zeit als Pamphylien bezeichnet wird.',
-        },  
-    }
-  },
-    {
-      img: img51,
-      name: 'Marmaris',
-      description: 'One of Turkey’s most popular seaside resorts, Marmaris is a picture-perfect setting of pine-clad mountains, sandy white beaches, turquoise waters and historic architecture. Located along the Turkish Riviera in southwest Turkey, this stunning cruise port is a tourist paradise with exceptional sightseeing opportunities, water sports, fantastic dining and buzzing nightlife.',
-      translations: {
-        ru: {
-          name: 'Мармарис',
-          description:'Мармарис – курортный город Турецкой Ривьеры с оживленным галечным пляжем и бульваром вдоль побережья. Город славится активной ночной жизнью на улице Баров, где под открытым небом расположено множество клубов и концертных площадок.',
-        },
-        de:{
-          name: 'Marmaris',
-          description:'Marmaris ist eine Küstenstadt in der Provinz Muğla im südwestlichen Teil der Türkei. Sie hat 94.749 Einwohner und ist vom Tourismus geprägt. Marmaris ist zugleich der Name des Landkreises. Seit einer Gebietsreform ist der Landkreis flächen- und einwohnermäßig identisch mit der Kreisstadt.',
-        },  
-    }
-  },
-    {
-      img: img52,
-      name: 'Side',
-      description: 'A major port in ancient Pamphylia and occupied by Alexander the Great in 4th century BC, Side today is a picturesque town of classic ruins and modern day resorts overlooking sandy white beaches. Located on Turkey’s Mediterranean Coast in the Antalya Province on a small peninsula, Side offers fantastic sightseeing, nightlife and outdoor adventure.',
-      translations: {
-        ru: {
-          name: 'Сиде',
-          description:'Сиде – древний курортный портовый город на юге средиземноморского побережья Турции. Он известен протяженными пляжами и греко-римскими руинами.',
-        },
-        de:{
-          name: 'Side',
-          description:'Side ist ein Urlaubsort an der Türkischen Riviera im Bezirk Manavgat der türkischen Provinz Antalya. Side umfasst den modernen Ferienort und – auf einer Halbinsel gelegen – die Ruinen der antiken Stadt.',
-        },  
-    }
-  },
-    {
-      img: img53,
-      name: 'Cappadocia',
-      description: 'Situated in Central Anatolia of Turkey, Cappadocia is best known for its fairytale landscape of unusual formations resembling chimneys, cones, mushrooms and pinnacles. Natural processes such as ancient volcanic eruptions and erosion have all sculpted these odd formations over the ages, with some of them rising as much as 130 feet (40 meters) high. However, thousands of years ago, mankind added remarkable touches to the landscape by carving out houses, churches and underground cities from the soft rock.',
-      translations: {
-        ru: {
-          name: 'Каппадокия',
-          description:'Каппадокия – полупустынный регион в центральной части Турции. Он известен своими волшебными дымоходами – высокими конусообразными скальными образованиями, которых особенно много в Пашабаге и долине Гёреме.',
-        },
-        de:{
-          name: 'Kappadokien',
-          description:'Kappadokien ist eine Landschaft in Zentralanatolien in der Türkei.  Das Gebiet, das als Kappadokien bezeichnet wird, umfasst heutzutage hauptsächlich die Provinzen Nevsehir, Nigde, Aksaray, Kırsehir und Kayseri.',
-        },  
-    }
-  },
-    {
-      img: img54,
-      name: 'Ephesus',
-      description: 'Europe’s most complete classical metropolis, Ephesus is an ancient site located in Aegean Turkey. By the 1st century BC, Ephesus was one of the largest cities in all of the Roman Empire, boasting one of the Seven Wonders of the Ancient World, the Temple of Artemis. The ruins of Ephesus are well preserved and contained within a large archaeological site, making it one of Turkey’s most popular tourist attractions.',
-      translations: {
-        ru: {
-          name: 'Эфес',
-          description:'Эфес — древний город на западном побережье Малой Азии, при впадении реки Каистр, южнее Смирны и западнее города Сельчук. По одним мнениям, в I веке н. э. население города достигало 225 тысяч жителей, по другим — около 50 тысяч, и город занимал третье место по численности населения в римской провинции Азия после Сардиса и Александрии Троадской.',
-        },
-        de:{
-          name: 'Ephesos',
-          description:'Ephesos, in der Landschaft Ionien gelegen, war im Altertum eine der ältesten, größten und bedeutendsten Städte Kleinasiens und beherbergte mit dem Tempel der Artemis eines der Sieben Weltwunder. ',
-        },  
-    }
-  },
-  ]
-},
-  ]
-export const COUNTRY_IDS = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'jp', 'cn', 'tr'];
+];
 
+export const COUNTRY_IDS = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'jp', 'cn', 'tr'];
 export const REACT_APP_WEATHER_KEY = 'c1b23d15ad387ce3fe178c7d2d465ccb';
 export const MAPBOX_ACCESS_TOKEN =
   'pk.eyJ1IjoiaTMtY29kZSIsImEiOiJja2x2MDJva3AwY2NrMnZwbHAzaGF1dzMzIn0.ZU0Tx2eZcz4pZLwQfy9vOQ';

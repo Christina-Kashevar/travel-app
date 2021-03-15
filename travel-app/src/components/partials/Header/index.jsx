@@ -3,9 +3,6 @@ import { Link } from 'react-router-dom';
 import Search from './Search';
 import UserArea from './UserArea';
 import useStyles from './styles';
-
-import { useTranslation } from 'react-i18next';
-
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
