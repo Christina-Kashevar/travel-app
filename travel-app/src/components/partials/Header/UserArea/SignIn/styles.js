@@ -2,6 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
+    position: 'relative',
     marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
