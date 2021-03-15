@@ -10,7 +10,7 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
 import { CAPITALS_COORDS } from '../../../data/geo';
 
-import { Grid, IconButton, Box, Popover, Typography} from '@material-ui/core';
+import { Grid, IconButton, Popper, Typography} from '@material-ui/core';
 
 const MapBox = ReactMapboxGl({ accessToken: MAPBOX_ACCESS_TOKEN });
 
@@ -63,29 +63,16 @@ export default function Map(props) {
         onStyleLoad={(map) => map.resize()}
       >
         <Marker coordinates={capitalCoords} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
-          <Box className={classes.markerSpan}>
-            <Popover
-              id="mouse-over-popover"
-              className={classes.popover}
-              classes={{
-                paper: classes.paper,
-              }}
-              open={open}
-              anchorEl={anchorEl}
-              anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
-              }}
-              onClose={handlePopoverClose}
-              disableRestoreFocus
-            >
-              <Typography>{capital}</Typography>
-            </Popover>
-          </Box>
+          <img src="./icons/pin.svg" alt="Capital marker" />
+          <Popper
+            placement="bottom"
+            className={classes.popover}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handlePopoverClose}
+          >
+            <Typography>{capital}</Typography>
+          </Popper>
         </Marker>
         <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
         <Layer
