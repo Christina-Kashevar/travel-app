@@ -8,12 +8,18 @@
   "PAGE_ERROR.GO": "Let's go",
   "PAGE_ERROR.HOME": "Home",
   "PAGE_ERROR.TRY": "and try from there.",
+  "SIGNUP.SIGNUP": "Sign up",
   "SIGNUP.USERNAME": "Username",
   "SIGNUP.PASSWORD": "Password",
   "SIGNUP.SUBMIT": "Sign Up",
+  "SIGNUP.HAVE_ACCOUNT": "Already have an account? Sign in",
   "SIGNUP.ADD_PHOTO": "Add photo",
   "SIGNUP.USER_EXISTS": "User with this username already exists",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Something went wrong, try later",
   "SIGNUP.AVATAR_SIZE_ERROR": "Size should be less than 2MB",
-  "SIGNUP.TITLE": "Sign Up"
+  "SIGNIN.SIGNIN": "Sign in",
+  "SIGNIN.REMEMBER_ME": "Remember me",
+  "SIGNIN.SUBMIT": "Sign in",
+  "SIGNIN.FORGOT_PASSWORD": "Forgot password?",
+  "SIGNIN.NO_ACCOUNT": "Don't have an account? Sign Up"
 }

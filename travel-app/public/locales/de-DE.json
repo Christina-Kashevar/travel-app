@@ -8,12 +8,18 @@
   "PAGE_ERROR.GO": "Lass uns gehen",
   "PAGE_ERROR.HOME": "Zuhause",
   "PAGE_ERROR.TRY": "und versuchen Sie es von dort.",
+  "SIGNUP.SIGNUP": "Anmelden",
   "SIGNUP.USERNAME": "Nutzername",
   "SIGNUP.PASSWORD": "Passwort",
   "SIGNUP.SUBMIT": "Anmeldung",
+  "SIGNUP.HAVE_ACCOUNT": "Sie haben bereits ein Konto? Einloggen",
   "SIGNUP.ADD_PHOTO": "Foto hinzufügen",
   "SIGNUP.USER_EXISTS": "Benutzer mit dieser Benutzerkennung existiert bereits",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Etwas ist schief gelaufen, versuchen Sie es später",
   "SIGNUP.AVATAR_SIZE_ERROR": "Die Größe sollte weniger als 2 MB betragen",
-  "SIGNUP.TITLE": "Anmelden"
+  "SIGNIN.SIGNIN": "Einloggen",
+  "SIGNIN.REMEMBER_ME": "Mich erinnern",
+  "SIGNIN.SUBMIT": "Anmeldung",
+  "SIGNIN.FORGOT_PASSWORD": "Passwort vergessen?",
+  "SIGNIN.NO_ACCOUNT": "Sie haben noch keinen Account? Anmeldung"
 }

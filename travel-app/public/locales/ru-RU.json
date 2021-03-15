@@ -8,12 +8,18 @@
   "PAGE_ERROR.GO": "Перейдите на",
   "PAGE_ERROR.HOME": "Главную страницу ",
   "PAGE_ERROR.TRY": "и попробуйте поискать там.",
+  "SIGNUP.SIGNUP": "Регистрация",
   "SIGNUP.USERNAME": "Имя пользователя",
   "SIGNUP.PASSWORD": "Пароль",
   "SIGNUP.SUBMIT": "Зарегистрироваться",
+  "SIGNUP.HAVE_ACCOUNT": "Уже есть аккаунт? Войти",
   "SIGNUP.ADD_PHOTO": "Добавить фото",
   "SIGNUP.USER_EXISTS": "Такой пользователь уже существует",
   "SIGNUP.SOMETHIG_WENT_WRONG": "Что-то пошло не так, попробуте позже",
   "SIGNUP.AVATAR_SIZE_ERROR": "Максимальный размер: 2МБ",
-  "SIGNUP.TITLE": "Зарегистрироваться"
+  "SIGNIN.SIGNIN": "Вход",
+  "SIGNIN.REMEMBER_ME": "Запомнить меня",
+  "SIGNIN.SUBMIT": "Войти",
+  "SIGNIN.FORGOT_PASSWORD": "Забыли пароль?",
+  "SIGNIN.NO_ACCOUNT": "Нет аккаунта? Регистрируйтесь"
 }
