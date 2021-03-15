@@ -4,8 +4,7 @@ export class AuthService {
   static signUp = async (userData) => {
     try {
       const result = await axios.post('https://travel-app-rs.herokuapp.com/signup', userData);
-      AuthService.signIn({ username: userData.username, password: userData.password });
-      return result;
+      return AuthService.signIn({ username: userData.username, password: userData.password });
     } catch (err) {
       return err;
     }
@@ -15,7 +14,7 @@ export class AuthService {
     try {
       const result = await axios.post('https://travel-app-rs.herokuapp.com/users/login', userData);
       localStorage.setItem('token', result.data.token);
-      AuthService.whoAmI();
+      return AuthService.whoAmI();
     } catch (err) {
       return err;
     }
@@ -35,4 +34,12 @@ export class AuthService {
       return err;
     }
   };
+
+  static logout = () => {
+    localStorage.setItem('token', null);
+  };
+
+  static setRememberMe =  value => {
+    localStorage.setItem('rememberMe', value);
+  };  
 }

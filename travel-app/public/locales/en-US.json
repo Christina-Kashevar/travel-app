@@ -21,5 +21,6 @@
   "SIGNIN.REMEMBER_ME": "Remember me",
   "SIGNIN.SUBMIT": "Sign in",
   "SIGNIN.FORGOT_PASSWORD": "Forgot password?",
-  "SIGNIN.NO_ACCOUNT": "Don't have an account? Sign Up"
+  "SIGNIN.NO_ACCOUNT": "Don't have an account? Sign Up",
+  "USER_PANEL.LOGOUT": "Log Out"
 }

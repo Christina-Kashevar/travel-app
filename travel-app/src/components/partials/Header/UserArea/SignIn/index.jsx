@@ -17,8 +17,7 @@ import { useTranslation } from 'react-i18next';
 
 import useStyles from './styles';
 
-export default function SignIn(props) {
-  const { callBack } = props;
+export default function SignIn({ callBack, onClose, onSignIn }) {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -33,9 +32,15 @@ export default function SignIn(props) {
   const handleSubmit = async () => {
     setIsPending(true);
     const result = await AuthService.signIn(credentials);
+    onSignIn(result.data)
     setIsPending(false);
+    onClose();
   };
-  
+
+  const handleRememberMe = e => {
+    AuthService.setRememberMe(e.target.checked)
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <div className={classes.paper}>
@@ -66,7 +71,7 @@ export default function SignIn(props) {
             label={t('SIGNUP.PASSWORD')}
             type="password"
           />
-          <FormControlLabel control={<Checkbox value="remember" color="primary" />} label={t('SIGNIN.REMEMBER_ME')} />
+          <FormControlLabel onClick={handleRememberMe} control={<Checkbox value="remember" color="primary" />} label={t('SIGNIN.REMEMBER_ME')} />
           <Button
             fullWidth
             variant="contained"
@@ -76,12 +81,7 @@ export default function SignIn(props) {
           >
             {t('SIGNIN.SUBMIT')}
           </Button>
-          <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                {t('SIGNIN.FORGOT_PASSWORD')}
-              </Link>
-            </Grid>
+          <Grid container justify="center">
             <Grid item>
               <Link variant="body2" className={classes.interactive} onClick={callBack('signUp')}>
                 {t('SIGNIN.NO_ACCOUNT')}
