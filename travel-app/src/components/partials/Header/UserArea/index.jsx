@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Button, Drawer, Grid, IconButton, Typography } from '@material-ui/core';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
@@ -23,6 +23,17 @@ export default function UserArea() {
   const [user, setUser] = useContext(UserContext);
   const handleSetType = (newType) => (event) => setType(newType);
   const toggleDrawer = (open) => (event) => setIsDrawerOpened(open);
+
+  
+  useEffect(() => {
+    const checkAuthorization = async () => {
+      const userData = await AuthService.checkAuthorization();
+      if (userData && !(userData instanceof Error)) {
+        setUser(userData.data);
+      }
+    };
+    checkAuthorization();
+  }, []);
 
   const handleLogout = () => {
     AuthService.logout();

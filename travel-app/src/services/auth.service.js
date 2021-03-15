@@ -1,9 +1,19 @@
 import axios from 'axios';
 
 export class AuthService {
+  static checkAuthorization = () => {
+    try {
+      if(localStorage.getItem('token') && localStorage.getItem('rememberMe')) {
+        return AuthService.whoAmI();
+      }
+    } catch (err) {
+      return err;
+    }
+  };
+
   static signUp = async (userData) => {
     try {
-      const result = await axios.post('https://travel-app-rs.herokuapp.com/signup', userData);
+      await axios.post('https://travel-app-rs.herokuapp.com/signup', userData);
       return AuthService.signIn({ username: userData.username, password: userData.password });
     } catch (err) {
       return err;
@@ -36,10 +46,14 @@ export class AuthService {
   };
 
   static logout = () => {
-    localStorage.setItem('token', null);
+    localStorage.removeItem('token');
   };
 
   static setRememberMe =  value => {
-    localStorage.setItem('rememberMe', value);
+    if(value) {
+      localStorage.setItem('rememberMe', value);
+    } else {
+      localStorage.removeItem('rememberMe');
+    }
   };  
 }
