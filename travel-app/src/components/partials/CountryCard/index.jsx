@@ -10,20 +10,20 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import { getCountryById } from '../../../engine';
+import { getCountryByCode } from '../../../engine';
 
 export default function CountryCard(props) {
   const history = useHistory();
-  const { id } = props;
+  const { code } = props;
   const { t, i18n } = useTranslation();
   const { language } = i18n;
-  const country = getCountryById(id, language);
+  const country = getCountryByCode(code, language);
   const classes = useStyles();
 
   const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
 
   function handleClick() {
-    history.push(`/country/${country.id}`);
+    history.push(`/country/${country.code}`);
   }
 
   return (

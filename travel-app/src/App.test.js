@@ -2,7 +2,7 @@ import { render } from '@testing-library/react';
 import App from './App';
 import Footer from './App';
 import RatingBlock from './components/partials/Rating';
-import { getCountryById } from './engine';
+import { getCountryByCode } from './engine';
 import { AuthService } from './services/auth.service';
 
 test('render RatingBlock', () => {
@@ -28,7 +28,7 @@ test('Footer exists', () => {
 });
 
 test('Country name exist', () => {
-  const country = getCountryById('tr', 'ru');
+  const country = getCountryByCode('tr', 'ru');
   expect(country).toHaveProperty('name');
 });
 

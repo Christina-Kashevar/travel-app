@@ -28,11 +28,11 @@ export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const { id, capital } = props;
+  const { code, capital } = props;
   const classes = useStyles();
 
-  const filter = ['==', 'iso_3166_1', id.toUpperCase()];
-  const capitalCoords = CAPITALS_COORDS[id];
+  const filter = ['==', 'iso_3166_1', code.toUpperCase()];
+  const capitalCoords = CAPITALS_COORDS[code];
 
   const open = Boolean(anchorEl);
   const handlePopoverOpen = (event) => setAnchorEl(event.currentTarget);

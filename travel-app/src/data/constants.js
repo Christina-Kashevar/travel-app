@@ -1,6 +1,6 @@
 export const COUNTRY_DATA = [
   {
-    id: 'fr',
+    code: 'fr',
     name: 'France',
     capital: 'Paris',
     timeZone: 'Europe/Paris',
@@ -47,7 +47,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'it',
+    code: 'it',
     name: 'Italy',
     capital: 'Rome',
     timeZone: 'Europe/Rome',
@@ -96,7 +96,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'ru',
+    code: 'ru',
     name: 'Russia',
     capital: 'Moscow',
     timeZone: 'Europe/Moscow',
@@ -144,7 +144,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'mx',
+    code: 'mx',
     name: 'Mexico',
     capital: 'Mexico',
     timeZone: 'America/Mexico_City',
@@ -187,7 +187,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'gr',
+    code: 'gr',
     name: 'Greece',
     capital: 'Athens',
     timeZone: 'Europe/Athens',
@@ -236,7 +236,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'in',
+    code: 'in',
     name: 'India',
     capital: 'New Delhi',
     timeZone: 'Asia/Kolkata',
@@ -281,7 +281,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'jp',
+    code: 'jp',
     name: 'Japan',
     capital: 'Tokyo',
     timeZone: 'Asia/Tokyo',
@@ -330,7 +330,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'cn',
+    code: 'cn',
     name: 'China',
     capital: 'Beijing',
     timeZone: 'Asia/Shanghai',
@@ -375,7 +375,7 @@ export const COUNTRY_DATA = [
     },
   },
   {
-    id: 'tr',
+    code: 'tr',
     name: 'Turkey',
     capital: 'Istanbul',
     timeZone: 'Europe/Istanbul',
@@ -422,7 +422,7 @@ export const COUNTRY_DATA = [
 
 export const SIGHTS_DATA = [
   {
-    id: 'gr',
+    code: 'gr',
     sights: [
       {
         img: './images/sightseen/mount_athos-min.jpg',
@@ -535,7 +535,7 @@ export const SIGHTS_DATA = [
     ],
   },
   {
-    id: 'in',
+    code: 'in',
     sights: [
       {
         img: './images/sightseen/rajasthan-min.jpg',
@@ -648,7 +648,7 @@ export const SIGHTS_DATA = [
     ],
   },
   {
-    id: 'jp',
+    code: 'jp',
     sights: [
       {
         img: './images/sightseen/hiroshima_peace_memorial-min.jpg',
@@ -761,7 +761,7 @@ export const SIGHTS_DATA = [
     ],
   },
   {
-    id: 'cn',
+    code: 'cn',
     sights: [
       {
         img: './images/sightseen/great_wall_of_china-min.jpg',
@@ -874,7 +874,7 @@ export const SIGHTS_DATA = [
     ],
   },
   {
-    id: 'tr',
+    code: 'tr',
     sights: [
       {
         img: './images/sightseen/mardin-min.jpg',
@@ -987,7 +987,7 @@ export const SIGHTS_DATA = [
     ],
   },
   {
-    id: 'it',
+    code: 'it',
     sights: [
       {
         img: './images/sightseen/italy-colosseum.jpg',
@@ -1029,7 +1029,7 @@ export const SIGHTS_DATA = [
   },
 ];
 
-export const COUNTRY_IDS = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'jp', 'cn', 'tr'];
+export const COUNTRY_CODES = ['fr', 'it', 'ru', 'mx', 'gr', 'in', 'jp', 'cn', 'tr'];
 export const REACT_APP_WEATHER_KEY = 'c1b23d15ad387ce3fe178c7d2d465ccb';
 export const MAPBOX_ACCESS_TOKEN =
   'pk.eyJ1IjoiaTMtY29kZSIsImEiOiJja2x2MDJva3AwY2NrMnZwbHAzaGF1dzMzIn0.ZU0Tx2eZcz4pZLwQfy9vOQ';
