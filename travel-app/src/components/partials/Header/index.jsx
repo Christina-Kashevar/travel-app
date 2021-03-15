@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Search from './Search';
-import LoginWindow from './Modal';
+import UserArea from './UserArea';
 import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
@@ -10,21 +10,25 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import PublicIcon from '@material-ui/icons/Public';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import { ReactComponent as Logo } from "../../../assets/icons/travel.svg";
+
 import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
   const { pageName, homePage, onSearch } = props;
   const [value, setValue] = useState('');
   const classes = useStyles();
-  const { t } = useTranslation();
+
   return (
     <div>
-      <AppBar position="static">
+      <AppBar>
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="open drawer">
+          <IconButton color="inherit" aria-label="start page">
             <Link to="/">
-              <PublicIcon style={{ color: '#FFF' }}/>
+            <SvgIcon fontSize="large">
+              <Logo />
+            </SvgIcon>
             </Link>
           </IconButton>
           <Typography className={classes.title} variant="h6" noWrap>
@@ -32,8 +36,7 @@ export default function Header(props) {
           </Typography>
           {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
           <LanguageSwitcher />
-          <LoginWindow/>
-          <Link className={classes.signupLink} to="signup">{t('SIGNUP.TITLE')}</Link>
+          <UserArea />
         </Toolbar>
       </AppBar>
     </div>

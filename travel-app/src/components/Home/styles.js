@@ -2,10 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    margin: `${theme.spacing(1)}px auto`,
-    width: '100vw',
-    height: `calc(100vh - ${theme.spacing(18)}px)`,
-    overflow: 'auto'
+    marginTop: theme.spacing(8),
+    height: `calc(100vh - ${theme.spacing(16)}px)`,
+    overflow: 'auto',
   },
 }));
 
