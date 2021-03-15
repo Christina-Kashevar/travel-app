@@ -60,7 +60,7 @@ export default function Country() {
                 </Player>
               </Grid>
               <Grid>
-                <Slider />
+                <Slider id={id} />
               </Grid>
               <Grid>
                 <Map id={id} capital={capitalName} />
