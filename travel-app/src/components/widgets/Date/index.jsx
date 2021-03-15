@@ -1,18 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
-import { getCountryById } from '../../../engine';
+import { getCountryByCode } from '../../../engine';
 
 import { Typography, Card, CardContent } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
 
-export default function DateWidget({id}) {
+export default function DateWidget({code}) {
   const [dayOfWeek, setDayOfWeek] = useState(null);
   const [dayAndMonth, setDayAndMonth] = useState(null);
   const [time, setTime] = useState(null);
 
   const classes = useStyles();
-  const country = getCountryById(id);
+  const country = getCountryByCode(code);
 
   const { i18n } = useTranslation();
 

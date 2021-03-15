@@ -17,13 +17,13 @@ import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
 import Weather from '../widgets/Weather';
 
-import { getCountryById } from '../../engine';
+import { getCountryByCode } from '../../engine';
 
 export default function Country() {
-  const { id } = useParams();
+  const { code } = useParams();
   const { t, i18n } = useTranslation();
   const { language } = i18n;
-  const country = getCountryById(id, language);
+  const country = getCountryByCode(code, language);
   const error = Object.keys(country).length === 0;
   const classes = useStyles();
 
@@ -60,16 +60,16 @@ export default function Country() {
                 </Player>
               </Grid>
               <Grid>
-                <Slider id={id} />
+                <Slider code={code} />
               </Grid>
               <Grid>
-                <Map id={id} capital={capitalName} />
+                <Map code={code} capital={capitalName} />
               </Grid>
             </Container>
           </Grid>
           <Grid item xs={3}>
             <Weather capital={capitalName} lang={language.slice(0, 2)} />
-            <DateWidget id={id} />
+            <DateWidget code={code} />
             <Currency currencyCode={country.currency} lang={language} />
           </Grid>
         </Grid>

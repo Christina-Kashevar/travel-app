@@ -15,10 +15,10 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { Grid, IconButton } from '@material-ui/core';
 
-import { getSightsById } from '../../../engine';
+import { getSightsByCode } from '../../../engine';
 
 export default function SliderComponent(props) {
-  const { id } = props;
+  const { code } = props;
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [openRating, setOpenRating] = useState(false);
@@ -26,7 +26,7 @@ export default function SliderComponent(props) {
   const [fsState, setFsState] = useState(handleFs.active);
   const { i18n } = useTranslation();
   const { language } = i18n;
-  const info = getSightsById(id, language);
+  const info = getSightsByCode(code, language);
 
   const classes = useStyles();
   let slider1;

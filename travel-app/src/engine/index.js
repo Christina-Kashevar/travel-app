@@ -1,7 +1,7 @@
 import { COUNTRY_DATA, SIGHTS_DATA } from '../data/constants';
 
-export function getCountryById(countryId, langId) {
-  const result = COUNTRY_DATA.filter((item) => item.id === countryId)[0] || {};
+export function getCountryByCode(countryCode, langId) {
+  const result = COUNTRY_DATA.filter((item) => item.code === countryCode)[0] || {};
   if (langId && langId !== 'en-US') {
     const lang = langId.slice(0, 2);
     const dataPatch = result.translations ? result.translations[lang] : {};
@@ -10,8 +10,8 @@ export function getCountryById(countryId, langId) {
   return result;
 }
 
-export function getSightsById(countryId, langId) {
-  const country = SIGHTS_DATA.filter((item) => item.id === countryId)[0] || {};
+export function getSightsByCode(countryCode, langId) {
+  const country = SIGHTS_DATA.filter((item) => item.code === countryCode)[0] || {};
   const result = country.sights || [];
   if (langId && langId !== 'en-US') {
     const lang = langId.slice(0, 2);

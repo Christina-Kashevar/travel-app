@@ -23,7 +23,7 @@ export default function App() {
               <SignUp />
             </Route>
             <Route path="/country">
-              <Route path="/country/:id" render={(props) => <Country {...props} />} />
+              <Route path="/country/:code" render={(props) => <Country {...props} />} />
             </Route>
             <Route path="*">
               <ErrorPage />

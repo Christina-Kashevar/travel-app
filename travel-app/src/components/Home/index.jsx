@@ -6,11 +6,11 @@ import Header from '../partials/Header';
 import Footer from '../partials/Footer';
 import CountryCard from '../partials/CountryCard';
 
-import { COUNTRY_IDS } from '../../data/constants';
+import { COUNTRY_CODES } from '../../data/constants';
 import { useTranslation } from 'react-i18next';
 
 export default function Country() {
-  const [countriesId, setCountriesId] = useState(COUNTRY_IDS);
+  const [countryCodes, setCountryCodes] = useState(COUNTRY_CODES);
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -23,14 +23,14 @@ export default function Country() {
     >
       <Header
         pageName={t('PAGE_NAME.TRAVEL_APP')}
-        onSearch={setCountriesId}
+        onSearch={setCountryCodes}
         homePage={true}
       />
       <Grid className={classes.root}>
         <Container>
           <Grid container direction="row" justify="space-evenly" alignItems="center">
-            {countriesId.map((id) => (
-              <CountryCard id={id} key={id} />
+            {countryCodes.map((code) => (
+              <CountryCard code={code} key={code} />
             ))}
           </Grid>
         </Container>
