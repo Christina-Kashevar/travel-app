@@ -16,11 +16,12 @@ import {
   Country,
   Sight,
 } from '../models';
-import {CountryRepository} from '../repositories';
+import {CountryRepository, SightRepository} from '../repositories';
 
 export class CountrySightController {
   constructor(
     @repository(CountryRepository) protected countryRepository: CountryRepository,
+    @repository(SightRepository) protected sightRepository: SightRepository,
   ) { }
 
   @get('/countries/{id}/sights', {
@@ -66,7 +67,7 @@ export class CountrySightController {
     return this.countryRepository.sights(id).create(sight);
   }
 
-  @patch('/countries/{id}/sights', {
+  @patch('/countries/sights/{sightId}', {
     responses: {
       '200': {
         description: 'Country.Sight PATCH success count',
@@ -75,7 +76,7 @@ export class CountrySightController {
     },
   })
   async patch(
-    @param.path.string('id') id: string,
+    @param.path.string('sightId') sightId: string,
     @requestBody({
       content: {
         'application/json': {
@@ -84,8 +85,8 @@ export class CountrySightController {
       },
     })
     sight: Partial<Sight>,
-  ): Promise<Count> {
-    return this.countryRepository.sights(id).patch(sight);
+  ): Promise<void> {
+    return this.sightRepository.updateById(sightId, sight);
   }
 
   @del('/countries/{id}/sights', {

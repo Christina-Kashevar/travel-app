@@ -63,7 +63,7 @@ export class CountryController {
     return this.countryRepository.find();
   }
   
-  @get('/countries/{id}')
+  @get('/countries/{code}')
   @response(200, {
     description: 'Country model instance',
     content: {
@@ -73,9 +73,9 @@ export class CountryController {
     },
   })
   async findById(
-    @param.path.string('id') id: string,
-  ): Promise<Country> {
-    return this.countryRepository.findById(id, { include: [{ relation: "sights" }] });
+    @param.path.string('code') code: string,
+  ): Promise<Country | null> {
+    return this.countryRepository.findOne({ where: {code}, include: [{ relation: "sights" }] });
   }
 
   @patch('/countries/{id}')
