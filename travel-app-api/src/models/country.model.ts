@@ -53,6 +53,11 @@ export class Country extends Entity {
   currency: string;
 
   @property({
+    type: 'string',
+  })
+  code?: string;
+
+  @property({
     type: 'array',
     itemType: 'string',
     required: true,
