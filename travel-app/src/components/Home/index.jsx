@@ -26,7 +26,6 @@ export default function Country() {
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchValue, setSearchValue] = useState('');
   const {
-    t,
     i18n: { language },
   } = useTranslation();
   const classes = useStyles();
@@ -69,7 +68,7 @@ export default function Country() {
 
   return (
     <Grid container direction="column" justify="space-between" alignItems="stretch">
-      <Header pageName={t('PAGE_NAME.TRAVEL_APP')} onSearch={setSearchValue} homePage={true} />
+      <Header onSearch={setSearchValue} homePage={true} />
       <Grid className={classes.root}>
         {isPending && <Loading />}
         <Container>

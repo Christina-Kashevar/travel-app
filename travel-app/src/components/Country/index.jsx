@@ -82,12 +82,17 @@ export default function Country() {
   }, [code, language]);
 
   if (error) return <ErrorPage />;
-  if (loading) return <Loading />;
+  if (loading) return (
+    <Grid>
+      <Header />
+      <Loading />
+    </Grid>
+  );
 
   const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
     return (
       <Grid>
-        <Header pageName={country.name} />
+        <Header />
         <Container>
           <Grid container spacing={1} className={classes.root}>
             <Grid item xs={9}>

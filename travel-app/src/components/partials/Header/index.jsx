@@ -9,13 +9,17 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import { ReactComponent as Logo } from "../../../assets/icons/travel.svg";
+import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
-  const { pageName, homePage, onSearch } = props;
+  const { homePage, onSearch } = props;
   const [value, setValue] = useState('');
+  const { t } = useTranslation();
   const classes = useStyles();
+
+  const pageName = t('PAGE_NAME.TRAVEL_APP');
 
   return (
     <div>
