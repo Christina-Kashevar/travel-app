@@ -19,7 +19,8 @@ import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
 import Weather from '../widgets/Weather';
 
-const countryCache = {};
+const [countryCache, sightsCache] = [{}, {}];
+
 function getCountryInfo(data, language) {
   const key = data.code || 'key';
   if (!countryCache[key]) countryCache[key] = data;
@@ -27,6 +28,19 @@ function getCountryInfo(data, language) {
   if (language !== 'en-US') {
     const dataPatch = result.translations ? result.translations[language.slice(0, 2)] : {};
     result = { ...result, ...dataPatch };
+  }
+  return result;
+}
+
+function getSightsInfo(key, data, language) {
+  if (!sightsCache[key]) sightsCache[key] = data || [];
+  let result = sightsCache[key];
+  if (language && language !== 'en-US') {
+    const lang = language.slice(0, 2);
+    result = result.map((sight) => {
+      const dataPatch = sight.translations ? sight.translations[lang] : {};
+      return { ...sight, ...dataPatch };
+    });
   }
   return result;
 }
@@ -41,25 +55,29 @@ export default function Country() {
   const error = (country === null || !code);
   const classes = useStyles();
 
-  const loadInfo = (info) => {
-    setCountry(info);
+  const loadInfo = (CountryInfo, sightsInfo) => {
+    setCountry(CountryInfo);
+    setSights(sightsInfo);
     setLoading(false);
   }
+
   useEffect(() => {
     if (!countryCache[code]) {
       axios
       .get(`https://travel-app-rs.herokuapp.com/countries/${code}`)
       .then((response) => {
         let result = response.data || {};
-        const info = getCountryInfo(result, language);
-        loadInfo(info);
+        const CountryInfo = getCountryInfo(result, language);
+        const sightsInfo = getSightsInfo(code, CountryInfo.sights, language);
+        loadInfo(CountryInfo, sightsInfo);
       })
       .catch((error) => {
         console.log(error);
       });
     } else {
-      const info = getCountryInfo({ code }, language)
-      loadInfo(info);
+      const CountryInfo = getCountryInfo({ code }, language);
+      const sightsInfo = getSightsInfo(code, CountryInfo.sights, language);
+      loadInfo(CountryInfo, sightsInfo);
     }
   }, [code, language]);
 
@@ -96,7 +114,7 @@ export default function Country() {
                   </Player>
                 </Grid>
                 <Grid>
-                  <Slider code={code} />
+                  <Slider sights={sights} />
                 </Grid>
                 <Grid>
                   <Map code={code} capital={capitalName} capitalCoords={country.capitalCoordinates}/>
