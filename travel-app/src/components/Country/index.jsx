@@ -25,16 +25,19 @@ export default function Country() {
   const { language } = i18n;
   const [country, setCountry] = useState({});
   const [loading, setLoading] = useState(true);
-  const error = (country === null);
+  const error = (country === null || !code);
   const classes = useStyles();
 
   useEffect(() => {
     axios
-      .get(
-        `https://travel-app-rs.herokuapp.com/countries/${code}`
-      )
+      .get(`https://travel-app-rs.herokuapp.com/countries/${code}`)
       .then((response) => {
-        setCountry(response.data);
+        let result = response.data || {};
+        if (language !== 'en-US') {
+          const dataPatch = result.translations ? result.translations[language.slice(0, 2)] : {};
+          result = { ...result, ...dataPatch };
+        }
+        setCountry(result);
         setLoading(false);
       })
       .catch((error) => {
