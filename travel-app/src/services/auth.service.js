@@ -1,9 +1,10 @@
 import axios from 'axios';
+import urls from '../contants/urls';
 
 export class AuthService {
   static checkAuthorization = () => {
     try {
-      if(localStorage.getItem('token') && localStorage.getItem('rememberMe')) {
+      if (localStorage.getItem('token') && localStorage.getItem('rememberMe')) {
         return AuthService.whoAmI();
       }
     } catch (err) {
@@ -13,7 +14,7 @@ export class AuthService {
 
   static signUp = async (userData) => {
     try {
-      await axios.post('https://travel-app-rs.herokuapp.com/signup', userData);
+      await axios.post(urls.auth.signup, userData);
       return AuthService.signIn({ username: userData.username, password: userData.password });
     } catch (err) {
       return err;
@@ -22,7 +23,7 @@ export class AuthService {
 
   static signIn = async (userData) => {
     try {
-      const result = await axios.post('https://travel-app-rs.herokuapp.com/users/login', userData);
+      const result = await axios.post(urls.auth.login, userData);
       localStorage.setItem('token', result.data.token);
       return AuthService.whoAmI();
     } catch (err) {
@@ -33,12 +34,9 @@ export class AuthService {
   static whoAmI = async () => {
     try {
       const token = localStorage.getItem('token');
-      const result = await axios.get(
-        'https://travel-app-rs.herokuapp.com/whoAmI',
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        },
-      );
+      const result = await axios.get(urls.auth.whoAmI, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
       return result;
     } catch (err) {
       return err;
@@ -49,11 +47,11 @@ export class AuthService {
     localStorage.removeItem('token');
   };
 
-  static setRememberMe =  value => {
-    if(value) {
+  static setRememberMe = (value) => {
+    if (value) {
       localStorage.setItem('rememberMe', value);
     } else {
       localStorage.removeItem('rememberMe');
     }
-  };  
+  };
 }

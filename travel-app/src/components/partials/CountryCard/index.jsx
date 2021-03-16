@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import useStyles from './styles';
@@ -10,15 +10,24 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import { getCountryByCode } from '../../../engine';
+import { LANGUAGES, DEFAULT_DB_LANG } from '../../../contants/languages';
 
-export default function CountryCard(props) {
+const getTranslatedCountry = (countryData, language) => {
+  const shortLang = LANGUAGES.find(lang => lang.type === language).short;
+  return shortLang === DEFAULT_DB_LANG ? countryData : {...countryData, ...countryData.translations[shortLang]};
+}
+
+export default function CountryCard({ countryData }) {
   const history = useHistory();
-  const { code } = props;
   const { t, i18n } = useTranslation();
   const { language } = i18n;
-  const country = getCountryByCode(code, language);
   const classes = useStyles();
+  const [country, setCountry] = useState(getTranslatedCountry(countryData, language));
+
+
+  useEffect(() => {
+    setCountry(getTranslatedCountry(countryData, language))
+  }, [language, countryData])
 
   const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
 
@@ -32,7 +41,7 @@ export default function CountryCard(props) {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={country.img}
+            image={country.linkToPhoto}
             title="Contemplative Reptile"
           />
           <CardContent>
