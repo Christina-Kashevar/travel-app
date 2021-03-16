@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import useStyles from './styles';
-import { getCountryByCode } from '../../../engine';
-
 import { Typography, Card, CardContent } from '@material-ui/core';
 import { useTranslation } from 'react-i18next';
 
-
-export default function DateWidget({code}) {
+export default function DateWidget({timeZone}) {
   const [dayOfWeek, setDayOfWeek] = useState(null);
   const [dayAndMonth, setDayAndMonth] = useState(null);
   const [time, setTime] = useState(null);
 
   const classes = useStyles();
-  const country = getCountryByCode(code);
 
   const { i18n } = useTranslation();
 
@@ -27,7 +23,7 @@ export default function DateWidget({code}) {
       hour: 'numeric',
       minute:'numeric',
       second:'numeric',
-      timeZone: country.timeZone
+      timeZone,
     };
 
     const oneSecInterval = setInterval(() => {
@@ -38,7 +34,7 @@ export default function DateWidget({code}) {
     }, 1000);
 
     return () => clearInterval(oneSecInterval);
-  }, [localLang, country.timeZone]);
+  }, [localLang, timeZone]);
 
   let infoToRender = (<p className={classes.root}>Loading....</p>);
 
