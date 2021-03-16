@@ -24,7 +24,7 @@ export default function UserArea() {
   const handleSetType = (newType) => (event) => setType(newType);
   const toggleDrawer = (open) => (event) => setIsDrawerOpened(open);
 
-  
+
   useEffect(() => {
     const checkAuthorization = async () => {
       const userData = await AuthService.checkAuthorization();
@@ -33,6 +33,7 @@ export default function UserArea() {
       }
     };
     checkAuthorization();
+    //eslint-disable-next-line
   }, []);
 
   const handleLogout = () => {

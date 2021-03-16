@@ -4,7 +4,6 @@ import { I18nextProvider } from 'react-i18next';
 import i18n from './i18n';
 
 import Home from './components/Home';
-import SignUp from './components/SignUp';
 import Country from './components/Country';
 import ErrorPage from './components/ErrorPage';
 import Loading from './components/partials/Loading';
@@ -22,9 +21,6 @@ export default function App() {
               <Switch>
                 <Route exact path="/">
                   <Home />
-                </Route>
-                <Route exact path="/signup">
-                  <SignUp />
                 </Route>
                 <Route path="/country">
                   <Route path="/country/:code" render={(props) => <Country {...props} />} />

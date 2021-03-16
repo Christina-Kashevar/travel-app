@@ -27,7 +27,7 @@ export default function SignIn({ callBack, onClose, onSignIn }) {
 
   useEffect(() => {
     AuthService.setRememberMe(false)
-  })
+  }, [])
 
   const handleChangeCredentials = (e) => {
     const { name, value } = e.target;
