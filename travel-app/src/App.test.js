@@ -4,6 +4,7 @@ import App from './App';
 import Footer from './App';
 import RatingBlock from './components/partials/Rating';
 import { AuthService } from './services/auth.service';
+import urls from './constants/urls';
 
 test('render RatingBlock', () => {
   const { container } = render(<RatingBlock />);
@@ -35,18 +36,21 @@ test('auth service, such user exists', async () => {
   const response = await AuthService.signUp({ username, password, avatar });
   await expect(Promise.resolve(response.response.status)).resolves.toBe(409);
 });
-test('data from database', async()=>{
- const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries/fr`)
- const data = response.data;
- expect(data.linkToPhoto).toContain('image')
-})
-test('coordinates from database', async()=>{
-  const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries/fr`)
+
+test('data from database', async () => {
+  const response = await axios.get(urls.countries.byCode('fr'));
   const data = response.data;
-  expect(data.capitalCoordinates).toHaveLength(2)
- })
- test('the number of countries is more than 8', async()=>{
-  const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries`)
+  expect(data.linkToPhoto).toContain('image');
+});
+
+test('coordinates from database', async () => {
+  const response = await axios.get(urls.countries.byCode('fr'));
+  const data = response.data;
+  expect(data.capitalCoordinates).toHaveLength(2);
+});
+
+test('the number of countries is more than 8', async () => {
+  const response = await axios.get(urls.countries.all);
   const data = response.data;
   expect(data.length).toBeGreaterThanOrEqual(8);
- })
+});

@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FormControl, Grid, MenuItem, Select } from '@material-ui/core';
 
-import { LANGUAGES } from '../../../contants/languages';
+import { LANGUAGES } from '../../../constants/languages';
 import useStyles from './styles';
 
 const LanguageSwitcher = () => {

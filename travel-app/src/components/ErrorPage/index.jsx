@@ -17,9 +17,7 @@ export default function ErrorPage() {
       direction="column"
       className={classes.root}
     >
-      <Header
-        pageName={t('PAGE_NAME.TRAVEL_APP')}
-      />
+      <Header />
       <Box className={classes.info}>
         <Grid className={classes.line}>
           <Typography className={classes.err}>4</Typography>

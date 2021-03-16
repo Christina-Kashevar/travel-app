@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Card } from '@material-ui/core';
 import useStyles from './styles';
 import WeatherCard from './Card';
-import { REACT_APP_WEATHER_KEY } from '../../../data/constants';
+import { REACT_APP_WEATHER_KEY } from '../../../constants/tokens';
 
 function Weather({ capital, lang }) {
   const [weatherData, setWeatherData] = useState(null);
