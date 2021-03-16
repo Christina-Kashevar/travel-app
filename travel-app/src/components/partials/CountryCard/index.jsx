@@ -10,20 +10,16 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
-import { getCountryByCode } from '../../../engine';
 
-export default function CountryCard(props) {
+export default function CountryCard({ countryData }) {
   const history = useHistory();
-  const { code } = props;
-  const { t, i18n } = useTranslation();
-  const { language } = i18n;
-  const country = getCountryByCode(code, language);
+  const { t } = useTranslation();
   const classes = useStyles();
 
-  const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), country.capital];
+  const [capitalDesc, capitalName] = [t('PAGE_CAPITAL'), countryData.capital];
 
   function handleClick() {
-    history.push(`/country/${country.code}`);
+    history.push(`/country/${countryData.code}`);
   }
 
   return (
@@ -32,18 +28,18 @@ export default function CountryCard(props) {
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={country.img}
+            image={countryData.linkToPhoto}
             title="Contemplative Reptile"
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2">
-              {country.name}
+              {countryData.name}
             </Typography>
             <Typography gutterBottom variant="h6" component="h3">
             {capitalDesc}: {capitalName}
             </Typography>
             <Typography variant="body2" component="p">
-              {country.shortDescription}
+              {countryData.shortDescription}
             </Typography>
           </CardContent>
         </CardActionArea>
