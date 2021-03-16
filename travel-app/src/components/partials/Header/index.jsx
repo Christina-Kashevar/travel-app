@@ -5,6 +5,7 @@ import UserArea from './UserArea';
 import useStyles from './styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
@@ -31,9 +32,11 @@ export default function Header(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             {pageName}
           </Typography>
-          {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
-          <LanguageSwitcher />
-          <UserArea />
+          <Grid className={classes.collapse}>
+            {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
+            <LanguageSwitcher />
+            <UserArea />
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>

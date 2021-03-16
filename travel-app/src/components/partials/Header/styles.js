@@ -13,6 +13,12 @@ const useStyles = makeStyles((theme) => ({
     textDecoration: 'none',
     marginLeft: 20,
   },
+  collapse: {
+    display: 'flex',
+    [theme.breakpoints.down("sm")]: {
+      display: "none"
+    },
+  }
 }));
 
 export default useStyles;
