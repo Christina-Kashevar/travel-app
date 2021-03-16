@@ -9,6 +9,8 @@ import Grid from '@material-ui/core/Grid';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import MenuIcon from "@material-ui/icons/Menu";
+import Drawer from '@material-ui/core/Drawer';
 import { ReactComponent as Logo } from "../../../assets/icons/travel.svg";
 
 import LanguageSwitcher from '../LanguageSwitcher';
@@ -16,7 +18,17 @@ import LanguageSwitcher from '../LanguageSwitcher';
 export default function Header(props) {
   const { pageName, homePage, onSearch } = props;
   const [value, setValue] = useState('');
+  const [state, setState] = React.useState({
+    right: false,
+  });
   const classes = useStyles();
+
+  const toggleDrawer = (open) => (event) => {
+    if (event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
+      return;
+    }
+    setState({right: open });
+  };
 
   return (
     <div>
@@ -36,6 +48,24 @@ export default function Header(props) {
             {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
             <LanguageSwitcher />
             <UserArea />
+          </Grid>
+          <Grid className={classes.smallScreen}>
+            <IconButton
+            color="inherit"
+            aria-label="Menu"
+            onClick={toggleDrawer(true)}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer(false)} >
+              <div className={classes.drawer}>
+                { homePage && <Search value={value} onChange={setValue} onSearch={onSearch} closeMenu={toggleDrawer(false)}/>}
+                <LanguageSwitcher />
+                <div className={classes.iconButton}>
+                  <UserArea closeMenu={toggleDrawer(false)} />
+                </div>
+              </div>
+            </Drawer>
           </Grid>
         </Toolbar>
       </AppBar>

@@ -1,8 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme) => ({ 
+const useStyles = makeStyles((theme) => ({
   profile: {
-    width: theme.spacing(55.5), 
+    width: theme.spacing(55.5),
     padding: theme.spacing(3),
     '& > *': {
     }
@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   },
   avatarIcon: {
     borderRadius: '50%',
-  },
+  }
 }));
 
 export default useStyles;
