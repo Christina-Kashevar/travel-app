@@ -1,5 +1,4 @@
 import React from 'react';
-import { COUNTRY_DATA, COUNTRY_CODES  } from '../../../../data/constants';
 import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
@@ -15,14 +14,7 @@ export default function Search({value, onChange, onSearch }) {
   const { t } = useTranslation();
 
   const searchHandler= (e) => {
-    const codes=[];
-    COUNTRY_DATA.forEach((country)=> {
-      if(country.name.toLowerCase().includes(e.target.value.toLowerCase())
-        || country.capital.toLowerCase().includes(e.target.value.toLowerCase())) {
-          codes.push(country.code)
-      }
-    })
-    onSearch(codes);
+    onSearch(e.target.value.toLowerCase());
     onChange(e.target.value);
   }
 
@@ -34,7 +26,7 @@ export default function Search({value, onChange, onSearch }) {
 
   const onDelete =() => {
     onChange('');
-    onSearch(COUNTRY_CODES);
+    onSearch('');
   }
 
   return (
