@@ -1,5 +1,5 @@
 import axios from 'axios';
-import urls from '../contants/urls';
+import urls from '../constants/urls';
 
 export class AuthService {
   static checkAuthorization = () => {

@@ -10,9 +10,9 @@ import Footer from '../partials/Footer';
 import CountryCard from '../partials/CountryCard';
 
 import { useTranslation } from 'react-i18next';
-import urls from '../../contants/urls';
+import urls from '../../constants/urls';
 import Loading from '../partials/Loading';
-import { LANGUAGES, DEFAULT_DB_LANG } from '../../contants/languages';
+import { LANGUAGES, DEFAULT_DB_LANG } from '../../constants/languages';
 
 const getTranslatedCountry = (countryData, language) => {
   const shortLang = LANGUAGES.find((lang) => lang.type === language).short;
