@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
+import axios from 'axios';
 import App from './App';
 import Footer from './App';
 import RatingBlock from './components/partials/Rating';
-import { getCountryByCode } from './engine';
 import { AuthService } from './services/auth.service';
 
 test('render RatingBlock', () => {
@@ -27,11 +27,6 @@ test('Footer exists', () => {
   expect(Footer()).toBeTruthy();
 });
 
-test('Country name exist', () => {
-  const country = getCountryByCode('tr', 'ru');
-  expect(country).toHaveProperty('name');
-});
-
 test('auth service, such user exists', async () => {
   const username = 'maks';
   const password = '01020304';
@@ -40,3 +35,18 @@ test('auth service, such user exists', async () => {
   const response = await AuthService.signUp({ username, password, avatar });
   await expect(Promise.resolve(response.response.status)).resolves.toBe(409);
 });
+test('data from database', async()=>{
+ const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries/fr`)
+ const data = response.data;
+ expect(data.linkToPhoto).toContain('image')
+})
+test('coordinates from database', async()=>{
+  const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries/fr`)
+  const data = response.data;
+  expect(data.capitalCoordinates).toHaveLength(2)
+ })
+ test('the number of countries is more than 8', async()=>{
+  const response= await axios.get( `https://travel-app-rs.herokuapp.com/countries`)
+  const data = response.data;
+  expect(data.length).toBeGreaterThanOrEqual(8);
+ })
