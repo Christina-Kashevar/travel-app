@@ -7,7 +7,7 @@ import useStyles from './styles';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
-import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
+import { MAPBOX_ACCESS_TOKEN } from '../../../constants/tokens';
 
 import { Grid, IconButton, Popper, Typography} from '@material-ui/core';
 

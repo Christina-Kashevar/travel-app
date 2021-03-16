@@ -2,7 +2,6 @@ import { render } from '@testing-library/react';
 import App from './App';
 import Footer from './App';
 import RatingBlock from './components/partials/Rating';
-import { getCountryByCode } from './engine';
 import { AuthService } from './services/auth.service';
 
 test('render RatingBlock', () => {
@@ -27,10 +26,13 @@ test('Footer exists', () => {
   expect(Footer()).toBeTruthy();
 });
 
+/*
+// deprecated because of engine.js
 test('Country name exist', () => {
   const country = getCountryByCode('tr', 'ru');
   expect(country).toHaveProperty('name');
 });
+*/
 
 test('auth service, such user exists', async () => {
   const username = 'maks';
