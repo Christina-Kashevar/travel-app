@@ -15,6 +15,8 @@ import Slider from '../partials/Slider';
 import ErrorPage from '../ErrorPage';
 import Loading from '../partials/Loading';
 
+import urls from '../../constants/urls';
+
 import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
 import Weather from '../widgets/Weather';
@@ -64,7 +66,7 @@ export default function Country() {
   useEffect(() => {
     if (!countryCache[code]) {
       axios
-      .get(`https://travel-app-rs.herokuapp.com/countries/${code}`)
+      .get(urls.countries.byCode(code))
       .then((response) => {
         let result = response.data || {};
         const CountryInfo = getCountryInfo(result, language);
@@ -86,6 +88,7 @@ export default function Country() {
     <Grid>
       <Header />
       <Loading />
+      <Footer />
     </Grid>
   );
 
