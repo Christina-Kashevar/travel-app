@@ -21,5 +21,7 @@
   "SIGNIN.REMEMBER_ME": "Запомнить меня",
   "SIGNIN.SUBMIT": "Войти",
   "SIGNIN.FORGOT_PASSWORD": "Забыли пароль?",
-  "SIGNIN.NO_ACCOUNT": "Нет аккаунта? Регистрируйтесь"
+  "SIGNIN.NO_ACCOUNT": "Нет аккаунта? Регистрируйтесь",
+  "SIGNIN.WRONG_CREDENTIALS": "Имя пользователя или пароль неверны",
+  "USER_PANEL.LOGOUT": "Выйти"
 }

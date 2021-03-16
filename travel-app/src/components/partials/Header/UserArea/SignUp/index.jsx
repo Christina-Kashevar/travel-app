@@ -1,5 +1,4 @@
 import React, { useRef, useState } from 'react';
-import { useHistory } from 'react-router-dom';
 
 import PhotoIcon from '@material-ui/icons/Photo';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -22,13 +21,11 @@ import { AuthService } from '../../../../../services/auth.service';
 
 const MAX_AVATAR_SIZE = 2 * 1024 * 1024;
 
-export default function SignUp(props) {
-  const { callBack } = props;
+export default function SignUp({ callBack, onClose, onSignIn }) {
   const { t } = useTranslation();
   const classes = useStyles();
 
   const formRef = useRef();
-  const history = useHistory();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [avatar, setAvatar] = useState(null);
@@ -71,7 +68,8 @@ export default function SignUp(props) {
           setSignError('SIGNUP.SOMETHIG_WENT_WRONG');
         }
       } else {
-        history.push('/');
+        onSignIn(response.data)
+        onClose();
       }
     }
   };

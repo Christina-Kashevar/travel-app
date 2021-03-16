@@ -21,5 +21,7 @@
   "SIGNIN.REMEMBER_ME": "Mich erinnern",
   "SIGNIN.SUBMIT": "Anmeldung",
   "SIGNIN.FORGOT_PASSWORD": "Passwort vergessen?",
-  "SIGNIN.NO_ACCOUNT": "Sie haben noch keinen Account? Anmeldung"
+  "SIGNIN.NO_ACCOUNT": "Sie haben noch keinen Account? Anmeldung",
+  "SIGNIN.WRONG_CREDENTIALS": "Benutzername oder Passwort ist falsch",
+  "USER_PANEL.LOGOUT": "Ausloggen"
 }
