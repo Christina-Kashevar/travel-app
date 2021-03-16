@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
@@ -23,6 +23,11 @@ export default function SignIn({ callBack, onClose, onSignIn }) {
 
   const [credentials, setCredentials] = useState({ username: '', password: '' });
   const [isPending, setIsPending] = useState(false)
+  const [error, setError] = useState(null)
+
+  useEffect(() => {
+    AuthService.setRememberMe(false)
+  })
 
   const handleChangeCredentials = (e) => {
     const { name, value } = e.target;
@@ -31,10 +36,20 @@ export default function SignIn({ callBack, onClose, onSignIn }) {
 
   const handleSubmit = async () => {
     setIsPending(true);
+    setError(null);
     const result = await AuthService.signIn(credentials);
-    onSignIn(result.data)
-    setIsPending(false);
-    onClose();
+    if (result instanceof Error) {
+      setIsPending(false);
+      if (result.response.status === 401) {
+        setError('SIGNIN.WRONG_CREDENTIALS');
+      } else {
+        setError('SIGNUP.SOMETHIG_WENT_WRONG');
+      }
+    } else {
+      onSignIn(result.data);
+      setIsPending(false);
+      onClose();
+    }
   };
 
   const handleRememberMe = e => {
@@ -51,6 +66,7 @@ export default function SignIn({ callBack, onClose, onSignIn }) {
         <Typography component="h1" variant="h5">
           {t('SIGNIN.SIGNIN')}
         </Typography>
+        { error && <Typography className={classes.error}>{t(error)}</Typography>}
         <form className={classes.form}>
           <TextField
             variant="outlined"

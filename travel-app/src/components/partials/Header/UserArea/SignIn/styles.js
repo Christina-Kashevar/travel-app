@@ -22,6 +22,9 @@ const useStyles = makeStyles((theme) => ({
   interactive: {
     cursor: 'pointer',
   },
+  error: {
+    color: theme.palette.error.dark,
+  }
 }));
 
 export default useStyles;

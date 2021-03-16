@@ -22,5 +22,6 @@
   "SIGNIN.SUBMIT": "Sign in",
   "SIGNIN.FORGOT_PASSWORD": "Forgot password?",
   "SIGNIN.NO_ACCOUNT": "Don't have an account? Sign Up",
+  "SIGNIN.WRONG_CREDENTIALS": "Username or password is wrong",
   "USER_PANEL.LOGOUT": "Log Out"
 }
