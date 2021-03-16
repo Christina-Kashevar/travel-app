@@ -19,30 +19,48 @@ import Currency from '../widgets/Currency';
 import DateWidget from '../widgets/Date';
 import Weather from '../widgets/Weather';
 
+const countryCache = {};
+function getCountryInfo(data, language) {
+  const key = data.code || 'key';
+  if (!countryCache[key]) countryCache[key] = data;
+  let result = countryCache[key];
+  if (language !== 'en-US') {
+    const dataPatch = result.translations ? result.translations[language.slice(0, 2)] : {};
+    result = { ...result, ...dataPatch };
+  }
+  return result;
+}
+
 export default function Country() {
   const { code } = useParams();
   const { t, i18n } = useTranslation();
   const { language } = i18n;
   const [country, setCountry] = useState({});
+  const [sights, setSights] = useState({});
   const [loading, setLoading] = useState(true);
   const error = (country === null || !code);
   const classes = useStyles();
 
+  const loadInfo = (info) => {
+    setCountry(info);
+    setLoading(false);
+  }
   useEffect(() => {
-    axios
+    if (!countryCache[code]) {
+      axios
       .get(`https://travel-app-rs.herokuapp.com/countries/${code}`)
       .then((response) => {
         let result = response.data || {};
-        if (language !== 'en-US') {
-          const dataPatch = result.translations ? result.translations[language.slice(0, 2)] : {};
-          result = { ...result, ...dataPatch };
-        }
-        setCountry(result);
-        setLoading(false);
+        const info = getCountryInfo(result, language);
+        loadInfo(info);
       })
       .catch((error) => {
         console.log(error);
       });
+    } else {
+      const info = getCountryInfo({ code }, language)
+      loadInfo(info);
+    }
   }, [code, language]);
 
   if (error) return <ErrorPage />;
@@ -81,7 +99,7 @@ export default function Country() {
                   <Slider code={code} />
                 </Grid>
                 <Grid>
-                  <Map code={code} capital={capitalName} />
+                  <Map code={code} capital={capitalName} capitalCoords={country.capitalCoordinates}/>
                 </Grid>
               </Container>
             </Grid>
