@@ -53,7 +53,7 @@ export class ScoreController {
       throw new HttpErrors[422]();
     }
     const currentScore = await this.scoreRepository.findOne({
-      where: { userId: currentUserProfile[securityId] },
+      where: { userId: currentUserProfile[securityId], sightId: score.sightId },
     });
     if (currentScore) {
       await this.scoreRepository.updateById(currentScore.id, {
