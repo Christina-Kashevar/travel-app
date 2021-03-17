@@ -9,6 +9,8 @@ import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
 
+import { useTranslation } from 'react-i18next';
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -50,10 +52,11 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function RatingTable({ open, handleClose, getScores }) {
+  const { t } = useTranslation();
   return (
-    <Dialog onClose={handleClose} open={open}>
+    <Dialog onClose={handleClose} open={open} fullWidth>
       <DialogTitle id="customized-dialog-title" onClose={handleClose}>
-        Modal title
+        {t('PAGE_RATING.MARKS')}
       </DialogTitle>
       <DialogContent dividers>
         <Typography gutterBottom>
