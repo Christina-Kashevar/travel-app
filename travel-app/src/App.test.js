@@ -1,7 +1,7 @@
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import App from './App';
-import Footer from './App';
+import Footer from './components/partials/Footer';
 import RatingBlock from './components/partials/Rating';
 import { AuthService } from './services/auth.service';
 import urls from './constants/urls';
@@ -16,16 +16,19 @@ test('length App`s children', () => {
   expect(container.children.length).toEqual(2);
 });
 
-test('App is an object', () => {
-  expect(App()).toBeInstanceOf(Object);
+test('container is an divElement', () => {
+  const { container } = render(<Footer />);
+  expect(container).toBeInstanceOf(HTMLDivElement);
 });
 
-test('Footer defined', () => {
-  expect(Footer()).toBeDefined();
+test('App container defined', () => {
+  const { container } = render(<App />);
+  expect(container).toBeDefined();
 });
 
-test('Footer exists', () => {
-  expect(Footer()).toBeTruthy();
+test('App container exists', () => {
+  const { container } = render(<App />);
+  expect(container).toBeTruthy();
 });
 
 test('auth service, such user exists', async () => {

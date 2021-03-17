@@ -8,7 +8,7 @@ import InputBase from '@material-ui/core/InputBase';
 import SearchIcon from '@material-ui/icons/Search';
 import ClearIcon from '@material-ui/icons/Clear';
 
-export default function Search({value, onChange, onSearch }) {
+export default function Search({value, onChange, onSearch, closeMenu }) {
   const classes = useStyles();
 
   const { t } = useTranslation();
@@ -20,7 +20,8 @@ export default function Search({value, onChange, onSearch }) {
 
   const enter=(e) => {
     if (e.keyCode === 13) {
-      e.target.blur()
+      e.target.blur();
+      closeMenu(e)
     }
   }
 
@@ -35,7 +36,7 @@ export default function Search({value, onChange, onSearch }) {
         aria-label="search"
         color="inherit"
         className={classes.searchIcon}
-        onClick={(e)=> e.target.blur()}
+        onClick={(e)=> {e.target.blur(); closeMenu(e)}}
       >
         <SearchIcon />
       </IconButton>

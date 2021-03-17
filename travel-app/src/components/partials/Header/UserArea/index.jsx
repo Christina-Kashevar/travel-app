@@ -13,7 +13,7 @@ const UserPanel = ({ type, ...props }) => {
   return type === 'signIn' ? <SignIn {...props} /> : <SignUp {...props} />;
 };
 
-export default function UserArea() {
+export default function UserArea({closeMenu}) {
   const savedType = 'signIn'; // From cookies;
   const {t} = useTranslation();
   const classes = useStyles();
@@ -23,7 +23,10 @@ export default function UserArea() {
   const [user, setUser] = useContext(UserContext);
   const handleSetType = (newType) => (event) => setType(newType);
   const toggleDrawer = (open) => (event) => setIsDrawerOpened(open);
-
+  const closeDrawer = (event) =>{
+    closeMenu(event);
+    setIsDrawerOpened(true);
+  }
 
   useEffect(() => {
     const checkAuthorization = async () => {
@@ -46,7 +49,7 @@ export default function UserArea() {
       <IconButton onClick={toggleDrawer(true)}>
         {user ? <img className={classes.avatarIcon} src={user.avatar} width={40} height={40} alt="avatar" /> : <AccountCircleIcon />}
       </IconButton>
-      <Drawer width="30%" anchor="right" open={isDrawerOpened} onClose={toggleDrawer(false)}>
+      <Drawer width="30%" anchor="right" open={isDrawerOpened} onClose={closeDrawer}>
         {user ? (
           <Grid container direction="column" alignItems="center" className={classes.profile}>
             <img className={classes.avatar} src={user.avatar} alt="avatar" />
@@ -54,7 +57,7 @@ export default function UserArea() {
             <Button onClick={handleLogout} fullWidth variant="contained" color="primary">{t('USER_PANEL.LOGOUT')}</Button>
           </Grid>
         ) : (
-          <UserPanel type={type} callBack={handleSetType} onSignIn={setUser} onClose={toggleDrawer(false)} />
+          <UserPanel type={type} callBack={handleSetType} onSignIn={setUser} onClose={closeDrawer} />
         )}
       </Drawer>
     </Grid>
