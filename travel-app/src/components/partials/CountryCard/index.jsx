@@ -11,7 +11,7 @@ import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 
 
-export default function CountryCard({ countryData }) {
+export default function CountryCard({ countryData, toggleRecorder }) {
   const history = useHistory();
   const { t } = useTranslation();
   const classes = useStyles();
@@ -20,6 +20,7 @@ export default function CountryCard({ countryData }) {
 
   function handleClick() {
     history.push(`/country/${countryData.code}`);
+    toggleRecorder(false)
   }
 
   return (
