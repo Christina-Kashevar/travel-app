@@ -59,8 +59,8 @@ test('the number of countries is more than 8', async () => {
 });
 test('get score from database', async () => {
   const countryId='604f46c7426e110004d066f5';
-  const result= [{username: "john", value: 4}];
+  const result= {username: "john", value: 3};
   const response = await axios.get(urls.scores(countryId));
   const data = response.data;
-  expect(Object.values(data)[0].scores).toEqual(expect.objectContaining(result));
+  expect(Object.values(data)[0].scores[0]).toEqual(expect.objectContaining(result));
 });
