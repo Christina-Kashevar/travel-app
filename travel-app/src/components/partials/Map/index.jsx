@@ -27,7 +27,7 @@ export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const { code, capital, capitalCoords } = props;
+  const { code, capital, capitalCoords, sightsCoordinates } = props;
   const classes = useStyles();
 
   const filter = ['==', 'iso_3166_1', code.toUpperCase()];
@@ -44,7 +44,6 @@ export default function Map(props) {
     }
     handleFs.enter();
   };
-
   return (
     <FullScreen handle={handleFs} onChange={trackFs}>
       <Grid className={classes.fsWrapper}>
@@ -72,6 +71,21 @@ export default function Map(props) {
             <Typography>{capital}</Typography>
           </Popper>
         </Marker>
+        {sightsCoordinates.map((el, i)=>{
+          return( 
+          <Marker  key={i} coordinates={el.coordinates} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
+          <img src="./icons/marker.svg" alt="sight marker" />
+          <Popper
+            placement="bottom"
+            className={classes.popover}
+            open={open}
+            anchorEl={anchorEl}
+            onClose={handlePopoverClose}
+          >
+            <Typography>{el.name}</Typography>
+          </Popper>
+        </Marker>)
+        })}
         <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
         <Layer
           type="fill"
