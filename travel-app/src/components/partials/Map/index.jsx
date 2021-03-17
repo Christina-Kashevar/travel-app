@@ -11,7 +11,6 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import { MAPBOX_ACCESS_TOKEN } from '../../../constants/tokens';
 
 import { Grid, IconButton, Tooltip } from '@material-ui/core';
-
 const MapBox = ReactMapboxGl({ accessToken: MAPBOX_ACCESS_TOKEN });
 
 const COUNTRY_BONDS_SOURCE = {
