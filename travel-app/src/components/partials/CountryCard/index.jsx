@@ -14,7 +14,7 @@ import { getCountryByCode } from '../../../engine';
 
 export default function CountryCard(props) {
   const history = useHistory();
-  const { code } = props;
+  const { code, toggleRecorder } = props;
   const { t, i18n } = useTranslation();
   const { language } = i18n;
   const country = getCountryByCode(code, language);
@@ -24,6 +24,7 @@ export default function CountryCard(props) {
 
   function handleClick() {
     history.push(`/country/${country.code}`);
+    toggleRecorder(false)
   }
 
   return (

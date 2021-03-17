@@ -13,7 +13,7 @@ import { ReactComponent as Logo } from "../../../assets/icons/travel.svg";
 import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
-  const { pageName, homePage, onSearch } = props;
+  const { pageName, homePage, onSearch, recorder, toggleRecorder } = props;
   const [value, setValue] = useState('');
   const classes = useStyles();
 
@@ -31,7 +31,7 @@ export default function Header(props) {
           <Typography className={classes.title} variant="h6" noWrap>
             {pageName}
           </Typography>
-          {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
+          {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} recorder={recorder} toggleRecorder={toggleRecorder}/>}
           <LanguageSwitcher />
           <UserArea />
         </Toolbar>
