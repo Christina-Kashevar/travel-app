@@ -5,7 +5,7 @@ import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
 
-export default function RatingComponent({ average, value, handleBackdrop, handleSetValue}) {
+export default function RatingComponent({ average, value, handleBackdrop, setValue}) {
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -21,7 +21,7 @@ export default function RatingComponent({ average, value, handleBackdrop, handle
       <Rating
         name="simple-controlled"
         value={value}
-        onChange={handleSetValue}
+        onChange={setValue}
         className={classes.stars}
       />
       <Button

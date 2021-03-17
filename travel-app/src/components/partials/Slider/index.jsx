@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useCallback, useContext } from 'react';
 import axios from 'axios';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import 'slick-carousel/slick/slick.css';
@@ -8,6 +8,7 @@ import SliderCard from './SliderCard';
 import RatingTable from '../RatingTable';
 
 import urls from '../../../constants/urls';
+import { UserContext } from '../../../contexts/UserContext';
 
 import './index.css';
 import useStyles from './style';
@@ -20,6 +21,7 @@ import { Grid, IconButton } from '@material-ui/core';
 export default function SliderComponent(props) {
   const { sights, id } = props;
   const [scores, setScores] = useState({});
+  const [user] = useContext(UserContext);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [openRatingTable, setOpenRatingTable] = useState(false);
@@ -27,14 +29,40 @@ export default function SliderComponent(props) {
   const [fsState, setFsState] = useState(handleFs.active);
   const classes = useStyles();
 
-  const average = 3;
-  const value = 3;
+  const handleSetScores = (newState) => {
+    setScores((event, oldState) => {
+      return {...oldState, ...newState };
+    });
+  }
+
+  const average = (sightId) => {
+    const sightScores = scores[sightId];
+    return ( sightScores && sightScores.averageValue) ? sightScores.averageValue : 0;
+  };
+
+  const value = (sightId) => {
+    const sightScores = scores[sightId];
+    const scoresData = ( sightScores && sightScores.scores) ? sightScores.scores : [];
+    for(const scoreRecord of scoresData) {
+      if (scoreRecord.username === user.username) return scoreRecord.value;
+    }
+    return 0;
+  };
+
+  const setValue = (sightId) => (event, newValue) => {
+    console.log(sightId);
+  };
+
+  useEffect(() => {
+    console.log('render');
+  })
 
   useEffect(() => {
       axios
       .get(urls.scores.byId(id))
       .then((response) => {
-        setScores(response.data || {})
+        handleSetScores(response.data || {})
+        console.log(response.data);
       })
       .catch((error) => {
         console.log(error);
@@ -45,13 +73,15 @@ export default function SliderComponent(props) {
   let slider2;
 
   useEffect(() => {
-    setNav1(slider1)
-    setNav2(slider2)
+    console.log('render sliders');
+    setNav1(slider1);
+    setNav2(slider2);
   }, [slider1, slider2])
+
 
   const settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -110,15 +140,15 @@ export default function SliderComponent(props) {
           >
             {sights.map((card) => (
               < SliderCard
-                key={card.linkToPhoto}
+                key={card.id}
                 imgUrl={card.linkToPhoto}
                 name={card.name}
                 description={card.description}
                 size={'large'}
-                average={average}
-                value={value}
+                average={average(card.id)}
+                value={value(card.id)}
                 handleBackdrop={setOpenRatingTable}
-                handleSetValue={setScores}
+                setValue={setValue(card.id)}
               />
             ))}
           </Slider>
@@ -129,9 +159,9 @@ export default function SliderComponent(props) {
       asNavFor={nav1}
       ref={slider => (slider2 = slider)}
     >
-      { sights.map((card) => (
-        < SliderCard key={card.linkToPhoto} imgUrl={card.linkToPhoto} size={'small'}/>
-      )) }
+      {sights.map((card) => (
+        < SliderCard key={card.id} imgUrl={card.linkToPhoto} size={'small'}/>
+      ))}
     </Slider>
   </div>
   );
