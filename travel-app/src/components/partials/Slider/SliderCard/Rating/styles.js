@@ -24,6 +24,26 @@ const useStyles = makeStyles((theme) => ({
       fontSize: 10,
     },
   },
+  red: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    borderRadius: '10px',
+    fontWeight: 'bold',
+    padding: theme.spacing(1),
+    color: theme.palette.error.main,
+  },
+  yellow: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    borderRadius: '10px',
+    fontWeight: 'bold',
+    padding: theme.spacing(1),
+    color: theme.palette.warning.main,
+  },
+  green: {
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    borderRadius: '10px',
+    padding: theme.spacing(1),
+    color: theme.palette.success.main,
+  },
 }));
 
 export default useStyles;

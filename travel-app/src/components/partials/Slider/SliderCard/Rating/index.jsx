@@ -1,15 +1,15 @@
 import React from 'react';
 import Rating from '@material-ui/lab/Rating';
+import { Box, Button, Typography } from '@material-ui/core/';
 import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
 
-import { Box, Button } from '@material-ui/core/';
-
-export default function RatingComponent({ value, handleValueChange, handleBackdrop }) {
+export default function RatingComponent({ average, value, handleBackdrop, handleSetValue}) {
   const { t } = useTranslation();
   const classes = useStyles();
 
+  const scoreColor = (average > 4) ? classes.green : (average > 3) ? classes.yellow : classes.red;
   return (
     <Box
       component="fieldset"
@@ -17,14 +17,15 @@ export default function RatingComponent({ value, handleValueChange, handleBackdr
       position="absolute"
       className={classes.rating}
     >
+      <Typography className={scoreColor}>{average}</Typography>
       <Rating
         name="simple-controlled"
         value={value}
-        onChange={handleValueChange}
+        onChange={handleSetValue}
         className={classes.stars}
       />
       <Button
-        color='inherit'
+        color="inherit"
         onClick={() => handleBackdrop(true)}
         className={classes.button}
       >{t('PAGE_RATING.MARKS')}</Button>

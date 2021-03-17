@@ -1,10 +1,9 @@
 import React from 'react';
 import useStyles from './styles';
-
 import { Box, Card, Typography } from '@material-ui/core/';
 import Rating from './Rating';
 
-export default function SliderCard({imgUrl, size, name, description, value, handleValueChange, handleBackdrop}) {
+export default function SliderCard({imgUrl, size, name, description, average, value, handleBackdrop, handleSetValue}) {
   const classes = useStyles();
 
   const sectionStyle = {
@@ -16,7 +15,7 @@ export default function SliderCard({imgUrl, size, name, description, value, hand
   return (
     <div>
       <Box style={ sectionStyle } className={classes[size]} m={1} >
-        { showRating && <Rating value={value} handleValueChange={handleValueChange} handleBackdrop={handleBackdrop} /> }
+        { showRating && <Rating {...{average, value, handleSetValue, handleBackdrop}}/> }
         { name && description
         && <Card className={classes.card} >
             <Typography gutterBottom variant="h5" className={classes.name}>{name}</Typography>

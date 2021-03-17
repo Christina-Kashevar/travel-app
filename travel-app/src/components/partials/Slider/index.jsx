@@ -1,10 +1,13 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard';
 import RatingTable from '../RatingTable';
+
+import urls from '../../../constants/urls';
 
 import './index.css';
 import useStyles from './style';
@@ -15,8 +18,8 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import { Grid, IconButton } from '@material-ui/core';
 
 export default function SliderComponent(props) {
-  const { sights } = props;
-  const [ratingValue, setRatingValue] = useState(0);
+  const { sights, id } = props;
+  const [scores, setScores] = useState({});
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [openRatingTable, setOpenRatingTable] = useState(false);
@@ -24,9 +27,19 @@ export default function SliderComponent(props) {
   const [fsState, setFsState] = useState(handleFs.active);
   const classes = useStyles();
 
-  const handleValueChange = (event, newValue) => {
-    setRatingValue(newValue);
-  };
+  const average = 3;
+  const value = 3;
+
+  useEffect(() => {
+      axios
+      .get(urls.scores.byId(id))
+      .then((response) => {
+        setScores(response.data || {})
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [id]);
 
   let slider1;
   let slider2;
@@ -102,9 +115,10 @@ export default function SliderComponent(props) {
                 name={card.name}
                 description={card.description}
                 size={'large'}
-                value={ratingValue}
-                handleValueChange={handleValueChange}
+                average={average}
+                value={value}
                 handleBackdrop={setOpenRatingTable}
+                handleSetValue={setScores}
               />
             ))}
           </Slider>
