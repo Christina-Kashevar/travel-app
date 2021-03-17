@@ -9,6 +9,10 @@ import ErrorPage from './components/ErrorPage';
 import Loading from './components/partials/Loading';
 import { UserContext } from './contexts/UserContext';
 
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
+
 export default function App() {
   const [context, setContext] = useState(null);
 
