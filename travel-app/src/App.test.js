@@ -1,17 +1,16 @@
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import Footer from './components/partials/Footer';
-import RatingBlock from './components/partials/Slider/SliderCard/Rating';
 import { AuthService } from './services/auth.service';
 import urls from './constants/urls';
 
-test('render RatingBlock', () => {
-  const { container } = render(<RatingBlock />);
+test('render Footer', () => {
+  const { container } = render(<Footer />);
   expect(container.firstChild).toHaveAttribute('class');
 });
 
-test('length RatingBlock`s children', () => {
-  const { container } = render(<RatingBlock />);
+test('length Footer`s children', () => {
+  const { container } = render(<Footer />);
   expect(container.children.length).toEqual(1);
 });
 
@@ -20,8 +19,8 @@ test('container is an divElement', () => {
   expect(container).toBeInstanceOf(HTMLDivElement);
 });
 
-test('RatingBlock container defined', () => {
-  const { container } = render(<RatingBlock />);
+test('Footer container defined', () => {
+  const { container } = render(<Footer/>);
   expect(container).toBeDefined();
 });
 
