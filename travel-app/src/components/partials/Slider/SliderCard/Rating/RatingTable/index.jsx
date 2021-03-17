@@ -25,6 +25,16 @@ const useStyles = makeStyles({
   },
 });
 
+const StyledTableCell = withStyles((theme) => ({
+  head: {
+    backgroundColor: theme.palette.common.black,
+    color: theme.palette.common.white,
+  },
+  body: {
+    fontSize: 14,
+  },
+}))(TableCell);
+
 const styles = (theme) => ({
   root: {
     margin: 0,
@@ -78,21 +88,25 @@ export default function RatingTable({ open, handleClose, getScores }) {
           <Table className={classes.table} size="small" aria-label="a dense table">
             <TableHead>
               <TableRow>
-                <TableCell>{t('SIGNUP.USERNAME')}</TableCell>
-                <TableCell>{t('PAGE_RATING.MARKS')}</TableCell>
+                <StyledTableCell>{t('SIGNUP.USERNAME')}</StyledTableCell>
+                <StyledTableCell>{t('PAGE_RATING.MARKS')}</StyledTableCell>
               </TableRow>
             </TableHead>
             <TableBody>
               {getScores.map((scoreRecord) => {
                 return (
                   <TableRow key={scoreRecord.username}>
-                  <TableCell component="th" scope="row">
-                  {scoreRecord.username}
-                  </TableCell>
-                  <TableCell >{scoreRecord.value}</TableCell>
+                  <TableCell >{scoreRecord.username}</TableCell>
+                  <TableCell>{scoreRecord.value}</TableCell>
                 </TableRow>
                 );
               })}
+              {(!getScores.length) &&
+                <TableRow>
+                  <TableCell>-------</TableCell>
+                  <TableCell>-------</TableCell>
+                </TableRow>
+              }
             </TableBody>
           </Table>
         </TableContainer>
