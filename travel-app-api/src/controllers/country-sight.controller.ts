@@ -7,6 +7,7 @@ import {
   del,
   get,
   getModelSchemaRef,
+  HttpErrors,
   param,
   patch,
   post,
@@ -17,11 +18,16 @@ import {
   Sight,
 } from '../models';
 import {CountryRepository, SightRepository} from '../repositories';
+import { authenticate } from '@loopback/authentication';
+import { SecurityBindings, securityId, UserProfile } from '@loopback/security';
+import { UserRepository } from '@loopback/authentication-jwt';
+import { inject } from '@loopback/core';
 
 export class CountrySightController {
   constructor(
     @repository(CountryRepository) protected countryRepository: CountryRepository,
     @repository(SightRepository) protected sightRepository: SightRepository,
+    @repository(UserRepository) protected userRepository: UserRepository,
   ) { }
 
   @get('/countries/{id}/sights', {
@@ -41,7 +47,8 @@ export class CountrySightController {
   ): Promise<Sight[]> {
     return this.countryRepository.sights(id).find();
   }
-
+  
+  @authenticate('jwt')
   @post('/countries/{id}/sights', {
     responses: {
       '200': {
@@ -63,10 +70,17 @@ export class CountrySightController {
         },
       },
     }) sight: Omit<Sight, 'id'>,
+    @inject(SecurityBindings.USER)
+    currentUserProfile: UserProfile,
   ): Promise<Sight> {
+    const user = await this.userRepository.findById(currentUserProfile[securityId]);
+    if (!user.isAdmin) {
+      throw new HttpErrors[403]();
+    }
     return this.countryRepository.sights(id).create(sight);
   }
 
+  @authenticate('jwt')
   @patch('/countries/sights/{sightId}', {
     responses: {
       '200': {
@@ -85,10 +99,17 @@ export class CountrySightController {
       },
     })
     sight: Partial<Sight>,
+    @inject(SecurityBindings.USER)
+    currentUserProfile: UserProfile,
   ): Promise<void> {
+    const user = await this.userRepository.findById(currentUserProfile[securityId]);
+    if (!user.isAdmin) {
+      throw new HttpErrors[403]();
+    }
     return this.sightRepository.updateById(sightId, sight);
   }
 
+  @authenticate('jwt')
   @del('/countries/{id}/sights', {
     responses: {
       '200': {
@@ -99,7 +120,13 @@ export class CountrySightController {
   })
   async delete(
     @param.path.string('id') id: string,
+    @inject(SecurityBindings.USER)
+    currentUserProfile: UserProfile,
   ): Promise<Count> {
+    const user = await this.userRepository.findById(currentUserProfile[securityId]);
+    if (!user.isAdmin) {
+      throw new HttpErrors[403]();
+    }
     return this.countryRepository.sights(id).delete();
   }
 }

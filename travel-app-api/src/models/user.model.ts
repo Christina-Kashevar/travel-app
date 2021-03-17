@@ -9,6 +9,12 @@ export class User extends Parent {
   })
   avatar?: string;
 
+  @property({
+    type: 'boolean',
+    default: '',
+  })
+  isAdmin?: boolean;
+
   constructor(data?: Partial<User>) {
     super(data);
   }
