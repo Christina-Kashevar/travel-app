@@ -54,10 +54,6 @@ export default function SliderComponent(props) {
   };
 
   useEffect(() => {
-    console.log('render');
-  })
-
-  useEffect(() => {
       axios
       .get(urls.scores.byId(id))
       .then((response) => {
@@ -73,7 +69,6 @@ export default function SliderComponent(props) {
   let slider2;
 
   useEffect(() => {
-    console.log('render sliders');
     setNav1(slider1);
     setNav2(slider2);
   }, [slider1, slider2])
@@ -81,7 +76,7 @@ export default function SliderComponent(props) {
 
   const settings = {
     dots: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,

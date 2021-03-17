@@ -2,6 +2,8 @@ import React, { useCallback, useState } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
 import ReactMapboxGl, { Layer, Source, Marker } from 'react-mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import mapboxgl from "mapbox-gl/dist/mapbox-gl";
+
 import useStyles from './styles';
 
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
@@ -10,6 +12,9 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 import { MAPBOX_ACCESS_TOKEN } from '../../../constants/tokens';
 
 import { Grid, IconButton, Popper, Typography} from '@material-ui/core';
+// eslint-disable-next-line import/no-webpack-loader-syntax
+mapboxgl.workerClass = require("worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker").default;
+
 
 const MapBox = ReactMapboxGl({ accessToken: MAPBOX_ACCESS_TOKEN });
 
