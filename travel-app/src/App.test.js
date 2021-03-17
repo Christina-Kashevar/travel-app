@@ -1,7 +1,6 @@
 import { render } from '@testing-library/react';
 import axios from 'axios';
 import Footer from './components/partials/Footer';
-// import RatingBlock from './components/partials/Rating';
 import { AuthService } from './services/auth.service';
 import urls from './constants/urls';
 
@@ -59,7 +58,7 @@ test('the number of countries is more than 8', async () => {
 test('get score from database', async () => {
   const countryId='604f46c7426e110004d066f5';
   const result= {username: "john", value: 3};
-  const response = await axios.get(urls.scores(countryId));
+  const response = await axios.get(urls.scores.byId(countryId));
   const data = response.data;
   expect(Object.values(data)[0].scores[0]).toEqual(expect.objectContaining(result));
 });
