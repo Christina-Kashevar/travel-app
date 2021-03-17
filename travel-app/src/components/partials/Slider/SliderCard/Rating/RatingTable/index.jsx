@@ -8,8 +8,22 @@ import MuiDialogActions from '@material-ui/core/DialogActions';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 
 import { useTranslation } from 'react-i18next';
+
+const useStyles = makeStyles({
+  table: {
+    minWidth: 300,
+  },
+});
 
 const styles = (theme) => ({
   root: {
@@ -52,22 +66,36 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions);
 
 export default function RatingTable({ open, handleClose, getScores }) {
+  const classes = useStyles();
   const { t } = useTranslation();
   return (
     <Dialog onClose={handleClose} open={open} fullWidth>
-      <DialogTitle id="customized-dialog-title" onClose={handleClose}>
+      <DialogTitle onClose={handleClose}>
         {t('PAGE_RATING.MARKS')}
       </DialogTitle>
       <DialogContent dividers>
-        <Typography gutterBottom>
-          {getScores.map((scoreRecord) => {
-            return (
-              <Typography key={scoreRecord.username}>
-                {scoreRecord.username} : {scoreRecord.value}
-              </Typography>
-            );
-          })}
-          </Typography>
+        <TableContainer component={Paper}>
+          <Table className={classes.table} size="small" aria-label="a dense table">
+            <TableHead>
+              <TableRow>
+                <TableCell>{t('SIGNUP.USERNAME')}</TableCell>
+                <TableCell>{t('PAGE_RATING.MARKS')}</TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {getScores.map((scoreRecord) => {
+                return (
+                  <TableRow key={scoreRecord.username}>
+                  <TableCell component="th" scope="row">
+                  {scoreRecord.username}
+                  </TableCell>
+                  <TableCell >{scoreRecord.value}</TableCell>
+                </TableRow>
+                );
+              })}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </DialogContent>
       <DialogActions>
         <Button autoFocus onClick={handleClose} color="primary">
