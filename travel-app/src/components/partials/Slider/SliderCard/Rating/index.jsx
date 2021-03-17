@@ -5,7 +5,18 @@ import useStyles from './styles';
 
 import { useTranslation } from 'react-i18next';
 
-export default function RatingComponent({ average, value, handleBackdrop, setValue}) {
+import RatingTable from './RatingTable';
+
+export default function RatingComponent({ average, value, handleBackdrop, getScores, setValue }) {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const { t } = useTranslation();
   const classes = useStyles();
 
@@ -26,10 +37,10 @@ export default function RatingComponent({ average, value, handleBackdrop, setVal
       />
       <Button
         color="inherit"
-        onClick={() => handleBackdrop(true)}
+        onClick={handleClickOpen}
         className={classes.button}
       >{t('PAGE_RATING.MARKS')}</Button>
+      <RatingTable open={open} handleClose={handleClose} getScores={getScores}/>
     </Box>
   );
 }
-

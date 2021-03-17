@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard';
-import RatingTable from '../RatingTable';
 
 import urls from '../../../constants/urls';
 import { UserContext } from '../../../contexts/UserContext';
@@ -24,7 +23,7 @@ export default function SliderComponent(props) {
   const [user] = useContext(UserContext);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
-  const [openRatingTable, setOpenRatingTable] = useState(false);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
   const classes = useStyles();
@@ -34,6 +33,11 @@ export default function SliderComponent(props) {
       return {...oldState, ...newState };
     });
   }
+
+  const getScores = (sightId) => {
+    const sightScores = scores[sightId];
+    return (sightScores && sightScores.scores) ? sightScores.scores : [];
+  };
 
   const average = (sightId) => {
     const sightScores = scores[sightId];
@@ -49,8 +53,8 @@ export default function SliderComponent(props) {
     return 0;
   };
 
-  const setValue = (sightId) => (event, newValue) => {
-    console.log(sightId);
+  const setValue = (event, newValue) => {
+    console.log(sights[currentSlide].id);
   };
 
   useEffect(() => {
@@ -80,6 +84,7 @@ export default function SliderComponent(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: slide => setCurrentSlide(slide),
   };
 
   const settingsSmall = {
@@ -121,7 +126,6 @@ export default function SliderComponent(props) {
   return (
     <div>
       <FullScreen handle={handleFs} onChange={trackFs}>
-        { openRatingTable && <RatingTable handleClose={setOpenRatingTable}/> }
         <Grid className={classes.fsWrapper}>
           <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
             {fsState ? <FullscreenExitIcon /> : <FullscreenIcon />}
@@ -142,8 +146,8 @@ export default function SliderComponent(props) {
                 size={'large'}
                 average={average(card.id)}
                 value={value(card.id)}
-                handleBackdrop={setOpenRatingTable}
-                setValue={setValue(card.id)}
+                getScores={getScores(card.id)}
+                setValue={setValue}
               />
             ))}
           </Slider>
