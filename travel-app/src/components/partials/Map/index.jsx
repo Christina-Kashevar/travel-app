@@ -9,7 +9,7 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { MAPBOX_ACCESS_TOKEN } from '../../../constants/tokens';
 
-import { Grid, IconButton, Popper, Typography} from '@material-ui/core';
+import { Grid, IconButton, Tooltip} from '@material-ui/core';
 
 const MapBox = ReactMapboxGl({ accessToken: MAPBOX_ACCESS_TOKEN });
 
@@ -26,15 +26,10 @@ const paint = {
 export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
-  const [anchorEl, setAnchorEl] = React.useState(null);
   const { code, capital, capitalCoords, sightsCoordinates } = props;
   const classes = useStyles();
 
   const filter = ['==', 'iso_3166_1', code.toUpperCase()];
-
-  const open = Boolean(anchorEl);
-  const handlePopoverOpen = (event) => setAnchorEl(event.currentTarget);
-  const handlePopoverClose = () => setAnchorEl(null);
 
   const trackFs = useCallback((state) => setFsState(state), []);
   const toggleFs = () => {
@@ -59,33 +54,19 @@ export default function Map(props) {
         center={capitalCoords}
         onStyleLoad={(map) => map.resize()}
       >
-        <Marker coordinates={capitalCoords} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
-          <img src="./icons/pin.svg" alt="Capital marker" />
-          <Popper
-            placement="bottom"
-            className={classes.popover}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handlePopoverClose}
-          >
-            <Typography>{capital}</Typography>
-          </Popper>
-        </Marker>
-        {sightsCoordinates.map((el, i)=>{
-          return( 
-          <Marker  key={i} coordinates={el.coordinates} className={classes.marker} onMouseEnter={handlePopoverOpen} onMouseLeave={handlePopoverClose}>
-          <img src="./icons/marker.svg" alt="sight marker" />
-          <Popper
-            placement="bottom"
-            className={classes.popover}
-            open={open}
-            anchorEl={anchorEl}
-            onClose={handlePopoverClose}
-          >
-            <Typography>{el.name}</Typography>
-          </Popper>
-        </Marker>)
+        {sightsCoordinates.map((sight) => {
+          return (
+          <Marker key={sight.name} coordinates={sight.coordinates} className={classes.marker} >
+            <Tooltip title={sight.name}>
+              <img src="./icons/marker.svg" alt="sight marker" />
+            </Tooltip>
+          </Marker>)
         })}
+        <Marker coordinates={capitalCoords} className={classes.marker}>
+          <Tooltip title={capital}>
+            <img src="./icons/pin.svg" alt="Capital marker" />
+          </Tooltip>
+        </Marker>
         <Source id="country-bonds" tileJsonSource={COUNTRY_BONDS_SOURCE} />
         <Layer
           type="fill"
