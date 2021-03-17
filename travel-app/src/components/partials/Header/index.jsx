@@ -12,15 +12,14 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 import MenuIcon from "@material-ui/icons/Menu";
 import Drawer from '@material-ui/core/Drawer';
 import { ReactComponent as Logo } from "../../../assets/icons/travel.svg";
+import { useTranslation } from 'react-i18next';
 
 import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
-  const { pageName, homePage, onSearch } = props;
+  const { homePage, onSearch } = props;
   const [value, setValue] = useState('');
-  const [state, setState] = React.useState({
-    right: false,
-  });
+  const [state, setState] = useState({right: false});
   const classes = useStyles();
 
   const toggleDrawer = (open) => (event) => {
@@ -29,6 +28,9 @@ export default function Header(props) {
     }
     setState({right: open });
   };
+  const { t } = useTranslation();
+
+  const pageName = t('PAGE_NAME.TRAVEL_APP');
 
   return (
     <div>

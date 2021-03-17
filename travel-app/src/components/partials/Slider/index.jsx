@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FullScreen, useFullScreenHandle } from 'react-full-screen';
-import { useTranslation } from 'react-i18next';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
@@ -15,18 +14,13 @@ import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
 import { Grid, IconButton } from '@material-ui/core';
 
-import { getSightsByCode } from '../../../engine';
-
 export default function SliderComponent(props) {
-  const { code } = props;
+  const { sights } = props;
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [openRating, setOpenRating] = useState(false);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
-  const { i18n } = useTranslation();
-  const { language } = i18n;
-  const info = getSightsByCode(code, language);
 
   const classes = useStyles();
   let slider1;
@@ -96,10 +90,10 @@ export default function SliderComponent(props) {
             ref={slider => (slider1 = slider)}
             className={'slider-large'}
           >
-            {info.map((card) => (
+            {sights.map((card) => (
               < SliderCard
-                key={card.img}
-                imgUrl={card.img}
+                key={card.linkToPhoto}
+                imgUrl={card.linkToPhoto}
                 name={card.name}
                 description={card.description}
                 size={'large'}
@@ -115,8 +109,8 @@ export default function SliderComponent(props) {
       asNavFor={nav1}
       ref={slider => (slider2 = slider)}
     >
-      { info.map((card) => (
-        < SliderCard key={card.img} imgUrl={card.img} size={'small'}/>
+      { sights.map((card) => (
+        < SliderCard key={card.linkToPhoto} imgUrl={card.linkToPhoto} size={'small'}/>
       )) }
     </Slider>
   </div>

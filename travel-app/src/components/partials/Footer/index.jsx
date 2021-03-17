@@ -24,11 +24,11 @@ export default function Footer() {
                 href={`https://github.com/${git}`}
                 target="blank"
                 rel="noreferrer noopener"
-                // className={classes.button}
                 startIcon={<GitHubIcon/>}
                 key={git}
+                className={classes.button}
               >
-                {git}
+                <Typography className={classes.text}>{git}</Typography>
               </Button>
             ))
 
@@ -43,7 +43,7 @@ export default function Footer() {
             >
               <img src="https://rs.school/images/rs_school.svg" alt="RS School logo" className={classes.logoImage}/>
             </IconButton>
-            <Typography variant="button" color="initial">2021</Typography>
+            <Typography variant="button" color="initial" className={classes.year}>2021</Typography>
           </Grid>
         </Toolbar>
       </AppBar>

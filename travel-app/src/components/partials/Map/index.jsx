@@ -7,8 +7,7 @@ import useStyles from './styles';
 import FullscreenIcon from '@material-ui/icons/Fullscreen';
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit';
 
-import { MAPBOX_ACCESS_TOKEN } from '../../../data/constants';
-import { CAPITALS_COORDS } from '../../../data/geo';
+import { MAPBOX_ACCESS_TOKEN } from '../../../constants/tokens';
 
 import { Grid, IconButton, Popper, Typography} from '@material-ui/core';
 
@@ -28,11 +27,10 @@ export default function Map(props) {
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const { code, capital } = props;
+  const { code, capital, capitalCoords } = props;
   const classes = useStyles();
 
   const filter = ['==', 'iso_3166_1', code.toUpperCase()];
-  const capitalCoords = CAPITALS_COORDS[code];
 
   const open = Boolean(anchorEl);
   const handlePopoverOpen = (event) => setAnchorEl(event.currentTarget);
