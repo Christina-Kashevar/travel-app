@@ -1,6 +1,7 @@
 import { repository } from '@loopback/repository';
 import { authenticate } from '@loopback/authentication';
 import { SecurityBindings, securityId, UserProfile } from '@loopback/security';
+import { UserRepository } from '@loopback/authentication-jwt';
 import { inject } from '@loopback/core';
 import { post, param, get, getModelSchemaRef, patch, del, requestBody, response, HttpErrors } from '@loopback/rest';
 import { Score } from '../models';
@@ -24,6 +25,7 @@ export class ScoreController {
   constructor(
     @repository(ScoreRepository)
     public scoreRepository: ScoreRepository,
+    @repository(UserRepository) protected userRepository: UserRepository,
   ) {}
 
   @authenticate('jwt')
@@ -47,7 +49,7 @@ export class ScoreController {
     @inject(SecurityBindings.USER)
     currentUserProfile: UserProfile,
   ): Promise<Score | null> {
-    if(score.value < 1 || score.value > 5) {
+    if (score.value < 1 || score.value > 5) {
       throw new HttpErrors[422]();
     }
     const currentScore = await this.scoreRepository.findOne({
@@ -83,11 +85,14 @@ export class ScoreController {
   async find(@param.path.string('countryId') countryId: string): Promise<ScoreMap> {
     const scoreMap: ScoreMap = {};
     const scores = await this.scoreRepository.find({ where: { countryId } });
+    
+    const users = await this.userRepository.find();
     scores.reduce((map: ScoreMap, score: Score) => {
       if (!map[score.sightId]) {
         map[score.sightId] = { scores: [] as ShortScore[] } as SightScore;
       }
-      map[score.sightId].scores.push({ username: score.userId, value: score.value });
+      const username = users.find(user => user.id === score.userId)?.username || 'unknown';
+      map[score.sightId].scores.push({ username, value: score.value });
       return map;
     }, scoreMap);
 
