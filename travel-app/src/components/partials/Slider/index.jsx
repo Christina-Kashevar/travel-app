@@ -48,26 +48,45 @@ export default function SliderComponent(props) {
     const sightScores = scores[sightId];
     const scoresData = ( sightScores && sightScores.scores) ? sightScores.scores : [];
     for(const scoreRecord of scoresData) {
-      if (scoreRecord.username === user.username) return scoreRecord.value;
+      if (scoreRecord.username === user?.username) return scoreRecord.value;
     }
     return 0;
   };
 
-  const setValue = (event, newValue) => {
-    console.log(sights[currentSlide].id);
+  const getScoresFromApi = useCallback(() => {
+    axios
+    .get(urls.scores.byId(id))
+    .then((response) => {
+      handleSetScores(response.data || {})
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+  },[id])
+
+  const setValue = async (event, newValue) => {
+    if(user) {
+      const score = {
+        userId: user.id,
+        countryId: id,
+        sightId: sights[currentSlide].id,
+        value: newValue,
+      }
+      try {
+        await axios.post(urls.scores.all, score, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+        })
+
+        getScoresFromApi();
+      } catch(err) {
+        console.log(err)
+      }
+    }
   };
 
   useEffect(() => {
-      axios
-      .get(urls.scores.byId(id))
-      .then((response) => {
-        handleSetScores(response.data || {})
-        console.log(response.data);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }, [id]);
+    getScoresFromApi();
+  }, [getScoresFromApi]);
 
   let slider1;
   let slider2;

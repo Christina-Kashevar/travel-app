@@ -18,6 +18,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
 import { useTranslation } from 'react-i18next';
+import Rating from '@material-ui/lab/Rating';
 
 const useStyles = makeStyles({
   table: {
@@ -97,7 +98,9 @@ export default function RatingTable({ open, handleClose, getScores }) {
                 return (
                   <TableRow key={scoreRecord.username}>
                   <TableCell >{scoreRecord.username}</TableCell>
-                  <TableCell>{scoreRecord.value}</TableCell>
+                  <TableCell>
+                    <Rating value={scoreRecord.value} readOnly />
+                  </TableCell>
                 </TableRow>
                 );
               })}
