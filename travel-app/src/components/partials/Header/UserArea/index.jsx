@@ -24,8 +24,8 @@ export default function UserArea({closeMenu}) {
   const handleSetType = (newType) => (event) => setType(newType);
   const toggleDrawer = (open) => (event) => setIsDrawerOpened(open);
   const closeDrawer = (event) =>{
-    closeMenu(event);
-    setIsDrawerOpened(true);
+    if(closeMenu) closeMenu(event);
+    setIsDrawerOpened(false);
   }
 
   useEffect(() => {
