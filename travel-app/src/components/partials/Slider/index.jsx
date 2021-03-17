@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 import SliderCard from './SliderCard';
-import RatingBlock from '../Rating';
+import RatingTable from '../RatingTable';
 
 import './index.css';
 import useStyles from './style';
@@ -16,13 +16,18 @@ import { Grid, IconButton } from '@material-ui/core';
 
 export default function SliderComponent(props) {
   const { sights } = props;
+  const [ratingValue, setRatingValue] = useState(0);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
-  const [openRating, setOpenRating] = useState(false);
+  const [openRatingTable, setOpenRatingTable] = useState(false);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
-
   const classes = useStyles();
+
+  const handleValueChange = (event, newValue) => {
+    setRatingValue(newValue);
+  };
+
   let slider1;
   let slider2;
 
@@ -77,8 +82,8 @@ export default function SliderComponent(props) {
 
   return (
     <div>
-      { openRating && <RatingBlock handleClose={setOpenRating}/> }
       <FullScreen handle={handleFs} onChange={trackFs}>
+        { openRatingTable && <RatingTable handleClose={setOpenRatingTable}/> }
         <Grid className={classes.fsWrapper}>
           <IconButton onClick={toggleFs} className={classes.fsButton} color="primary">
             {fsState ? <FullscreenExitIcon /> : <FullscreenIcon />}
@@ -97,8 +102,9 @@ export default function SliderComponent(props) {
                 name={card.name}
                 description={card.description}
                 size={'large'}
-                mark={5}
-                handleBackdrop={setOpenRating}
+                value={ratingValue}
+                handleValueChange={handleValueChange}
+                handleBackdrop={setOpenRatingTable}
               />
             ))}
           </Slider>

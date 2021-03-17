@@ -5,7 +5,7 @@ import { Backdrop, Box } from '@material-ui/core/';
 import CloseIcon from '@material-ui/icons/Close';
 import IconButton from '@material-ui/core/IconButton';
 
-export default function RatingBlock({handleClose}) {
+export default function RatingTable({handleClose}) {
   const classes = useStyles();
   const [open, setOpen] = useState(true);
   const closeBlockHandler = () => {
