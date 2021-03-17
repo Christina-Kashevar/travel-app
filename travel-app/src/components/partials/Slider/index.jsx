@@ -27,6 +27,7 @@ export default function SliderComponent(props) {
   const [openRatingTable, setOpenRatingTable] = useState(false);
   const handleFs = useFullScreenHandle();
   const [fsState, setFsState] = useState(handleFs.active);
+  const [currentSlide, setCurrentSlide] = useState(0);
   const classes = useStyles();
 
   const handleSetScores = (newState) => {
@@ -49,8 +50,8 @@ export default function SliderComponent(props) {
     return 0;
   };
 
-  const setValue = (sightId) => (event, newValue) => {
-    console.log(sightId);
+  const setValue = (event, newValue) => {
+    console.log(sights[currentSlide].id);
   };
 
   useEffect(() => {
@@ -85,6 +86,7 @@ export default function SliderComponent(props) {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    afterChange: slide => setCurrentSlide(slide)
   };
 
   const settingsSmall = {
@@ -148,7 +150,7 @@ export default function SliderComponent(props) {
                 average={average(card.id)}
                 value={value(card.id)}
                 handleBackdrop={setOpenRatingTable}
-                setValue={setValue(card.id)}
+                setValue={setValue}
               />
             ))}
           </Slider>
