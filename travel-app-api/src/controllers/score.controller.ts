@@ -85,13 +85,13 @@ export class ScoreController {
   async find(@param.path.string('countryId') countryId: string): Promise<ScoreMap> {
     const scoreMap: ScoreMap = {};
     const scores = await this.scoreRepository.find({ where: { countryId } });
-    
+
     const users = await this.userRepository.find();
     scores.reduce((map: ScoreMap, score: Score) => {
       if (!map[score.sightId]) {
         map[score.sightId] = { scores: [] as ShortScore[] } as SightScore;
       }
-      const username = users.find(user => user.id === score.userId)?.username || 'unknown';
+      const username = users.find((user) => user.id === score.userId)?.username || 'unknown';
       map[score.sightId].scores.push({ username, value: score.value });
       return map;
     }, scoreMap);
@@ -108,7 +108,15 @@ export class ScoreController {
   @response(204, {
     description: 'Score DELETE success',
   })
-  async deleteById(@param.path.string('id') id: string): Promise<void> {
+  async deleteById(
+    @param.path.string('id') id: string,
+    @inject(SecurityBindings.USER)
+    currentUserProfile: UserProfile,
+  ): Promise<void> {
+    const user = await this.userRepository.findById(currentUserProfile[securityId]);
+    if (!user.isAdmin) {
+      throw new HttpErrors[403]();
+    }
     await this.scoreRepository.deleteById(id);
   }
 }
