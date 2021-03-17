@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   drawer: {
     minWidth: 250,
     maxWidth: 300,
+    overflow: 'hidden',
     display: 'flex',
     flexDirection: 'column'
   }
