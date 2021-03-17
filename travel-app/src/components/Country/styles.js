@@ -9,15 +9,19 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     margin: '0 0 1% 0',
     [theme.breakpoints.down('sm')]: {
+      textStroke: '1px black',
       fontSize: 20,
     },
     [theme.breakpoints.between('sm', 'md')]: {
+      textStroke: '2px black',
       fontSize: 35,
     },
     [theme.breakpoints.between('md', 'lg')]: {
+      textStroke: '3px black',
       fontSize: 45,
     },
     [theme.breakpoints.up('lg')]: {
+      textStroke: '4px black',
       fontSize: 55,
     },
     textStroke: '4px black',
