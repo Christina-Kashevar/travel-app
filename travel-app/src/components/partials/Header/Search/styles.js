@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   },
   search: {
     display: 'flex',
-    height: 56,
+    height: 61,
     borderRadius: theme.shape.borderRadius,
     backgroundColor: fade(theme.palette.common.white, 0.15),
     '&:hover': {

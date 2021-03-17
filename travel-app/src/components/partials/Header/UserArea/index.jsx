@@ -17,7 +17,7 @@ const UserPanel = ({ type, ...props }) => {
   return <UserLogged {...{user, handleLogout}} />
 };
 
-export default function UserArea() {
+export default function UserArea({closeMenu}) {
   const [user, setUser] = useContext(UserContext);
   const panelType = (user) ? 'userLogged' : 'signIn';
   const [type, setType] = useState(panelType);
@@ -26,7 +26,10 @@ export default function UserArea() {
 
   const handleSetType = (newType) => (event) => setType(newType);
   const toggleDrawer = (open) => (event) => setIsDrawerOpened(open);
-
+  const closeDrawer = (event) =>{
+    closeMenu(event);
+    setIsDrawerOpened(true);
+  }
 
   useEffect(() => {
     const checkAuthorization = async () => {
@@ -56,7 +59,7 @@ export default function UserArea() {
       <IconButton onClick={toggleDrawer(true)}>
         {user ? <img className={classes.avatarIcon} src={user.avatar} width={40} height={40} alt="avatar" /> : <AccountCircleIcon />}
       </IconButton>
-      <Drawer width="30%" anchor="right" open={isDrawerOpened} onClose={toggleDrawer(false)}>
+      <Drawer width="30%" anchor="right" open={isDrawerOpened} onClose={closeDrawer}>
         <UserPanel
           type={type}
           callBack={handleSetType}

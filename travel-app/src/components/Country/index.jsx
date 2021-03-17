@@ -53,6 +53,7 @@ export default function Country() {
   const { language } = i18n;
   const [country, setCountry] = useState({});
   const [sights, setSights] = useState({});
+  const [sightsCoordinates, setSightsCoordinates] = useState([]);
   const [loading, setLoading] = useState(true);
   const error = (country === null || !code);
   const classes = useStyles();
@@ -60,6 +61,9 @@ export default function Country() {
   const loadInfo = (CountryInfo, sightsInfo) => {
     setCountry(CountryInfo);
     setSights(sightsInfo);
+    let sightsCoop=[];
+    sightsInfo.forEach(el=> sightsCoop.push({'coordinates': el.сoordinates, 'name': el.name}));
+    setSightsCoordinates(sightsCoop);
     setLoading(false);
   }
 
@@ -125,7 +129,7 @@ export default function Country() {
                   <Slider sights={sights} id={country.id} />
                 </Grid>
                 <Grid>
-                  <Map code={code} capital={capitalName} capitalCoords={country.capitalCoordinates}/>
+                  <Map code={code} capital={capitalName} capitalCoords={country.capitalCoordinates} sightsCoordinates={sightsCoordinates}/>
                 </Grid>
               </Container>
             </Grid>
