@@ -27,7 +27,7 @@ export default function Header(props) {
       return;
     }
     setState({right: open });
-    toggleRecorder(false);
+    if (toggleRecorder) toggleRecorder(false);
   };
   const { t } = useTranslation();
 
