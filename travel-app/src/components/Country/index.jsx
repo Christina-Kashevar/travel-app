@@ -126,7 +126,7 @@ export default function Country() {
                   </Player>
                 </Grid>
                 <Grid>
-                  <Slider sights={sights} />
+                  <Slider sights={sights} id={country.id} />
                 </Grid>
                 <Grid>
                   <Map code={code} capital={capitalName} capitalCoords={country.capitalCoordinates} sightsCoordinates={sightsCoordinates}/>

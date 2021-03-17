@@ -8,9 +8,12 @@ const urls = {
   },
   countries: {
     all: `${baseUrl}/countries`,
-    byCode: code => `${baseUrl}/countries/${code}`,
+    byCode: (code) => `${baseUrl}/countries/${code}`,
   },
-  scores: countryId => `${baseUrl}/scores/${countryId}`
-}
+  scores: {
+    all: `${baseUrl}/scores`,
+    byId: (id) => `${baseUrl}/scores/${id}`,
+  },
+};
 
 export default urls;

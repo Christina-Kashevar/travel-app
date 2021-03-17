@@ -26,10 +26,10 @@ const WeatherCard = ({ weatherData }) => {
             <img
               className={classes.img}
               alt="weather"
-              src={`http://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
+              src={`https://openweathermap.org/img/w/${weatherData.weather[0].icon}.png`}
             />
           </Grid>
-        
+
           <Typography className={classes.hSmall}>{weatherData.weather[0].description}</Typography>
         </Grid>
       </Grid>
