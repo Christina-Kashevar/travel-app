@@ -25,6 +25,7 @@ export default function Country() {
   const [translatedCountries, setTranslatedCountries] = useState([]);
   const [filteredCountries, setFilteredCountries] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [recorder, toggleRecorder] = useState(false);
   const {
     i18n: { language },
   } = useTranslation();
@@ -68,13 +69,13 @@ export default function Country() {
 
   return (
     <Grid container direction="column" justify="space-between" alignItems="stretch">
-      <Header onSearch={setSearchValue} homePage={true} />
+      <Header onSearch={setSearchValue} homePage={true} recorder={recorder} toggleRecorder={toggleRecorder}/>
       <Grid className={classes.root}>
         {isPending && <Loading />}
         <Container>
           <Grid container direction="row" justify="space-evenly" alignItems="center">
             {filteredCountries.map((country) => (
-              <CountryCard countryData={country} key={country.id} />
+              <CountryCard countryData={country} key={country.id} toggleRecorder={toggleRecorder}/>
             ))}
           </Grid>
         </Container>

@@ -17,7 +17,7 @@ import { useTranslation } from 'react-i18next';
 import LanguageSwitcher from '../LanguageSwitcher';
 
 export default function Header(props) {
-  const { homePage, onSearch } = props;
+  const { homePage, onSearch, recorder, toggleRecorder } = props;
   const [value, setValue] = useState('');
   const [state, setState] = useState({right: false});
   const classes = useStyles();
@@ -27,6 +27,7 @@ export default function Header(props) {
       return;
     }
     setState({right: open });
+    toggleRecorder(false);
   };
   const { t } = useTranslation();
 
@@ -47,7 +48,7 @@ export default function Header(props) {
             {pageName}
           </Typography>
           <Grid className={classes.collapse}>
-            {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} />}
+            {homePage && <Search value={value} onChange={setValue} onSearch={onSearch} recorder={recorder} toggleRecorder={toggleRecorder}/>}
             <LanguageSwitcher />
             <UserArea />
           </Grid>
@@ -61,7 +62,7 @@ export default function Header(props) {
             </IconButton>
             <Drawer anchor={'right'} open={state['right']} onClose={toggleDrawer(false)} >
               <div className={classes.drawer}>
-                { homePage && <Search value={value} onChange={setValue} onSearch={onSearch} closeMenu={toggleDrawer(false)}/>}
+                { homePage && <Search value={value} onChange={setValue} onSearch={onSearch} closeMenu={toggleDrawer(false)} recorder={recorder} toggleRecorder={toggleRecorder}/>}
                 <LanguageSwitcher />
                 <div className={classes.iconButton}>
                   <UserArea closeMenu={toggleDrawer(false)} />
